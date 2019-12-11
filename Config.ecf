@@ -14,6 +14,14 @@ VERSION: 8
 # IsAccessible: shows up in Control Panel
 # O2Accept: "OxygenBottleLarge,OxygenBottleSmall" > items that can be used to fill a O2 tank. First item in list will be filled when O2 is withdrawn
 # FuelAccept: "EnergyCell, EnergyCellLarge, EnergyCellHydrogen, FusionCell, BioFuel" > items that can be used to fill a fuel tank. First item in list will be filled when fuel is withdrawn
+{ Block Id: 53, Name: SathiumResource
+  Material: resourcemedium
+  Group: resource
+  { Child DropOnDestroy
+    Count: "2,4"
+    Prob: 0.2
+  }
+}
 { Item Id: 2071, Name: Chainsaw
   PickupToToolbar: true
   StackSize: 1
@@ -25,18 +33,19 @@ VERSION: 8
     AllowRemote: false
     HarvestSupport: false
     ROF: 0.25, type: float
-    Range: 4, display: false
+    Range: 2, display: false
     NoiseStrength: 60, display: false
     CameraShake: 0
     IgnoreAtmo: true
     Automatic: true
-    Damage: 110, display: true
+    Damage: 65, display: true
     AmmoCapacity: 125, display: true
     AmmoType: BioFuel, display: true
     ReloadDelay: 3.8, display: true
-    DamageMultiplier_1: 1, data: wood|plants
-    DamageMultiplier_2: 1, data: concrete|hull|hullarmored|hullcombat|metal|metalhard
-    DamageMultiplier_1: 5, data: head, display: DmgMultiplierHead
+    DamageMultiplier_1: 0.04, data: wood|plants
+    DamageMultiplier_2: 0, data: concrete|hull|hullarmored|hullcombat|metal|metalhard
+    DamageMultiplier_3: 0, data: dirt|stone|rock
+    DamageMultiplier_4: 5, data: head, display: DmgMultiplierHead
   }
   UnlockCost: 0, display: true
   UnlockLevel: 1, display: true
@@ -149,3 +158,4 @@ VERSION: 8
   TechTreeParent: AssaultRifle
   TechTreeNames: Weapons
 }
+
