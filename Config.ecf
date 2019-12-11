@@ -115,3 +115,37 @@ VERSION: 8
   TechTreeParent: RocketLauncher
   TechTreeNames: Weapons
 }
+{ Item Id: 2055, Name: Sniper
+  PickupToToolbar: true
+  StackSize: 1
+  Category: Weapons/Items
+  Mass: 6, type: float, display: true, formatter: Kilogram
+  Volume: 4, type: float, display: true, formatter: Liter
+  Durability: 500, display: false
+  DegradationProb: 0.625, type: float, display: false
+  {
+    AllowRemote: false
+    ROF: 0.5, type: float, display: true, formatter: ROF
+    Range: 303, display: false
+    NoiseStrength: 100, display: false
+    CameraShake: 0
+    Automatic: false
+    BulletSpread: 0.03, display: true
+    Recoil: 1.1, display: true
+    Damage: 220, display: true
+    AmmoCapacity: 6, display: true
+    AmmoType: 12.7mmBullet, display: true
+    ReloadDelay: 3.1, display: true
+    Tracer: Weapons/Projectiles/TracerOrange1
+    TracerPerBullet: 1
+    DamageMultiplier_1: 6, data: head, display: DmgMultiplierHead
+    DamageMultiplier_2: 0, data: dirt|stone|rock|wood|hullarmored|hullcombat
+    DamageMultiplier_3: 0, data: shield
+  }
+  {
+  }
+  UnlockCost: 7, display: true
+  UnlockLevel: 5, display: true
+  TechTreeParent: AssaultRifle
+  TechTreeNames: Weapons
+}
