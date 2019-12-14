@@ -92,6 +92,16 @@ VERSION: 8
     MagnesiumOre: 5
   }
 }
+{ Template Name: 5.8mmBullet
+  OutputCount: 150
+  CraftTime: 5
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
+  { Child Inputs
+    SteelPlate: 8
+    CopperIngot: 4
+    NCPowder: 1
+  }
+}
 { Item Id: 2053, Name: Minigun
   PickupToToolbar: true
   StackSize: 1
@@ -156,6 +166,39 @@ VERSION: 8
   UnlockCost: 7, display: true
   UnlockLevel: 5, display: true
   TechTreeParent: AssaultRifle
+  TechTreeNames: Weapons
+}
+{ Item Id: 2063, Name: AssaultRifle
+  PickupToToolbar: true
+  StackSize: 1
+  Category: Weapons/Items
+  Mass: 4, type: float, display: true, formatter: Kilogram
+  Volume: 2, type: float, display: true, formatter: Liter
+  Durability: 500, display: false
+  DegradationProb: 0.08, type: float, display: false
+  {
+    AllowRemote: false
+    ROF: 0.2, type: float, display: true, formatter: ROF
+    Range: 150, display: false
+    NoiseStrength: 100, display: false
+    CameraShake: 1
+    Automatic: true, display: true
+    BulletSpread: 0.16, display: true
+    Recoil: 0.6, display: true
+    Damage: 70, display: true
+    AmmoCapacity: 30, display: true
+    AmmoType: 5.8mmBullet, display: true
+    ReloadDelay: 3.1, display: true
+    Tracer: Weapons/Projectiles/TracerOrange1
+    TracerPerBullet: 2
+    DamageMultiplier_1: 7, data: head, display: DmgMultiplierHead
+    DamageMultiplier_2: 0, data: dirt|stone|rock|wood|hullarmored|hullcombat
+    DamageMultiplier_3: 0, data: shield
+  }
+  {
+  }
+  UnlockCost: 6, display: true
+  UnlockLevel: 3, display: true
   TechTreeNames: Weapons
 }
 

@@ -315,6 +315,7 @@ VERSION: 8
 }
 { Block Id: 273, Name: ContainerMS01
   Group: cpgCargoBox
+  LootList: 66
   Material: metal
   ShowBlockName: true
   TemplateRoot: ContainerSmallBlocks
@@ -592,6 +593,7 @@ VERSION: 8
   TechTreeNames: 
 }
 { Block Id: 331, Name: ContainerUltraRare, Ref: ContainerMS01
+  LootList: 49
   BlockColor: "96,33,173"
 }
 { Block Id: 333, Name: RailingDiagonal
@@ -628,6 +630,7 @@ VERSION: 8
 }
 { Block Id: 336, Name: PentaxidTank
   Group: cpgWarp
+  LootList: 3
   Material: metal
   ShowBlockName: true
   MaxCount: 1, type: int, display: true
@@ -635,7 +638,7 @@ VERSION: 8
   BlockColor: "110,110,110"
   Mass: 4000, type: float, display: true, formatter: Kilogram
   Volume: 300, type: float, display: true, formatter: Liter
-  VolumeCapacity: 1000, type: float, display: true, formatter: Liter
+  VolumeCapacity: 2500, type: float, display: true, formatter: Liter
   Category: Devices
   HitPoints: 100, type: int, display: true
   CPUIn: 400, type: int, display: true
@@ -856,17 +859,17 @@ VERSION: 8
   ShowBlockName: true
   BlockColor: "110,110,110"
   TemplateRoot: LandinggearBlocksSV
-  Volume: 120, type: float, display: true, formatter: Liter
-  Mass: 275, type: float, display: true, formatter: Kilogram
+  Mass: 100, type: float, display: true, formatter: Kilogram
   Info: bkiLandinggearSV, display: true
   IsAccessible: true, type: bool
   IsOxygenTight: false, display: true
   Category: Devices
-  HitPoints: 25, type: int, display: true
+  HitPoints: 50, type: int, display: true
   EnergyIn: 1, type: int, display: true, formatter: Watt
 }
 { Block Id: 418, Name: GeneratorSV
   Group: cpgGenerator
+  LootList: 1
   Material: metalhard
   ShowBlockName: true
   BlockColor: "110,110,110"
@@ -882,8 +885,9 @@ VERSION: 8
   Category: Devices
   BlastRadius: 5
   BlastDamage: 200
-  UnlockCost: 0, display: true
-  UnlockLevel: 1, display: true
+  UnlockCost: 2, display: true
+  UnlockLevel: 3, display: true
+  TechTreeParent: GeneratorSVSmall
   TechTreeNames: "Small Vessel,Hover Vessel"
   Temperature: 50, display: true
 }
@@ -907,9 +911,10 @@ VERSION: 8
   BlastRadius: 5
   BlastDamage: 500
   Radiation: 0.25, display: RadiationLevel
-  UnlockCost: 0, display: true
-  UnlockLevel: 1, display: true
+  UnlockCost: 2, display: true
+  UnlockLevel: 3, display: true
   TechTreeNames: "Small Vessel,Hover Vessel"
+  TechTreeParent: FuelTankSVSmall
 }
 { Block Id: 420, Name: RCSBlockMS
   Group: cpgRCS
@@ -935,6 +940,7 @@ VERSION: 8
 }
 { Block Id: 422, Name: OxygenTankSV
   Group: cpgO2Tank
+  LootList: 25
   Material: metallight
   ShowBlockName: true
   BlockColor: "110,110,110"
@@ -957,6 +963,7 @@ VERSION: 8
 }
 { Block Id: 423, Name: FridgeSV
   Group: cpgFridge
+  LootList: 1
   Material: metal
   ShowBlockName: true
   StackSize: 6
@@ -1092,12 +1099,12 @@ VERSION: 8
   ShowBlockName: true
   BlockColor: "110,110,110"
   TemplateRoot: LandinggearBlocksCV
-  Volume: 1000, type: float, display: true, formatter: Liter
-  Mass: 2500, type: float, display: true, formatter: Kilogram
+  HitPoints: 650, type: int, display: true
+  Mass: 2000, type: float, display: true, formatter: Kilogram
+  Volume: 300, type: float, display: true, formatter: Liter
   IsAccessible: true, type: bool
   IsOxygenTight: false, display: true
   Category: Devices
-  HitPoints: 50, type: int, display: true
   EnergyIn: 1, type: int, display: true, formatter: Watt
 }
 { Block Id: 449, Name: ThrusterSVRoundNormal
@@ -1308,6 +1315,53 @@ VERSION: 8
   TechTreeNames: "Base,Capital Vessel"
   Temperature: 100, display: true
 }
+{ Block Id: 470, Name: FuelTankSVSmall
+  Group: cpgFuelTank
+  Material: metallight
+  ShowBlockName: true
+  IsLockable: true
+  IsOxygenTight: false, display: true
+  IsIgnoreLC: true
+  Volume: 10, type: float, display: true, formatter: Liter
+  Mass: 250, type: float, display: true, formatter: Kilogram
+  Info: bkiFuelTank, display: true
+  StackSize: 99
+  BlockColor: "110,110,110"
+  EnergyIn: 1, type: int, display: true, formatter: Watt
+  CPUIn: 75, type: int, display: true
+  Category: Devices
+  FuelAccept: "EnergyCell, EnergyCellLarge, EnergyCellHydrogen, FusionCell, BioFuel"
+  FuelCapacity: 300, type: int, display: true
+  BlastRadius: 5
+  BlastDamage: 300
+  Radiation: 0.25, display: RadiationLevel
+  UnlockCost: 0, display: true
+  UnlockLevel: 1, display: true
+  TechTreeNames: "Small Vessel,Hover Vessel"
+}
+{ Block Id: 471, Name: GeneratorSVSmall
+  Group: cpgGenerator
+  LootList: 1
+  Material: metalhard
+  ShowBlockName: true
+  BlockColor: "110,110,110"
+  Volume: 100, type: float, display: true, formatter: Liter
+  Mass: 500, type: float, display: true, formatter: Kilogram
+  Info: bkiGenerator, display: true
+  StackSize: 99
+  IsOxygenTight: true, display: true
+  IsIgnoreLC: true
+  HitPoints: 125, type: int, display: true
+  EnergyOut: 900, type: int, display: true, formatter: Watt
+  CPUIn: 112, type: int, display: true
+  Category: Devices
+  BlastRadius: 3
+  BlastDamage: 200
+  UnlockCost: 0, display: true
+  UnlockLevel: 1, display: true
+  TechTreeNames: "Small Vessel,Hover Vessel"
+  Temperature: 50, display: true
+}
 { Block Id: 489, Name: WeaponSV05Homing, Ref: WeaponSV05
   WeaponItem: RocketLauncherSSHomingWeapon
   Volume: 200, type: float, display: true, formatter: Liter
@@ -1391,6 +1445,7 @@ VERSION: 8
   Temperature: 70, display: true
 }
 { Block Id: 514, Name: ContainerSpecialEvent, Ref: ContainerMS01
+  LootList: 36
   BlockColor: "96,33,173"
 }
 { Block Id: 535, Name: ContainerBlocks
@@ -1433,6 +1488,7 @@ VERSION: 8
 }
 { Block Id: 541, Name: AlienContainer
   Group: cpgAlien
+  LootList: 38
   Info: bkiAlienBlock, display: true
   Material: metal
   BlockColor: "110,110,110"
@@ -1450,12 +1506,15 @@ VERSION: 8
 }
 { Block Id: 542, Name: AlienContainerRare, Ref: AlienContainer
   BlockColor: "255,247,0"
+  LootList: 39
 }
 { Block Id: 543, Name: AlienContainerVeryRare, Ref: AlienContainer
   BlockColor: "170,5,5"
+  LootList: 40
 }
 { Block Id: 544, Name: AlienContainerUltraRare, Ref: AlienContainer
   BlockColor: "171,32,161"
+  LootList: 41
 }
 { Block Id: 545, Name: WindowShutterLargeBlocks
   Material: hullcombat
@@ -1694,6 +1753,7 @@ VERSION: 8
 }
 { Block Id: 583, Name: FridgeMS02
   Group: cpgFridge
+  LootList: 72
   Material: metal
   ShowBlockName: true
   IsLockable: true
@@ -1829,6 +1889,7 @@ VERSION: 8
   IsLockable: true
 }
 { Block Id: 614, Name: KitchenCounter, Ref: DecoTemplate
+  LootList: 63
   VolumeCapacity: 1000, type: float, display: true, formatter: Liter
 }
 { Block Id: 615, Name: KitchenTable, Ref: DecoTemplate
@@ -1844,6 +1905,7 @@ VERSION: 8
   Info: bkiDecoModel, display: true
 }
 { Block Id: 619, Name: BathroomCounter, Ref: DecoTemplate
+  LootList: 62
   VolumeCapacity: 1000, type: float, display: true, formatter: Liter
 }
 { Block Id: 620, Name: Toilet, Ref: DecoTemplate
@@ -2080,6 +2142,7 @@ VERSION: 8
   BlockColor: "170,5,5"
 }
 { Block Id: 669, Name: SawAttachment
+  LootList: 37
   Group: cpgHarvest
   Material: metalhard
   ShowBlockName: true
@@ -2141,6 +2204,7 @@ VERSION: 8
 { Block Id: 682, Name: RailingRound, Ref: RailingDiagonal
 }
 { Block Id: 683, Name: DrillAttachment
+  LootList: 37
   Group: cpgHarvest
   Material: metalhard
   ShowBlockName: true
@@ -2180,6 +2244,7 @@ VERSION: 8
 }
 { Block Id: 686, Name: ContainerPersonal
   Group: cpgCargoBox
+  LootList: 66
   Material: metal
   ShowBlockName: true
   TemplateRoot: ContainerLargeBlocks
@@ -2226,7 +2291,7 @@ VERSION: 8
   HitPoints: 1500, type: int, display: true
   ThrusterForce: 7018, type: int, display: true, formatter: Newton
   EnergyIn: 1452, type: int, display: true, formatter: Watt
-  CPUIn: 4681, type: int, display: true
+  CPUIn: 5150, type: int, display: true
   Category: Devices
   BlastRadius: 3
   BlastDamage: 100
@@ -2242,7 +2307,7 @@ VERSION: 8
   HitPoints: 1650, type: int, display: true
   ThrusterForce: 10126, type: int, display: true, formatter: Newton
   EnergyIn: 1659, type: int, display: true, formatter: Watt
-  CPUIn: 6754, type: int, display: true
+  CPUIn: 7430, type: int, display: true
   UnlockCost: 15, display: true
   UnlockLevel: 17, display: true
   TechTreeParent: ThrusterJetRound3x7x3
@@ -2255,7 +2320,7 @@ VERSION: 8
   HitPoints: 1800, type: int, display: true
   ThrusterForce: 13295, type: int, display: true, formatter: Newton
   EnergyIn: 1725, type: int, display: true, formatter: Watt
-  CPUIn: 8868, type: int, display: true
+  CPUIn: 9750, type: int, display: true
   UnlockCost: 25, display: true
   UnlockLevel: 20, display: true
   TechTreeParent: ThrusterJetRound3x10x3
@@ -2268,7 +2333,7 @@ VERSION: 8
   HitPoints: 300, type: int, display: true
   ThrusterForce: 328, type: int, display: true, formatter: Newton
   EnergyIn: 108, type: int, display: true, formatter: Watt
-  CPUIn: 219, type: int, display: true
+  CPUIn: 240, type: int, display: true
   UnlockCost: 12, display: true
   UnlockLevel: 10, display: true
   TechTreeParent: 
@@ -2281,7 +2346,7 @@ VERSION: 8
   HitPoints: 650, type: int, display: true
   ThrusterForce: 2206, type: int, display: true, formatter: Newton
   EnergyIn: 576, type: int, display: true, formatter: Watt
-  CPUIn: 1471, type: int, display: true
+  CPUIn: 1620, type: int, display: true
   UnlockCost: 14, display: true
   UnlockLevel: 12, display: true
   TechTreeParent: ThrusterJetRound1x3x1
@@ -2368,9 +2433,8 @@ VERSION: 8
   Category: Devices
   BlastRadius: 2
   BlastDamage: 50
-  UnlockCost: 5, display: true
-  UnlockLevel: 2, display: true
-  TechTreeParent: OxygenGeneratorSmall
+  UnlockCost: 1, display: true
+  UnlockLevel: 1, display: true
   TechTreeNames: Misc
 }
 { Block Id: 712, Name: PassengerSeatSV
@@ -2458,6 +2522,7 @@ VERSION: 8
 }
 { Block Id: 717, Name: OxygenTankSmallMS
   Group: cpgO2Tank
+  LootList: 25
   Material: metallight
   ShowBlockName: true
   IsLockable: true
@@ -2527,21 +2592,20 @@ VERSION: 8
   ShowBlockName: true
   BlockColor: "110,110,110"
   TemplateRoot: LandinggearBlocksSV
-  Volume: 100, type: float, display: true, formatter: Liter
-  Mass: 150, type: float, display: true, formatter: Kilogram
+  Mass: 100, type: float, display: true, formatter: Kilogram
   IsAccessible: false, type: bool
   IsOxygenTight: false, display: true
   Category: Devices
-  HitPoints: 25, type: int, display: true
+  HitPoints: 50, type: int, display: true
   EnergyIn: 1, type: int, display: true, formatter: Watt
 }
 { Block Id: 723, Name: LandinggearMSLight, Ref: LandinggearMSHeavy
-  Volume: 500, type: float, display: true, formatter: Liter
+  HitPoints: 650, type: int, display: true
   Mass: 2000, type: float, display: true, formatter: Kilogram
-  HitPoints: 25, type: int, display: true
 }
 { Block Id: 724, Name: ContainerAmmoLarge
   Group: cpgAmmo
+  LootList: 70
   Material: metallight
   IsLockable: true
   IsOxygenTight: true, display: true
@@ -2569,6 +2633,7 @@ VERSION: 8
   VolumeCapacity: 1000, type: float, display: true, formatter: Liter
   Volume: 95, type: float, display: true, formatter: Liter
   Mass: 600, type: float, display: true, formatter: Kilogram
+  LootList: 69
   UnlockCost: 0
   UnlockLevel: 1
   TechTreeNames: 
@@ -2576,7 +2641,7 @@ VERSION: 8
 { Block Id: 730, Name: DockingPad, Ref: LandinggearShort
   Info: bkiLandinggearHV, display: true
   TemplateRoot: DockingPad
-  Mass: 150, type: float, display: true, formatter: Kilogram
+  Mass: 100, type: float, display: true, formatter: Kilogram
   Volume: 10, type: float, display: true, formatter: Liter
   UnlockCost: 0, display: true
   UnlockLevel: 1, display: true
@@ -2584,6 +2649,7 @@ VERSION: 8
 }
 { Block Id: 732, Name: ContainerHarvest
   Group: cpgHarvest
+  LootList: 48
   Material: metal
   ShowBlockName: true
   BlockColor: "62,30,10"
@@ -2669,19 +2735,17 @@ VERSION: 8
   BlockColor: "110,110,110"
   TemplateRoot: LandinggearBlocksSV
   Info: bkiLandinggearSV, display: true
-  Volume: 200, type: float, display: true, formatter: Liter
-  Mass: 150, type: float, display: true, formatter: Kilogram
+  Mass: 100, type: float, display: true, formatter: Kilogram
   IsAccessible: true, type: bool
   IsOxygenTight: false, display: true
   Category: Devices
-  HitPoints: 30, type: int, display: true
+  HitPoints: 50, type: int, display: true
   EnergyIn: 1, type: int, display: true, formatter: Watt
 }
 { Block Id: 780, Name: LandinggearDouble, Ref: LandinggearSingle
-  Volume: 400, type: float, display: true, formatter: Liter
-  Mass: 250, type: float, display: true, formatter: Kilogram
+  Mass: 200, type: float, display: true, formatter: Kilogram
+  HitPoints: 75, type: int, display: false
   TemplateRoot: LandinggearBlocksHeavySV
-  HitPoints: 50, type: int, display: true
 }
 { Block Id: 781, Name: CloneChamber
   Group: cpgMedic
@@ -3376,6 +3440,7 @@ VERSION: 8
   Temperature: 150, display: true
 }
 { Block Id: 1035, Name: FuelTankMSLargeT2, Ref: FuelTankMSLarge
+  LootList: 47
   Volume: 180, type: float, display: true, formatter: Liter
   Mass: 9700, type: float, display: true, formatter: Kilogram
   HitPoints: 80, type: int, display: true
@@ -3397,10 +3462,9 @@ VERSION: 8
   Mass: 370, type: float, display: true, formatter: Kilogram
 }
 { Block Id: 1064, Name: LandinggearHeavySV, Ref: LandinggearSV
+  Mass: 200, type: float, display: true, formatter: Kilogram
+  HitPoints: 75, type: int, display: false
   TemplateRoot: LandinggearBlocksHeavySV
-  Mass: 660, type: float, display: true, formatter: Kilogram
-  Volume: 280, type: float, display: true, formatter: Liter
-  HitPoints: 70, type: int, display: true
 }
 { Block Id: 1072, Name: ScifiBed, Ref: DecoTemplate
   Group: cpgEquipment
@@ -3415,6 +3479,7 @@ VERSION: 8
   EnergyIn: 1, type: int, display: true, formatter: Watt
 }
 { Block Id: 1074, Name: ScifiNightstand, Ref: DecoTemplate
+  LootList: 65
   EnergyIn: 1, type: int, display: true, formatter: Watt
   VolumeCapacity: 500, type: float, display: true, formatter: Liter
 }
@@ -3442,6 +3507,7 @@ VERSION: 8
   Group: cpgEquipment
   IsAccessible: true, type: bool
   IsLockable: true
+  LootList: 64
   EnergyIn: 1, type: int, display: true, formatter: Watt
   VolumeCapacity: 1000, type: float, display: true, formatter: Liter
 }
@@ -3461,11 +3527,13 @@ VERSION: 8
 { Block Id: 1080, Name: ScifiPlant, Ref: IndoorPlant01
 }
 { Block Id: 1081, Name: ScifiContainer1, Ref: ContainerMS01
+  LootList: 68
   Mass: 300, type: float, display: true, formatter: Kilogram
   VolumeCapacity: 250, type: float, display: true, formatter: Liter
   CPUIn: 30, type: int, display: true
 }
 { Block Id: 1082, Name: ScifiContainer2, Ref: ContainerMS01
+  LootList: 67
   Mass: 150, type: float, display: true, formatter: Kilogram
   IsOxygenTight: false, display: true
   VolumeCapacity: 250, type: float, display: true, formatter: Liter
@@ -3473,12 +3541,14 @@ VERSION: 8
 }
 { Block Id: 1083, Name: ScifiContainerEnergy, Ref: DecoTemplate
   TemplateRoot: DecoBlocks2
+  LootList: 61
   BlockColor: "110,110,110"
   EnergyIn: 1, type: int, display: true, formatter: Watt
   IsOxygenTight: false, display: true
   VolumeCapacity: 2500, type: float, display: true, formatter: Liter
 }
 { Block Id: 1084, Name: ScifiContainerPower, Ref: ContainerMS01
+  LootList: 68
   Mass: 300, type: float, display: true, formatter: Kilogram
   IsOxygenTight: false, display: true
   VolumeCapacity: 250, type: float, display: true, formatter: Liter
@@ -3720,6 +3790,8 @@ VERSION: 8
 { Block Id: 1116, Name: LandinggearSingleShort, Ref: LandinggearSV
 }
 { Block Id: 1117, Name: LandinggearDoubleShort, Ref: LandinggearSV
+  Mass: 200, type: float, display: true, formatter: Kilogram
+  HitPoints: 75, type: int, display: false
   TemplateRoot: LandinggearBlocksHeavySV
 }
 { Block Id: 1118, Name: LandinggearBlocksSV
@@ -3729,8 +3801,8 @@ VERSION: 8
   IsAccessible: false, type: bool
   IsOxygenTight: varies, display: true
   Category: Devices
-  HitPoints: 25, type: int, display: false
-  Mass: 200, type: float, display: true, formatter: Kilogram
+  HitPoints: 50, type: int, display: false
+  Mass: 100, type: float, display: true, formatter: Kilogram
   Volume: 30, type: float, display: true, formatter: Liter
   EnergyIn: 1, type: int, display: false, formatter: Watt
   ChildBlocks: "LandingGearSVSingle, LandingGearSVRetDouble, LandingGearSVRetSkid, LandingGearSVSideStrut, LandinggearShort, LandinggearSV, LandinggearSingle, LandinggearSingleShort"
@@ -3740,9 +3812,9 @@ VERSION: 8
 }
 { Block Id: 1119, Name: LandinggearBlocksHeavySV, Ref: LandinggearBlocksSV
   Info: bkiBlockGroup, display: true
-  Mass: 600, type: float, display: true, formatter: Kilogram
+  Mass: 200, type: float, display: true, formatter: Kilogram
+  HitPoints: 75, type: int, display: false
   Volume: 60, type: float, display: true, formatter: Liter
-  HitPoints: 70, type: int, display: false
   ChildBlocks: "LandingGearSVRetLargeSingleV3, LandingGearSVRetLargeSingleV2, LandingGearSVRetLargeDoubleV3, LandingGearSVRetLargeDoubleV2,  LandinggearDouble, LandinggearDoubleShort, LandinggearHeavySV"
   UnlockCost: 8, display: true
   UnlockLevel: 10, display: true
@@ -3756,7 +3828,7 @@ VERSION: 8
   IsAccessible: false, type: bool
   IsOxygenTight: varies, display: true
   Category: Devices
-  HitPoints: 25, type: int, display: false
+  HitPoints: 650, type: int, display: false
   Mass: 2000, type: float, display: true, formatter: Kilogram
   Volume: 300, type: float, display: true, formatter: Liter
   EnergyIn: 1, type: int, display: false, formatter: Watt
@@ -3766,12 +3838,20 @@ VERSION: 8
   TechTreeNames: Capital Vessel
 }
 { Block Id: 1121, Name: LandinggearSingleCV, Ref: LandinggearMSHeavy
+  HitPoints: 650, type: int, display: true
+  Mass: 2000, type: float, display: true, formatter: Kilogram
 }
 { Block Id: 1122, Name: LandinggearSingleShortCV, Ref: LandinggearMSHeavy
+  HitPoints: 650, type: int, display: true
+  Mass: 2000, type: float, display: true, formatter: Kilogram
 }
 { Block Id: 1123, Name: LandinggearDoubleCV, Ref: LandinggearMSHeavy
+  HitPoints: 650, type: int, display: true
+  Mass: 2000, type: float, display: true, formatter: Kilogram
 }
 { Block Id: 1124, Name: LandinggearDoubleShortCV, Ref: LandinggearMSHeavy
+  HitPoints: 650, type: int, display: true
+  Mass: 2000, type: float, display: true, formatter: Kilogram
 }
 { Block Id: 1125, Name: StairShapes
   Material: metal
@@ -4303,6 +4383,7 @@ VERSION: 8
   TechTreeNames: Base
 }
 { Block Id: 1232, Name: Closet, Ref: DecoTemplate
+  LootList: 64
   VolumeCapacity: 2500, type: float, display: true, formatter: Liter
 }
 { Block Id: 1233, Name: DoorVerticalGlassArmored, Ref: DoorArmored
@@ -4544,11 +4625,13 @@ VERSION: 8
 }
 { Block Id: 1282, Name: Level4Prop2, Ref: DecoTemplate
   TemplateRoot: DecoBlocks2
+  LootList: 57
   EnergyIn: 1, type: int, display: true, formatter: Watt
   VolumeCapacity: 500, type: float, display: true, formatter: Liter
 }
 { Block Id: 1283, Name: Level4Prop3, Ref: DecoTemplate
   TemplateRoot: DecoBlocks2
+  LootList: 58
   EnergyIn: 1, type: int, display: true, formatter: Watt
   VolumeCapacity: 500, type: float, display: true, formatter: Liter
 }
@@ -4556,43 +4639,52 @@ VERSION: 8
 }
 { Block Id: 1285, Name: Level5FreezerOpened, Ref: DecoTemplate
   TemplateRoot: DecoBlocks2
+  LootList: 59
   EnergyIn: 1, type: int, display: true, formatter: Watt
   VolumeCapacity: 1500, type: float, display: true, formatter: Liter
 }
 { Block Id: 1286, Name: LabTable1, Ref: DecoTemplate
   TemplateRoot: DecoBlocks2
+  LootList: 51
   EnergyIn: 1, type: int, display: true, formatter: Watt
   VolumeCapacity: 500, type: float, display: true, formatter: Liter
 }
 { Block Id: 1287, Name: LabTable2, Ref: DecoTemplate
   TemplateRoot: DecoBlocks2
+  LootList: 51
   EnergyIn: 1, type: int, display: true, formatter: Watt
   VolumeCapacity: 500, type: float, display: true, formatter: Liter
 }
 { Block Id: 1288, Name: LabTable3, Ref: DecoTemplate
   TemplateRoot: DecoBlocks2
+  LootList: 51
   VolumeCapacity: 500, type: float, display: true, formatter: Liter
 }
 { Block Id: 1289, Name: LockerWShelves, Ref: DecoTemplate
   TemplateRoot: DecoBlocks2
+  LootList: 52
   VolumeCapacity: 1000, type: float, display: true, formatter: Liter
 }
 { Block Id: 1290, Name: OperationTableWDrawers, Ref: DecoTemplate
   TemplateRoot: DecoBlocks2
+  LootList: 53
   VolumeCapacity: 1000, type: float, display: true, formatter: Liter
 }
 { Block Id: 1291, Name: Props6BoxLarge1, Ref: DecoTemplate
   TemplateRoot: DecoBlocks2
+  LootList: 56
   EnergyIn: 1, type: int, display: true, formatter: Watt
   VolumeCapacity: 2500, type: float, display: true, formatter: Liter
 }
 { Block Id: 1292, Name: Props6BoxLarge2, Ref: DecoTemplate
   TemplateRoot: DecoBlocks2
+  LootList: 56
   EnergyIn: 1, type: int, display: true, formatter: Watt
   VolumeCapacity: 2500, type: float, display: true, formatter: Liter
 }
 { Block Id: 1293, Name: Props6BoxMedium1, Ref: DecoTemplate
   TemplateRoot: DecoBlocks2
+  LootList: 54
   EnergyIn: 1, type: int, display: true, formatter: Watt
   VolumeCapacity: 1500, type: float, display: true, formatter: Liter
 }
@@ -4619,11 +4711,13 @@ VERSION: 8
 }
 { Block Id: 1297, Name: Tank1, Ref: DecoTemplate
   TemplateRoot: DecoBlocks2
+  LootList: 60
   EnergyIn: 1, type: int, display: true, formatter: Watt
   VolumeCapacity: 1000, type: float, display: true, formatter: Liter
 }
 { Block Id: 1298, Name: Tank2, Ref: DecoTemplate
   TemplateRoot: DecoBlocks2
+  LootList: 60
   EnergyIn: 1, type: int, display: true, formatter: Watt
   VolumeCapacity: 1000, type: float, display: true, formatter: Liter
 }
@@ -5035,6 +5129,12 @@ VERSION: 8
 }
 { Block Id: 1400, Name: LCDProjector, Ref: LCDNoFrame1x1
 }
+{ Block Id: 1401, Name: CoreNPCcpu, Ref: CoreNPC
+  BlockColor: "220,212,0"
+}
+{ Block Id: 1402, Name: CoreNoCPU, Ref: CoreNPC
+  BlockColor: "0,220,220"
+}
 { Block Id: 1405, Name: Ventilator
   Group: cpgO2Ventilator
   Material: hull
@@ -5156,6 +5256,7 @@ VERSION: 8
 }
 { Block Id: 1437, Name: PentaxidTankSV
   Group: cpgWarp
+  LootList: 13
   Material: metal
   ShowBlockName: true
   BlockColor: "110,110,110"
@@ -5406,9 +5507,9 @@ VERSION: 8
   Volume: 30, type: float, display: true, formatter: Liter
   MaxCount: 4, type: int, display: true
   EnergyIn: 5, type: int, display: true, formatter: Watt
-  CPUIn: 300, type: int, display: true
+  CPUIn: 400, type: int, display: true
   Torque: 2, type: int, display: true, formatter: NewtonMeter
-  ThrusterForce: 10, type: int, display: true, formatter: Newton
+  ThrusterForce: 20, type: int, display: true, formatter: Newton
   HVEngineDampCoef: 8, type: float, display: false, formatter: Hardness
   HVEngineDampPow: 1.5, type: float, display: false, formatter: Hardness
   HitPoints: 100, type: int, display: true
@@ -5764,7 +5865,6 @@ VERSION: 8
   BlastDamage: 80
   UnlockCost: 5, display: true
   UnlockLevel: 3, display: true
-  TechTreeParent: GeneratorSV
   TechTreeNames: Hover Vessel
 }
 { Block Id: 1576, Name: DetectorHVT2, Ref: DetectorHVT1
@@ -5808,6 +5908,7 @@ VERSION: 8
   Mass: 500, type: float, display: true, formatter: Kilogram
 }
 { Block Id: 1582, Name: DrillAttachmentCV
+  LootList: 37
   Group: cpgHarvest
   Material: metalhard
   ShowBlockName: true
@@ -6437,6 +6538,7 @@ VERSION: 8
 }
 { Block Id: 1676, Name: CargoContainerSmall
   Group: cpgCargoBox
+  LootList: 76
   Material: metal
   ShowBlockName: true
   TemplateRoot: ContainerLargeBlocks
@@ -6456,6 +6558,7 @@ VERSION: 8
   CPUIn: 960, type: int, display: true
 }
 { Block Id: 1677, Name: CargoContainerMedium, Ref: CargoContainerSmall
+  LootList: 76
   Mass: 300, type: float, display: true, formatter: Kilogram
   Volume: 300, type: float, display: true, formatter: Liter
   VolumeCapacity: 16000, type: float, display: true, formatter: Liter
@@ -6483,6 +6586,7 @@ VERSION: 8
 }
 { Block Id: 1682, Name: ContainerControllerLarge
   Group: cpgCargoBox
+  LootList: 76
   Material: metal
   BlockColor: "110,110,110"
   Mass: 500, type: float, display: true, formatter: Kilogram
@@ -6506,6 +6610,7 @@ VERSION: 8
 }
 { Block Id: 1683, Name: ContainerExtensionLarge
   Group: cpgCargoBox
+  LootList: 68
   Material: metal
   BlockColor: "110,110,110"
   Mass: 250, type: float, display: true, formatter: Kilogram
@@ -6683,10 +6788,14 @@ VERSION: 8
 }
 { Block Id: 1699, Name: LandingGearSVRetLargeDoubleV2, Ref: LandinggearSV
   TemplateRoot: LandinggearBlocksHeavySV
+  Mass: 200, type: float, display: true, formatter: Kilogram
+  HitPoints: 75, type: int, display: false
   IsOxygenTight: true, display: true
 }
 { Block Id: 1700, Name: LandingGearSVRetLargeDoubleV3, Ref: LandinggearSV
   TemplateRoot: LandinggearBlocksHeavySV
+  Mass: 200, type: float, display: true, formatter: Kilogram
+  HitPoints: 75, type: int, display: false
   IsOxygenTight: true, display: true
 }
 { Block Id: 1701, Name: LandingGearSVRetLargeSingle, Ref: LandinggearSV
@@ -6694,20 +6803,24 @@ VERSION: 8
 }
 { Block Id: 1702, Name: LandingGearSVRetLargeSingleV2, Ref: LandinggearSV
   TemplateRoot: LandinggearBlocksHeavySV
+  Mass: 200, type: float, display: true, formatter: Kilogram
+  HitPoints: 75, type: int, display: false
   IsOxygenTight: true, display: true
 }
 { Block Id: 1703, Name: LandingGearSVRetLargeSingleV3, Ref: LandinggearSV
   TemplateRoot: LandinggearBlocksHeavySV
+  Mass: 200, type: float, display: true, formatter: Kilogram
+  HitPoints: 75, type: int, display: false
   IsOxygenTight: true, display: true
 }
 { Block Id: 1704, Name: LandingGearCVRetLargeDouble, Ref: LandinggearMSHeavy
+  HitPoints: 650, type: int, display: true
   Mass: 2000, type: float, display: true, formatter: Kilogram
-  Volume: 300, type: float, display: true, formatter: Liter
   IsOxygenTight: true, display: true
 }
 { Block Id: 1705, Name: LandingGearCVRetLargeSingle, Ref: LandinggearMSHeavy
+  HitPoints: 650, type: int, display: true
   Mass: 2000, type: float, display: true, formatter: Kilogram
-  Volume: 300, type: float, display: true, formatter: Liter
   IsOxygenTight: true, display: true
 }
 { Block Id: 1706, Name: BoardingRampBlocks
@@ -6774,18 +6887,21 @@ VERSION: 8
   TechTreeNames: "Small Vessel,Hover Vessel"
 }
 { Block Id: 1713, Name: ContainerMS01Large, Ref: ContainerMS01
+  LootList: 76
   Mass: 300, type: float, display: true, formatter: Kilogram
   VolumeCapacity: 8000, type: float, display: true, formatter: Liter
   CPUIn: 960, type: int, display: true
   TemplateRoot: ContainerLargeBlocks
 }# Container Blocks
 { Block Id: 1714, Name: ScifiContainer1Large, Ref: ContainerMS01
+  LootList: 76
   Mass: 300, type: float, display: true, formatter: Kilogram
   VolumeCapacity: 16000, type: float, display: true, formatter: Liter
   CPUIn: 1920, type: int, display: true
   TemplateRoot: ContainerLargeBlocks
 }
 { Block Id: 1715, Name: ScifiContainer2Large, Ref: ContainerMS01
+  LootList: 76
   Mass: 150, type: float, display: true, formatter: Kilogram
   IsOxygenTight: false, display: true
   VolumeCapacity: 8000, type: float, display: true, formatter: Liter
@@ -6793,6 +6909,7 @@ VERSION: 8
   TemplateRoot: ContainerLargeBlocks
 }
 { Block Id: 1716, Name: ScifiContainerPowerLarge, Ref: ContainerMS01
+  LootList: 76
   Mass: 300, type: float, display: true, formatter: Kilogram
   IsOxygenTight: false, display: true
   VolumeCapacity: 16000, type: float, display: true, formatter: Liter
@@ -6867,6 +6984,7 @@ VERSION: 8
 }
 { Block Id: 1740, Name: TribalBarrels, Ref: DecoTemplate
   Material: woodblock
+  LootList: 56
   VolumeCapacity: 100, type: float, display: true, formatter: Liter
   TemplateRoot: DecoTribalBlocks
 }
@@ -6876,6 +6994,7 @@ VERSION: 8
 }
 { Block Id: 1742, Name: TribalBaskets, Ref: DecoTemplate
   Material: woodblock
+  LootList: 55
   VolumeCapacity: 100, type: float, display: true, formatter: Liter
   TemplateRoot: DecoTribalBlocks
 }
@@ -6889,26 +7008,31 @@ VERSION: 8
 }
 { Block Id: 1745, Name: TribalBookcase1, Ref: DecoTemplate
   Material: woodblock
+  LootList: 62
   VolumeCapacity: 100, type: float, display: true, formatter: Liter
   TemplateRoot: DecoTribalBlocks
 }
 { Block Id: 1746, Name: TribalBookcase2, Ref: DecoTemplate
   Material: woodblock
+  LootList: 62
   VolumeCapacity: 100, type: float, display: true, formatter: Liter
   TemplateRoot: DecoTribalBlocks
 }
 { Block Id: 1747, Name: TribalBuckets, Ref: DecoTemplate
   Material: woodblock
+  LootList: 55
   VolumeCapacity: 100, type: float, display: true, formatter: Liter
   TemplateRoot: DecoTribalBlocks
 }
 { Block Id: 1748, Name: TribalCabinet1, Ref: DecoTemplate
   Material: woodblock
+  LootList: 59
   VolumeCapacity: 100, type: float, display: true, formatter: Liter
   TemplateRoot: DecoTribalBlocks
 }
 { Block Id: 1749, Name: TribalCabinet2, Ref: DecoTemplate
   Material: woodblock
+  LootList: 59
   VolumeCapacity: 100, type: float, display: true, formatter: Liter
   TemplateRoot: DecoTribalBlocks
 }
@@ -6930,6 +7054,7 @@ VERSION: 8
 }
 { Block Id: 1754, Name: TribalSacks, Ref: DecoTemplate
   Material: woodblock
+  LootList: 54
   VolumeCapacity: 100, type: float, display: true, formatter: Liter
   TemplateRoot: DecoTribalBlocks
 }
@@ -6987,6 +7112,7 @@ VERSION: 8
 }
 { Block Id: 1768, Name: TribalBox, Ref: DecoTemplate
   Material: woodblock
+  LootList: 56
   VolumeCapacity: 100, type: float, display: true, formatter: Liter
   TemplateRoot: DecoTribalBlocks
 }
@@ -6994,12 +7120,14 @@ VERSION: 8
   TemplateRoot: ContainerSmallBlocks
 } 
 { Block Id: 1770, Name: ScifiContainer1Small, Ref: ContainerMS01
+  LootList: 68
   Mass: 300, type: float, display: true, formatter: Kilogram
   VolumeCapacity: 250, type: float, display: true, formatter: Liter
   CPUIn: 30, type: int, display: true
   TemplateRoot: ContainerSmallBlocks
 } 
 { Block Id: 1771, Name: ScifiContainer2Small, Ref: ContainerMS01
+  LootList: 67
   Mass: 150, type: float, display: true, formatter: Kilogram
   IsOxygenTight: false, display: true
   VolumeCapacity: 250, type: float, display: true, formatter: Liter
@@ -7007,6 +7135,7 @@ VERSION: 8
   TemplateRoot: ContainerSmallBlocks
 } 
 { Block Id: 1772, Name: ScifiContainerPowerSmall, Ref: ContainerMS01
+  LootList: 68
   Mass: 300, type: float, display: true, formatter: Kilogram
   IsOxygenTight: false, display: true
   VolumeCapacity: 250, type: float, display: true, formatter: Liter
@@ -7062,6 +7191,7 @@ VERSION: 8
   TechTreeNames: Hover Vessel
 } 
 { Block Id: 1777, Name: CargoPalette01, Ref: ContainerMS01
+  LootList: 76
   Mass: 300, type: float, display: true, formatter: Kilogram
   VolumeCapacity: 8000, type: float, display: true, formatter: Liter
   CPUIn: 960, type: int, display: true
@@ -7069,6 +7199,7 @@ VERSION: 8
   IsOxygenTight: false, display: true
 }
 { Block Id: 1778, Name: CargoPalette02, Ref: ContainerMS01
+  LootList: 76
   Mass: 300, type: float, display: true, formatter: Kilogram
   VolumeCapacity: 8000, type: float, display: true, formatter: Liter
   CPUIn: 960, type: int, display: true
@@ -7076,6 +7207,7 @@ VERSION: 8
   IsOxygenTight: false, display: true
 }
 { Block Id: 1779, Name: CargoPalette03, Ref: ContainerMS01
+  LootList: 76
   Mass: 300, type: float, display: true, formatter: Kilogram
   VolumeCapacity: 8000, type: float, display: true, formatter: Liter
   CPUIn: 960, type: int, display: true
@@ -7083,6 +7215,7 @@ VERSION: 8
   IsOxygenTight: false, display: true
 }
 { Block Id: 1780, Name: CargoPalette04, Ref: ContainerMS01
+  LootList: 76
   Mass: 300, type: float, display: true, formatter: Kilogram
   VolumeCapacity: 8000, type: float, display: true, formatter: Liter
   CPUIn: 960, type: int, display: true
@@ -7116,12 +7249,14 @@ VERSION: 8
 { Block Id: 1794, Name: AlienExtendedLarge, Ref: AlienFullLarge
 }
 { Block Id: 1795, Name: ContainerMS02Large, Ref: ContainerMS01
+  LootList: 76
   Mass: 300, type: float, display: true, formatter: Kilogram
   VolumeCapacity: 16000, type: float, display: true, formatter: Liter
   CPUIn: 1920, type: int, display: true
   TemplateRoot: ContainerLargeBlocks
 }
 { Block Id: 1796, Name: ContainerMS03Large, Ref: ContainerMS01
+  LootList: 76
   Mass: 150, type: float, display: true, formatter: Kilogram
   IsOxygenTight: false, display: true
   VolumeCapacity: 8000, type: float, display: true, formatter: Liter
@@ -7129,6 +7264,7 @@ VERSION: 8
   TemplateRoot: ContainerLargeBlocks
 }
 { Block Id: 1797, Name: ContainerMS04Large, Ref: ContainerMS01
+  LootList: 76
   Mass: 300, type: float, display: true, formatter: Kilogram
   IsOxygenTight: false, display: true
   VolumeCapacity: 16000, type: float, display: true, formatter: Liter
@@ -7139,6 +7275,7 @@ VERSION: 8
 }
 { Block Id: 1799, Name: Level4Prop4, Ref: DecoTemplate
   TemplateRoot: DecoBlocks2
+  LootList: 58
   EnergyIn: 1, type: int, display: true, formatter: Watt
   VolumeCapacity: 600, type: float, display: true, formatter: Liter
 }
@@ -7283,6 +7420,7 @@ VERSION: 8
   TechTreeNames: 
 }
 { Block Id: 1814, Name: ContainerMS05Large, Ref: ContainerMS01
+  LootList: 76
   Mass: 300, type: float, display: true, formatter: Kilogram
   VolumeCapacity: 8000, type: float, display: true, formatter: Liter
   CPUIn: 960, type: int, display: true
@@ -7867,6 +8005,7 @@ VERSION: 8
 }
 # ======= ID 2023-2034 NEW Core Extender Blocks =========
 { Block Id: 2023, Name: CPUExtenderHVT2
+  Group: cpgCore
   Material: metal
   ShowBlockName: true
   IsIgnoreLC: true
@@ -7887,6 +8026,7 @@ VERSION: 8
   TechTreeParent: Core
 }
 { Block Id: 2024, Name: CPUExtenderHVT3
+  Group: cpgCore
   Material: metal
   ShowBlockName: true
   IsIgnoreLC: true
@@ -7918,6 +8058,7 @@ VERSION: 8
   TechTreeParent: CPUExtenderHVT3
 }
 { Block Id: 2026, Name: CPUExtenderSVT2
+  Group: cpgCore
   Material: metal
   ShowBlockName: true
   IsIgnoreLC: true
@@ -7938,6 +8079,7 @@ VERSION: 8
   TechTreeParent: Core
 }
 { Block Id: 2027, Name: CPUExtenderSVT3
+  Group: cpgCore
   Material: metal
   ShowBlockName: true
   IsIgnoreLC: true
@@ -7969,6 +8111,7 @@ VERSION: 8
   TechTreeParent: CPUExtenderSVT3
 }
 { Block Id: 2029, Name: CPUExtenderCVT2
+  Group: cpgCore
   Material: metal
   ShowBlockName: true
   IsIgnoreLC: true
@@ -7982,13 +8125,14 @@ VERSION: 8
   Mass: 300, type: float, display: true, formatter: Kilogram
   Volume: 100, type: float, display: true, formatter: Liter
   EnergyIn: 50, type: int, display: true, formatter: Watt
-  HitPoints: 250, type: int, display: true
+  HitPoints: 650, type: int, display: true
   UnlockCost: 10, display: true
   UnlockLevel: 10, display: true
   TechTreeNames: Capital Vessel
   TechTreeParent: Core
 }
 { Block Id: 2030, Name: CPUExtenderCVT3
+  Group: cpgCore
   Material: metal
   ShowBlockName: true
   IsIgnoreLC: true
@@ -8002,7 +8146,7 @@ VERSION: 8
   Mass: 500, type: float, display: true, formatter: Kilogram
   Volume: 180, type: float, display: true, formatter: Liter
   EnergyIn: 85, type: int, display: true, formatter: Watt
-  HitPoints: 500, type: int, display: true
+  HitPoints: 900, type: int, display: true
   UnlockCost: 15, display: true
   UnlockLevel: 15, display: true
   TechTreeNames: Capital Vessel
@@ -8013,13 +8157,14 @@ VERSION: 8
   Volume: 200, type: float, display: true, formatter: Liter
   MaxCount: 4, type: int, display: true
   EnergyIn: 100, type: int, display: true, formatter: Watt
-  HitPoints: 550, type: int, display: true
+  HitPoints: 950, type: int, display: true
   UnlockCost: 20, display: true
   UnlockLevel: 20, display: true
   TechTreeNames: Capital Vessel
   TechTreeParent: CPUExtenderCVT3
 }
 { Block Id: 2032, Name: CPUExtenderBAT2
+  Group: cpgCore
   Material: metal
   ShowBlockName: true
   IsIgnoreLC: true
@@ -8033,13 +8178,14 @@ VERSION: 8
   Mass: 300, type: float, display: true, formatter: Kilogram
   Volume: 100, type: float, display: true, formatter: Liter
   EnergyIn: 50, type: int, display: true, formatter: Watt
-  HitPoints: 250, type: int, display: true
+  HitPoints: 650, type: int, display: true
   UnlockCost: 7, display: true
   UnlockLevel: 7, display: true
   TechTreeNames: Base
   TechTreeParent: Core
 }
 { Block Id: 2033, Name: CPUExtenderBAT3
+  Group: cpgCore
   Material: metal
   ShowBlockName: true
   IsIgnoreLC: true
@@ -8053,7 +8199,7 @@ VERSION: 8
   Mass: 500, type: float, display: true, formatter: Kilogram
   Volume: 180, type: float, display: true, formatter: Liter
   EnergyIn: 85, type: int, display: true, formatter: Watt
-  HitPoints: 500, type: int, display: true
+  HitPoints: 900, type: int, display: true
   UnlockCost: 12, display: true
   UnlockLevel: 12, display: true
   TechTreeNames: Base
@@ -8064,7 +8210,7 @@ VERSION: 8
   Volume: 200, type: float, display: true, formatter: Liter
   MaxCount: 4, type: int, display: true
   EnergyIn: 100, type: int, display: true, formatter: Watt
-  HitPoints: 550, type: int, display: true
+  HitPoints: 950, type: int, display: true
   UnlockCost: 20, display: true
   UnlockLevel: 20, display: true
   TechTreeNames: Base
@@ -8443,6 +8589,21 @@ VERSION: 8
     RadialText: rdlChangeRotate
     RadialDesc: rdlChangeRotateTxt
     RadialIcon: Radial_ChangeRotate
+  }
+  {
+    AllowAt: "UnderWater, Planet, Space"
+    Range: 5
+    NoiseStrength: 10, display: false
+    CameraShake: 0
+    IgnoreAtmo: true
+    ROF: 0.4, type: float
+    Automatic: true
+    AmmoCapacity: 250
+    AmmoType: MultiCharge
+    ReloadDelay: 3.0
+    RadialText: btnDowngrade
+    RadialDesc: lblDowngradeTxt
+    RadialIcon: Radial_Downgrade
   }
   {
     AllowAt: "UnderWater, Planet, Space"
@@ -9022,7 +9183,6 @@ VERSION: 8
   TechTreeNames: Hidden
 }
 { Item Id: 2079, Name: MultiToolT2, Ref: MultiTool
-  PickupToToolbar: true
   {
     Range: 8
     ReturnFactor: 0.667, display: true
@@ -9034,6 +9194,9 @@ VERSION: 8
     DamageMultiplier_6: 250, data: hullcombat
     DamageMultiplier_7: 150, data: concrete
     DamageMultiplier_8: 50, data: woodblock
+  }
+  {
+    Range: 8
   }
   {
     Range: 8
@@ -10124,7 +10287,6 @@ VERSION: 8
     InfoPopup: true
     TerrainMode: true
     HarvestSupport: true
-    AllowAt: Planet
     ROF: 0.5, type: float
     Damage: 750
     Radius: 2
@@ -10198,7 +10360,6 @@ VERSION: 8
 { Item Id: 2181, Name: DrillAttachmentT2Weapon, Ref: DrillAttachmentWeapon
   {
     TerrainMode: true
-    AllowAt: Planet
     Damage: 1000
     Radius: 2
     Range: 8, display: false
@@ -11215,7 +11376,7 @@ VERSION: 8
 }
 { Item Id: 2294, Name: PentaxidCrystal, Ref: ComponentsTemplate
   StackSize: 50
-  Mass: 100, type: float, display: true, formatter: Kilogram
+  Mass: 10, type: float, display: true, formatter: Kilogram
   Volume: 5, type: float, display: true, formatter: Liter
 }
 { Item Id: 2295, Name: SteelPlateArmored, Ref: ComponentsTemplate
@@ -13354,7 +13515,7 @@ VERSION: 8
   UnlockLevel: 25
   TechTreeParent: 
   TechTreeNames: Hidden
-}
+} 
 { Item Id: 3048, Name: TradingGoodsTemplate
   Mass: 1, type: float, display: true, formatter: Kilogram
   Volume: 2, type: float, display: true, formatter: Liter
@@ -13381,6 +13542,36 @@ VERSION: 8
 { Item Id: 3058, Name: AlienOrganism, Ref: TradingGoodsTemplate
 }
 { Item Id: 3059, Name: AncientRelics, Ref: TradingGoodsTemplate
+}
+{ Item Id: 3060, Name: Coolant, Ref: TradingGoodsTemplate
+}
+{ Item Id: 3061, Name: Chemicals, Ref: TradingGoodsTemplate
+}
+{ Item Id: 3062, Name: Filters, Ref: TradingGoodsTemplate
+}
+{ Item Id: 3063, Name: SpareParts, Ref: TradingGoodsTemplate
+}
+{ Item Id: 3064, Name: ScienceEquipment, Ref: TradingGoodsTemplate
+}
+{ Item Id: 3065, Name: MutatedSubstance, Ref: TradingGoodsTemplate
+}
+{ Item Id: 3066, Name: TechnicalArtifact, Ref: TradingGoodsTemplate
+}
+{ Item Id: 3148, Name: MeleeTalonGuardianCharged, Ref: TradingGoodsTemplate
+}
+{ Item Id: 3149, Name: TalonCrossbowWeaponCharged, Ref: TradingGoodsTemplate
+}
+{ Item Id: 3150, Name: TurretEnemyBallistaCharged, Ref: TradingGoodsTemplate
+}
+{ Item Id: 3348, Name: KeyCardBlack, Ref: TradingGoodsTemplate
+}
+{ Item Id: 3349, Name: KeyCardBlue, Ref: TradingGoodsTemplate
+}
+{ Item Id: 3350, Name: KeyCardGreen, Ref: TradingGoodsTemplate
+}
+{ Item Id: 3351, Name: KeyCardYellow, Ref: TradingGoodsTemplate
+}
+{ Item Id: 3352, Name: KeyCardRed, Ref: TradingGoodsTemplate
 }
 
 
@@ -13812,10 +14003,11 @@ VERSION: 8
 
 
 # Target Abbreviations / CraftTime Factors:
-# SuitC  = Survival Constructor	        - factor: 1.8
-# SurvC  = Portable Constructor 	        - factor: 1.6
+# SuitC  = Survival Constructor 	        - factor: 1.8
+# SurvC  = Portable Constructor (ConstructorSurvival)	        - factor: 1.6
 # SmallC = ConstructorSV			- factor: 1.4
-# HoverC = ConstructorHV,ConstructorT0			- factor: 1.4
+# HoverC = ConstructorHV 			- factor: 1.4
+# BaseC = ConstructorT0 			- factor: 1.2
 # LargeC = ConstructorT1V2			- factor: 1
 # AdvC   = ConstructorT2			- factor: 0.5
 # FoodP  = FoodProcessorV2			- factor: 1
@@ -13830,7 +14022,7 @@ VERSION: 8
 { Template Name: IronOre
   BaseItem: true
   CraftTime: 5
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     CrushedStone: 15
   }
@@ -13838,7 +14030,7 @@ VERSION: 8
 { Template Name: CopperOre
   BaseItem: true
   CraftTime: 5
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     CrushedStone: 15
   }
@@ -13846,7 +14038,7 @@ VERSION: 8
 { Template Name: SiliconOre
   BaseItem: true
   CraftTime: 5
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     CrushedStone: 15
   }
@@ -13869,7 +14061,7 @@ VERSION: 8
   BaseItem: true
   OutputCount: 10
   CraftTime: 5
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC,Furn"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC,Furn"
   { Child Inputs
     IronOre: 5
   }
@@ -13878,7 +14070,7 @@ VERSION: 8
   BaseItem: true
   OutputCount: 10
   CraftTime: 5
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC,Furn"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC,Furn"
   { Child Inputs
     CopperOre: 5
   }
@@ -13887,7 +14079,7 @@ VERSION: 8
   BaseItem: true
   OutputCount: 10
   CraftTime: 5
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC,Furn"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC,Furn"
   { Child Inputs
     SiliconOre: 5
   }
@@ -13896,7 +14088,7 @@ VERSION: 8
   BaseItem: true
   OutputCount: 10
   CraftTime: 5
-  Target: "SmallC,HoverC,LargeC,AdvC,Furn"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC,Furn"
   { Child Inputs
     CobaltOre: 5
   }
@@ -13905,7 +14097,7 @@ VERSION: 8
   BaseItem: true
   OutputCount: 10
   CraftTime: 5
-  Target: "SmallC,HoverC,LargeC,AdvC,Furn"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC,Furn"
   { Child Inputs
     NeodymiumOre: 5
   }
@@ -13914,7 +14106,7 @@ VERSION: 8
   BaseItem: true
   OutputCount: 10
   CraftTime: 5
-  Target: "SmallC,HoverC,LargeC,AdvC,Furn"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC,Furn"
   { Child Inputs
     SathiumOre: 5
   }
@@ -13996,7 +14188,7 @@ VERSION: 8
 { Template Name: PromethiumPellets
   OutputCount: 10
   CraftTime: 5
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     PromethiumOre: 1
   }
@@ -14004,7 +14196,7 @@ VERSION: 8
 { Template Name: WaterBottle
   OutputCount: 10
   CraftTime: 5
-  Target: "FoodP,SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "FoodP,SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     WaterJug: 1
   }
@@ -14013,14 +14205,14 @@ VERSION: 8
   BaseItem: true
   OutputCount: 20
   CraftTime: 5
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     WoodLogs: 1
   }
 }
 { Template Name: Cement
   CraftTime: 1
-  Target: "SurvC,HoverC,LargeC,AdvC"
+  Target: "SurvC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     RockDust: 2
   }
@@ -14029,7 +14221,7 @@ VERSION: 8
   BaseItem: true
   OutputCount: 40
   CraftTime: 10
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     WoodLogs: 1
   }
@@ -14038,7 +14230,7 @@ VERSION: 8
   BaseItem: true
   OutputCount: 20
   CraftTime: 2
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Fiber: 1
   }
@@ -14047,7 +14239,7 @@ VERSION: 8
   BaseItem: true
   OutputCount: 20
   CraftTime: 5
-  Target: "SurvC,FoodP,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,FoodP,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Fiber: 4
     RockDust: 1
@@ -14056,7 +14248,7 @@ VERSION: 8
 { Template Name: MagnesiumPowder
   OutputCount: 10
   CraftTime: 5
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     MagnesiumOre: 5
   }
@@ -14065,7 +14257,7 @@ VERSION: 8
   BaseItem: true
   OutputCount: 20
   CraftTime: 1
-  Target: "FoodP,SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "FoodP,SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     CrushedStone: 5
   }
@@ -14073,7 +14265,7 @@ VERSION: 8
 { Template Name: EnergyCell
   OutputCount: 2
   CraftTime: 5
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     PromethiumPellets: 10
   }
@@ -14098,7 +14290,7 @@ VERSION: 8
 { Template Name: SteelPlate
   OutputCount: 10
   CraftTime: 2
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     IronIngot: 2
   }
@@ -14113,7 +14305,7 @@ VERSION: 8
 }
 { Template Name: EnergyMatrix
   CraftTime: 2
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     CobaltIngot: 2
     CopperIngot: 1
@@ -14123,7 +14315,7 @@ VERSION: 8
 { Template Name: Electronics
   OutputCount: 2
   CraftTime: 2
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     CopperIngot: 2
     SiliconIngot: 1
@@ -14131,7 +14323,7 @@ VERSION: 8
 }
 { Template Name: GlassPlate
   CraftTime: 2
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SiliconIngot: 1
   }
@@ -14139,7 +14331,7 @@ VERSION: 8
 { Template Name: OpticalFiber
   OutputCount: 2
   CraftTime: 2
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SiliconIngot: 1
   }
@@ -14147,21 +14339,21 @@ VERSION: 8
 { Template Name: MechanicalComponents
   OutputCount: 2
   CraftTime: 2
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 1
   }
 }
 { Template Name: Nanotubes
   CraftTime: 2
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     PlasticMaterial: 1
   }
 }
 { Template Name: Computer
   CraftTime: 2
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 1
     OpticalFiber: 1
@@ -14170,7 +14362,7 @@ VERSION: 8
 }
 { Template Name: Motor
   CraftTime: 2
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 2
     Nanotubes: 3
@@ -14179,7 +14371,7 @@ VERSION: 8
 }
 { Template Name: CobaltAlloy
   CraftTime: 3
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     CobaltIngot: 3
     IronIngot: 2
@@ -14188,7 +14380,7 @@ VERSION: 8
 { Template Name: SteelPlateArmored
   OutputCount: 10
   CraftTime: 2
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 3
     SathiumIngot: 5
@@ -14205,7 +14397,7 @@ VERSION: 8
 }
 { Template Name: Oscillator
   CraftTime: 3
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     NeodymiumIngot: 5
     CobaltIngot: 2
@@ -14214,7 +14406,7 @@ VERSION: 8
 }
 { Template Name: FluxCoil
   CraftTime: 3
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SathiumIngot: 2
     NeodymiumIngot: 5
@@ -14240,7 +14432,7 @@ VERSION: 8
 }
 { Template Name: SpawnNewBase
   CraftTime: 12
-  Target: "SurvC,HoverC,LargeC,AdvC"
+  Target: "SurvC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Core: 1
   }
@@ -14272,7 +14464,7 @@ VERSION: 8
 }
 { Template Name: PlayerBikeKit
   CraftTime: 10
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Motor: 1
     Nanotubes: 1
@@ -14283,7 +14475,7 @@ VERSION: 8
 }
 { Template Name: PlayerBike
   CraftTime: 10
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     PlayerBikeKit: 1
   }
@@ -14291,21 +14483,21 @@ VERSION: 8
 { Template Name: PlasticSmallBlocks
   CraftTime: 2
   DeconOverride: Continue
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     PlasticMaterial: 1
   }
 }
 { Template Name: TrussSmallBlocks
   CraftTime: 2
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 1
   }
 }
 { Template Name: HullSmallBlocks
   CraftTime: 2
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 2
   }
@@ -14329,7 +14521,7 @@ VERSION: 8
 { Template Name: PlasticLargeBlocks
   CraftTime: 2
   DeconOverride: Continue
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     PlasticMaterial: 2
   }
@@ -14337,14 +14529,14 @@ VERSION: 8
 { Template Name: WoodBlocks
   CraftTime: 1
   DeconOverride: Continue
-  Target: "SurvC,HoverC,LargeC,AdvC"
+  Target: "SurvC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     WoodPlanks: 1
   }
 }
 { Template Name: ConcreteBlocks
   CraftTime: 1
-  Target: "SurvC,HoverC,LargeC,AdvC"
+  Target: "SurvC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Cement: 1
   }
@@ -14359,14 +14551,14 @@ VERSION: 8
 }
 { Template Name: TrussLargeBlocks
   CraftTime: 2
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 5
   }
 }
 { Template Name: HullLargeBlocks
   CraftTime: 2
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 10
   }
@@ -14426,7 +14618,7 @@ VERSION: 8
 }
 { Template Name: ArtMassBlocks
   CraftTime: 2
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 20
   }
@@ -14455,7 +14647,7 @@ VERSION: 8
 }
 { Template Name: WindowSmallBlocks
   CraftTime: 3
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 1
     GlassPlate: 1
@@ -14472,7 +14664,7 @@ VERSION: 8
 }
 { Template Name: WindowLargeBlocks
   CraftTime: 5
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 5
     GlassPlate: 5
@@ -14489,7 +14681,7 @@ VERSION: 8
 }
 { Template Name: WindowShutterSmallBlocks
   CraftTime: 3
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 1
     GlassPlate: 2
@@ -14516,14 +14708,14 @@ VERSION: 8
 }
 { Template Name: WalkwaySmallBlocks
   CraftTime: 3
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 2
   }
 }
 { Template Name: WalkwayLargeBlocks
   CraftTime: 3
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 5
   }
@@ -14538,7 +14730,7 @@ VERSION: 8
 }
 { Template Name: SensorTriggerBlocksSV
   CraftTime: 2
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Electronics: 2
     MechanicalComponents: 2
@@ -14619,9 +14811,29 @@ VERSION: 8
     Computer: 2
   }
 }
+{ Template Name: CoreNoCPU
+  CraftTime: 25
+  Target: 
+  { Child Inputs
+    SteelPlate: 6
+    Electronics: 4
+    Computer: 5
+    OpticalFiber: 3
+  }
+}
+{ Template Name: CoreNPC
+  CraftTime: 25
+  Target: 
+  { Child Inputs
+    SteelPlate: 6
+    Electronics: 4
+    Computer: 5
+    OpticalFiber: 3
+  }
+}
 { Template Name: Core
   CraftTime: 25
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 6
     Electronics: 4
@@ -14735,7 +14947,7 @@ VERSION: 8
 }
 { Template Name: DoorBlocks
   CraftTime: 5
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     MechanicalComponents: 2
     Electronics: 2
@@ -14763,7 +14975,7 @@ VERSION: 8
 }
 { Template Name: DoorBlocksSV
   CraftTime: 5
-  Target: "SmallC,HoverC, LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC, LargeC,AdvC"
   { Child Inputs
     MechanicalComponents: 4
     Electronics: 3
@@ -14783,7 +14995,7 @@ VERSION: 8
 }
 { Template Name: ShutterDoorSmallBlocks
   CraftTime: 5
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     MechanicalComponents: 10
     Motor: 1
@@ -14873,7 +15085,7 @@ VERSION: 8
 }
 { Template Name: ArmorLocker
   CraftTime: 10
-  Target: "SurvC,HoverC,LargeC,AdvC"
+  Target: "SurvC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Electronics: 3
     SteelPlate: 25
@@ -14882,7 +15094,7 @@ VERSION: 8
 }
 { Template Name: ArmorLockerSV
   CraftTime: 10
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Electronics: 2
     SteelPlate: 25
@@ -14891,7 +15103,7 @@ VERSION: 8
 }
 { Template Name: RemoteConnection
   CraftTime: 10
-  Target: "HoverC,LargeC,AdvC"
+  Target: "HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Electronics: 3
     OpticalFiber: 5
@@ -14900,7 +15112,7 @@ VERSION: 8
 }
 { Template Name: DetectorHVT1
   CraftTime: 10
-  Target: "HoverC,LargeC,AdvC"
+  Target: "HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Electronics: 2
     OpticalFiber: 4
@@ -14929,7 +15141,7 @@ VERSION: 8
 }
 { Template Name: ConstructorT0
   CraftTime: 30
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Computer: 1
     SteelPlate: 3
@@ -14940,7 +15152,7 @@ VERSION: 8
 }
 { Template Name: ConstructorT1V2
   CraftTime: 30
-  Target: "HoverC,LargeC,AdvC"
+  Target: "HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Computer: 2
     SteelPlate: 5
@@ -15085,7 +15297,7 @@ VERSION: 8
 }
 { Template Name: ConstructorHV
   CraftTime: 30
-  Target: "SurvC,HoverC,LargeC,AdvC"
+  Target: "SurvC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Computer: 2
     SteelPlate: 4
@@ -15096,21 +15308,21 @@ VERSION: 8
 }
 { Template Name: ContainerSmallBlocks
   CraftTime: 5
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 2
   }
 }
 { Template Name: ContainerLargeBlocks
   CraftTime: 5
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 12
   }
 }
 { Template Name: ContainerControllerLarge
   CraftTime: 10
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 12
     Electronics: 1
@@ -15118,14 +15330,14 @@ VERSION: 8
 }
 { Template Name: ContainerExtensionLarge
   CraftTime: 10
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 12
   }
 }
 { Template Name: ContainerControllerSmall
   CraftTime: 5
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 2
     Electronics: 1
@@ -15133,7 +15345,7 @@ VERSION: 8
 }
 { Template Name: ContainerExtensionSmall
   CraftTime: 5
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 2
   }
@@ -15148,7 +15360,7 @@ VERSION: 8
 }
 { Template Name: ContainerHarvestControllerSmall
   CraftTime: 5
-  Target: "HoverC,LargeC,AdvC"
+  Target: "HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 2
     Electronics: 1
@@ -15156,7 +15368,7 @@ VERSION: 8
 }
 { Template Name: ContainerAmmoControllerSmall
   CraftTime: 5
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 2
     Electronics: 1
@@ -15164,7 +15376,7 @@ VERSION: 8
 }
 { Template Name: ContainerAmmoLarge
   CraftTime: 5
-  Target: "LargeC,AdvC"
+  Target: "BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 12
     MechanicalComponents: 2
@@ -15181,7 +15393,7 @@ VERSION: 8
 }
 { Template Name: LightPlant01
   CraftTime: 5
-  Target: "LargeC,AdvC"
+  Target: "BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 5
     GlassPlate: 1
@@ -15190,7 +15402,7 @@ VERSION: 8
 }
 { Template Name: LightLargeBlocks
   CraftTime: 5
-  Target: "LargeC,AdvC"
+  Target: "BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 2
     GlassPlate: 1
@@ -15199,7 +15411,7 @@ VERSION: 8
 }
 { Template Name: LightSS01
   CraftTime: 5
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 2
     GlassPlate: 1
@@ -15208,7 +15420,7 @@ VERSION: 8
 }
 { Template Name: Flare
   CraftTime: 5
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 2
     GlassPlate: 1
@@ -15217,7 +15429,7 @@ VERSION: 8
 }
 { Template Name: LightWork
   CraftTime: 5
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 5
     GlassPlate: 1
@@ -15225,7 +15437,7 @@ VERSION: 8
 }
 { Template Name: LightWork02
   CraftTime: 5
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 5
     GlassPlate: 1
@@ -15234,7 +15446,7 @@ VERSION: 8
 }
 { Template Name: SpotlightBlocks
   CraftTime: 5
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 2
     GlassPlate: 1
@@ -15243,7 +15455,7 @@ VERSION: 8
 }
 { Template Name: CloneChamber
   CraftTime: 12
-  Target: "SurvC,HoverC,LargeC,AdvC"
+  Target: "SurvC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Nanotubes: 2
     Computer: 1
@@ -15290,7 +15502,7 @@ VERSION: 8
 }
 { Template Name: OxygenTankSmallMS
   CraftTime: 12
-  Target: "LargeC,AdvC"
+  Target: "BaseC,LargeC,AdvC"
   { Child Inputs
     MechanicalComponents: 4
     SteelPlate: 12
@@ -15308,7 +15520,7 @@ VERSION: 8
 }
 { Template Name: OxygenTankSV
   CraftTime: 12
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     MechanicalComponents: 4
     SteelPlate: 6
@@ -15316,7 +15528,7 @@ VERSION: 8
 }
 { Template Name: OxygenStation
   CraftTime: 12
-  Target: "LargeC,AdvC"
+  Target: "BaseC,LargeC,AdvC"
   { Child Inputs
     MechanicalComponents: 8
     Computer: 3
@@ -15325,7 +15537,7 @@ VERSION: 8
 }
 { Template Name: OxygenStationSV
   CraftTime: 12
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     MechanicalComponents: 6
     Computer: 2
@@ -15344,7 +15556,7 @@ VERSION: 8
 }
 { Template Name: FridgeSV
   CraftTime: 15
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Electronics: 3
     SteelPlate: 12
@@ -15353,7 +15565,7 @@ VERSION: 8
 }
 { Template Name: FridgeBlocks
   CraftTime: 15
-  Target: "SurvC,HoverC,LargeC,AdvC"
+  Target: "SurvC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Electronics: 3
     SteelPlate: 20
@@ -15363,7 +15575,7 @@ VERSION: 8
 }
 { Template Name: FoodProcessorV2
   CraftTime: 15
-  Target: "LargeC,AdvC"
+  Target: "BaseC,LargeC,AdvC"
   { Child Inputs
     Computer: 2
     Electronics: 3
@@ -15374,7 +15586,7 @@ VERSION: 8
 }
 { Template Name: SolarPanelBlocks
   CraftTime: 20
-  Target: "LargeC,AdvC"
+  Target: "BaseC,LargeC,AdvC"
   { Child Inputs
     GlassPlate: 3
     SteelPlate: 3
@@ -15383,7 +15595,7 @@ VERSION: 8
 }
 { Template Name: SolarPanelSmallBlocks
   CraftTime: 20
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     GlassPlate: 2
     SteelPlate: 2
@@ -15392,7 +15604,7 @@ VERSION: 8
 }
 { Template Name: SolarGenerator
   CraftTime: 20
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Electronics: 3
     OpticalFiber: 1
@@ -15402,7 +15614,7 @@ VERSION: 8
 }
 { Template Name: GeneratorBA
   CraftTime: 25
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 20
     MechanicalComponents: 10
@@ -15411,9 +15623,18 @@ VERSION: 8
     Computer: 3
   }
 }
-{ Template Name: GeneratorSV
+{ Template Name: GeneratorSVSmall
   CraftTime: 25
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
+  { Child Inputs
+    SteelPlate: 10
+    Motor: 1
+    Electronics: 2
+  }
+}
+{ Template Name: GeneratorSV
+  CraftTime: 50
+  Target: "BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 20
     Motor: 1
@@ -15421,9 +15642,18 @@ VERSION: 8
     Computer: 1
   }
 }
-{ Template Name: FuelTankSV
+{ Template Name: FuelTankSVSmall
   CraftTime: 10
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
+  { Child Inputs
+    Electronics: 1
+    SteelPlate: 5
+    OpticalFiber: 1
+  }
+}
+{ Template Name: FuelTankSV
+  CraftTime: 20
+  Target: "BaseC,LargeC,AdvC"
   { Child Inputs
     Electronics: 3
     SteelPlate: 7
@@ -15432,7 +15662,7 @@ VERSION: 8
 }
 { Template Name: FuelTankMSSmall
   CraftTime: 10
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Electronics: 5
     SteelPlate: 15
@@ -15637,7 +15867,7 @@ VERSION: 8
 }
 { Template Name: CockpitBlocksSV
   CraftTime: 15
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Electronics: 3
     MechanicalComponents: 5
@@ -15648,7 +15878,7 @@ VERSION: 8
 }
 { Template Name: CockpitBlocksSVT2
   CraftTime: 30
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Electronics: 5
     MechanicalComponents: 7
@@ -15661,7 +15891,7 @@ VERSION: 8
 }
 { Template Name: PassengerSeatSV
   CraftTime: 15
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Electronics: 1
     SteelPlate: 25
@@ -15701,7 +15931,7 @@ VERSION: 8
 }
 { Template Name: HoverEngineThruster
   CraftTime: 10
-  Target: "SurvC,HoverC,LargeC,AdvC"
+  Target: "SurvC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Motor: 1
     Electronics: 1
@@ -15711,7 +15941,7 @@ VERSION: 8
 }
 { Template Name: HoverEngineSmall
   CraftTime: 10
-  Target: "SurvC,HoverC,LargeC,AdvC"
+  Target: "SurvC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Motor: 2
     Electronics: 3
@@ -15722,7 +15952,7 @@ VERSION: 8
 }
 { Template Name: HoverEngineLarge
   CraftTime: 15
-  Target: "HoverC,LargeC,AdvC"
+  Target: "HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Motor: 4
     Electronics: 5
@@ -15733,7 +15963,7 @@ VERSION: 8
 }
 { Template Name: HoverBooster
   CraftTime: 10
-  Target: "HoverC,LargeC,AdvC"
+  Target: "HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Motor: 10
     Electronics: 4
@@ -15743,7 +15973,7 @@ VERSION: 8
 }
 { Template Name: ThrusterGVDirectional
   CraftTime: 15
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Motor: 1
     Electronics: 6
@@ -15754,7 +15984,7 @@ VERSION: 8
 }
 { Template Name: ThrusterGVRoundBlocks
   CraftTime: 20
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Motor: 1
     Electronics: 6
@@ -15765,7 +15995,7 @@ VERSION: 8
 }
 { Template Name: ThrusterGVRoundNormalT2
   CraftTime: 25
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Motor: 2
     Electronics: 8
@@ -15777,7 +16007,7 @@ VERSION: 8
 }
 { Template Name: ThrusterGVRoundLarge
   CraftTime: 30
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Motor: 2
     Electronics: 12
@@ -15788,7 +16018,7 @@ VERSION: 8
 }
 { Template Name: ThrusterGVRoundLargeT2
   CraftTime: 35
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Motor: 4
     Electronics: 15
@@ -15800,7 +16030,7 @@ VERSION: 8
 }
 { Template Name: ThrusterGVJetRound1x3x1
   CraftTime: 30
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Motor: 3
     Electronics: 8
@@ -15811,7 +16041,7 @@ VERSION: 8
 }
 { Template Name: RCSBlockGV
   CraftTime: 25
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Electronics: 2
     MechanicalComponents: 3
@@ -15977,7 +16207,7 @@ VERSION: 8
 }
 { Template Name: DockingPad
   CraftTime: 15
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     MechanicalComponents: 10
     Electronics: 2
@@ -16086,7 +16316,7 @@ VERSION: 8
   DeconOverride: Stop
   OutputCount: 2
   CraftTime: 10
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     WaterJug: 1
     SteelPlate: 1
@@ -16104,7 +16334,7 @@ VERSION: 8
 }
 { Template Name: TextureColorTool
   CraftTime: 10
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Electronics: 2
     Nanotubes: 4
@@ -16112,7 +16342,7 @@ VERSION: 8
 }
 { Template Name: Flashlight
   CraftTime: 1
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 2
     Electronics: 1
@@ -16121,7 +16351,7 @@ VERSION: 8
 }
 { Template Name: OreScanner
   CraftTime: 12
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     MechanicalComponents: 2
     Electronics: 1
@@ -16130,7 +16360,7 @@ VERSION: 8
 }
 { Template Name: RadarSuitT1
   CraftTime: 12
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Electronics: 1
     OpticalFiber: 2
@@ -16139,7 +16369,7 @@ VERSION: 8
 }
 { Template Name: ArmorLight
   CraftTime: 60
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 12
     Electronics: 1
@@ -16148,7 +16378,7 @@ VERSION: 8
 }
 { Template Name: Chainsaw
   CraftTime: 20
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     MechanicalComponents: 4
     Electronics: 2
@@ -16180,7 +16410,7 @@ VERSION: 8
 }
 { Template Name: MultiTool
   CraftTime: 15
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Electronics: 1
     OpticalFiber: 1
@@ -16199,7 +16429,7 @@ VERSION: 8
 }
 { Template Name: EVABoost
   CraftTime: 100
-  Target: "HoverC,SmallC,LargeC,AdvC"
+  Target: "HoverC,BaseC,SmallC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 1
     OpticalFiber: 1
@@ -16209,7 +16439,7 @@ VERSION: 8
 }
 { Template Name: Pistol
   CraftTime: 20
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     MechanicalComponents: 5
   }
@@ -16225,7 +16455,7 @@ VERSION: 8
 }
 { Template Name: AssaultRifle
   CraftTime: 30
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     MechanicalComponents: 5
     Electronics: 1
@@ -16242,7 +16472,7 @@ VERSION: 8
 }
 { Template Name: Shotgun
   CraftTime: 30
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     MechanicalComponents: 5
     SteelPlate: 2
@@ -16250,7 +16480,7 @@ VERSION: 8
 }
 { Template Name: Sniper
   CraftTime: 30
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     MechanicalComponents: 5
     SteelPlate: 2
@@ -16258,7 +16488,7 @@ VERSION: 8
 }
 { Template Name: RocketLauncher
   CraftTime: 30
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     MechanicalComponents: 8
     Electronics: 2
@@ -16278,7 +16508,7 @@ VERSION: 8
 { Template Name: Explosives
   OutputCount: 1
   CraftTime: 5
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 4
     EnergyCell: 1
@@ -16287,7 +16517,7 @@ VERSION: 8
 }
 { Template Name: LaserPistol
   CraftTime: 30
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     MechanicalComponents: 3
     Electronics: 3
@@ -16317,7 +16547,7 @@ VERSION: 8
 }
 { Template Name: Minigun
   CraftTime: 30
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     MechanicalComponents: 5
     CobaltAlloy: 2
@@ -16337,7 +16567,7 @@ VERSION: 8
 }
 { Template Name: PulseRifle
   CraftTime: 30
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     MechanicalComponents: 2
     SteelPlateArmored: 3
@@ -16379,7 +16609,7 @@ VERSION: 8
 }
 { Template Name: SawAttachment
   CraftTime: 20
-  Target: "HoverC,LargeC,AdvC"
+  Target: "HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Motor: 2
     Electronics: 6
@@ -16390,7 +16620,7 @@ VERSION: 8
 }
 { Template Name: DrillAttachment
   CraftTime: 20
-  Target: "HoverC,LargeC,AdvC"
+  Target: "HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Motor: 4
     MechanicalComponents: 20
@@ -16399,7 +16629,7 @@ VERSION: 8
 }
 { Template Name: DrillAttachmentLarge
   CraftTime: 20
-  Target: "HoverC,LargeC,AdvC"
+  Target: "HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Motor: 6
     MechanicalComponents: 40
@@ -16440,7 +16670,7 @@ VERSION: 8
 }
 { Template Name: WeaponSV02
   CraftTime: 30
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     MechanicalComponents: 15
     Electronics: 3
@@ -16577,7 +16807,7 @@ VERSION: 8
 }
 { Template Name: SentryGunBlocks
   CraftTime: 30
-  Target: "LargeC,AdvC"
+  Target: "BaseC,LargeC,AdvC"
   { Child Inputs
     MechanicalComponents: 10
     Electronics: 4
@@ -16673,7 +16903,7 @@ VERSION: 8
 { Template Name: DrillCharge
   OutputCount: 5
   CraftTime: 5
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 1
     PromethiumPellets: 10
@@ -16683,7 +16913,7 @@ VERSION: 8
 { Template Name: MultiCharge
   OutputCount: 3
   CraftTime: 5
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 1
     PromethiumPellets: 10
@@ -16692,7 +16922,7 @@ VERSION: 8
 { Template Name: BioFuel
   OutputCount: 1
   CraftTime: 28
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     Fiber: 10
   }
@@ -16701,7 +16931,7 @@ VERSION: 8
   OutputCount: 25
   CraftTime: 5
   DeconOverride: Continue
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     CopperIngot: 2
     NCPowder: 1
@@ -16710,7 +16940,7 @@ VERSION: 8
 { Template Name: 5.8mmBullet
   OutputCount: 50
   CraftTime: 5
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 8
     CopperIngot: 4
@@ -16720,7 +16950,7 @@ VERSION: 8
 { Template Name: ShotgunShells
   OutputCount: 30
   CraftTime: 5
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 2
     CopperIngot: 4
@@ -16730,7 +16960,7 @@ VERSION: 8
 { Template Name: 12.7mmBullet
   OutputCount: 15
   CraftTime: 5
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 6
     CopperIngot: 2
@@ -16740,7 +16970,7 @@ VERSION: 8
 { Template Name: 8.3mmBullet
   OutputCount: 50
   CraftTime: 5
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 10
     NCPowder: 1
@@ -16749,7 +16979,7 @@ VERSION: 8
 { Template Name: SlowRocket
   OutputCount: 5
   CraftTime: 5
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 8
     PromethiumPellets: 4
@@ -16771,7 +17001,7 @@ VERSION: 8
   OutputCount: 75
   DeconOverride: Continue
   CraftTime: 5
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     PlasticMaterial: 2
     PentaxidElement: 5
@@ -16800,7 +17030,7 @@ VERSION: 8
 { Template Name: 15mmBullet
   OutputCount: 100
   CraftTime: 5
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     SteelPlate: 15
     NCPowder: 4
@@ -17030,7 +17260,7 @@ VERSION: 8
 { Template Name: AntibioticOintment
   DeconOverride: Stop
   CraftTime: 10
-  Target: "FoodP,SurvC,SmallC,HoverC,SuitC"
+  Target: "FoodP,SurvC,SmallC,HoverC,BaseC,SuitC"
   { Child Inputs
     HerbalLeaves: 1
     PlantProtein: 1
@@ -17039,7 +17269,7 @@ VERSION: 8
 { Template Name: AntiRadiationOintment
   DeconOverride: Stop
   CraftTime: 15
-  Target: "FoodP,SurvC,SmallC,HoverC"
+  Target: "FoodP,SurvC,SmallC,HoverC,BaseC"
   { Child Inputs
     MushroomBrown: 1
     PlantProtein: 1
@@ -17049,7 +17279,7 @@ VERSION: 8
 { Template Name: AntiToxicOintment
   DeconOverride: Stop
   CraftTime: 15
-  Target: "FoodP,SurvC,SmallC,HoverC,SuitC"
+  Target: "FoodP,SurvC,SmallC,HoverC,BaseC,SuitC"
   { Child Inputs
     AlienTooth: 1
     HerbalLeaves: 1
@@ -17059,7 +17289,7 @@ VERSION: 8
 { Template Name: Bandages
   DeconOverride: Stop
   CraftTime: 25
-  Target: "FoodP,SurvC,SmallC,HoverC,SuitC"
+  Target: "FoodP,SurvC,SmallC,HoverC,BaseC,SuitC"
   { Child Inputs
     Fiber: 3
     PlantProtein: 2
@@ -17113,7 +17343,7 @@ VERSION: 8
 }
 { Template Name: StomachPills
   CraftTime: 15
-  Target: "FoodP,SurvC,SmallC,HoverC"
+  Target: "FoodP,SurvC,SmallC,HoverC,BaseC"
   { Child Inputs
     Spice: 1
     HerbalLeaves: 1
@@ -17122,7 +17352,7 @@ VERSION: 8
 { Template Name: AntibioticPills
   DeconOverride: Stop
   CraftTime: 15
-  Target: "FoodP,SurvC,SmallC,HoverC"
+  Target: "FoodP,SurvC,SmallC,HoverC,BaseC"
   { Child Inputs
     ConfettiMossScrapings: 1
     HerbalLeaves: 1
@@ -17131,7 +17361,7 @@ VERSION: 8
 { Template Name: AntiToxicPills
   DeconOverride: Stop
   CraftTime: 23
-  Target: "FoodP,SurvC,SmallC,HoverC"
+  Target: "FoodP,SurvC,SmallC,HoverC,BaseC"
   { Child Inputs
     ConfettiMossScrapings: 1
     AlienTooth: 1
@@ -17141,7 +17371,7 @@ VERSION: 8
 { Template Name: AntiParasitePills
   DeconOverride: Stop
   CraftTime: 23
-  Target: "FoodP,SurvC,SmallC,HoverC"
+  Target: "FoodP,SurvC,SmallC,HoverC,BaseC"
   { Child Inputs
     ConfettiMossScrapings: 1
     AlienParts02: 1
@@ -17151,7 +17381,7 @@ VERSION: 8
 { Template Name: RadiationPills
   DeconOverride: Stop
   CraftTime: 28
-  Target: "FoodP,SurvC,SmallC,HoverC"
+  Target: "FoodP,SurvC,SmallC,HoverC,BaseC"
   { Child Inputs
     ConfettiMossScrapings: 1
     MushroomBrown: 1
@@ -17243,7 +17473,7 @@ VERSION: 8
 { Template Name: Milk
   DeconOverride: Stop
   CraftTime: 5
-  Target: "FoodP,SurvC,SmallC,HoverC"
+  Target: "FoodP,SurvC,SmallC,HoverC,BaseC"
   { Child Inputs
     PlantProtein: 1
     WaterBottle: 1
@@ -17252,7 +17482,7 @@ VERSION: 8
 { Template Name: Meat
   DeconOverride: Stop
   CraftTime: 7
-  Target: "FoodP,SurvC,SmallC,HoverC"
+  Target: "FoodP,SurvC,SmallC,HoverC,BaseC"
   { Child Inputs
     PlantProtein: 1
     Vegetables: 1
@@ -17261,7 +17491,7 @@ VERSION: 8
 { Template Name: PlantProtein
   OutputCount: 2
   CraftTime: 7
-  Target: "SuitC,FoodP,SurvC,SmallC,HoverC"
+  Target: "SuitC,FoodP,SurvC,SmallC,HoverC,BaseC"
   { Child Inputs
     Vegetables: 1
   }
@@ -17269,7 +17499,7 @@ VERSION: 8
 { Template Name: PowerBar
   DeconOverride: Stop
   CraftTime: 12
-  Target: "FoodP,SurvC,SmallC,HoverC,SuitC"
+  Target: "FoodP,SurvC,SmallC,HoverC,BaseC,SuitC"
   { Child Inputs
     PlantProtein: 2
   }
@@ -17310,7 +17540,7 @@ VERSION: 8
 { Template Name: Steak
   DeconOverride: Stop
   CraftTime: 11
-  Target: "FoodP,SurvC,SmallC,HoverC"
+  Target: "FoodP,SurvC,SmallC,HoverC,BaseC"
   { Child Inputs
     Meat: 1
   }
@@ -17318,7 +17548,7 @@ VERSION: 8
 { Template Name: Salami
   DeconOverride: Stop
   CraftTime: 18
-  Target: "FoodP,SurvC,SmallC,HoverC"
+  Target: "FoodP,SurvC,SmallC,HoverC,BaseC"
   { Child Inputs
     Meat: 1
     Spice: 1
@@ -17345,35 +17575,35 @@ VERSION: 8
 }
 { Template Name: HotBeverage
   CraftTime: 2
-  Target: "FoodP,SurvC,SmallC,HoverC,SuitC"
+  Target: "FoodP,SurvC,SmallC,HoverC,BaseC,SuitC"
   { Child Inputs
     Buds: 2
   }
 }
 { Template Name: EnergyDrink
   CraftTime: 9
-  Target: "FoodP,SurvC,SmallC,HoverC,SuitC"
+  Target: "FoodP,SurvC,SmallC,HoverC,BaseC,SuitC"
   { Child Inputs
     NaturalStimulant: 2
   }
 }
 { Template Name: BerryJuice
   CraftTime: 12
-  Target: "FoodP,SurvC,SmallC,HoverC,SuitC"
+  Target: "FoodP,SurvC,SmallC,HoverC,BaseC,SuitC"
   { Child Inputs
     Berries: 2
   }
 }
 { Template Name: FruitJuice
   CraftTime: 10
-  Target: "FoodP,SurvC,SmallC,HoverC"
+  Target: "FoodP,SurvC,SmallC,HoverC,BaseC"
   { Child Inputs
     Fruit: 2
   }
 }
 { Template Name: VegetableJuice
   CraftTime: 12
-  Target: "FoodP,SurvC,SmallC,HoverC,SuitC"
+  Target: "FoodP,SurvC,SmallC,HoverC,BaseC,SuitC"
   { Child Inputs
     Vegetables: 2
   }
@@ -17754,7 +17984,7 @@ VERSION: 8
   DeconOverride: Stop
   OutputCount: 3
   CraftTime: 5
-  Target: "FoodP,SurvC,SmallC,HoverC"
+  Target: "FoodP,SurvC,SmallC,HoverC,BaseC"
   { Child Inputs
     PlantProtein: 1
   }
@@ -17855,34 +18085,44 @@ VERSION: 8
 }
 { Template Name: SmallOptronicBridge
   BaseItem: true
-  CraftTime: 2
-  Target: 
+  CraftTime: 600
+  Target: AdvC
   { Child Inputs
-    Electronics: 10
+    GoldIngot: 15
+    Electronics: 125
+    Oscillator: 20
   }
 }
 { Template Name: SmallOptronicMatrix
   BaseItem: true
-  CraftTime: 2
-  Target: 
+  CraftTime: 900
+  Target: AdvC
   { Child Inputs
-    Electronics: 10
+    GoldIngot: 20
+    Computer: 100
+    EnergyMatrix: 20
   }
 }
 { Template Name: LargeOptronicBridge
   BaseItem: true
-  CraftTime: 2
-  Target: 
+  CraftTime: 600
+  Target: AdvC
   { Child Inputs
-    Electronics: 10
+    GoldIngot: 15
+    SmallOptronicBridge: 1
+    Oscillator: 20
+    ZascosiumAlloy: 10
   }
 }
 { Template Name: LargeOptronicMatrix
   BaseItem: true
-  CraftTime: 2
-  Target: 
+  CraftTime: 900
+  Target: AdvC
   { Child Inputs
-    Electronics: 10
+    GoldIngot: 20
+    SmallOptronicMatrix: 1
+    PowerCoil: 10
+    ErestrumGel: 20
   }
 }
 { Template Name: OxygenGeneratorSmall
@@ -17952,4 +18192,1896 @@ VERSION: 8
   { Child Inputs
     SteelPlateArmored: 1
   }
+}
+
+
+# ==================== LOOT TABLES ==============================
+
+
+# Item line: "Group|Name_x" (x incrementing), data: "probability" [, xdata="count range"] (default = 1,1)
+# NOTE: Please currently always use 8 columns! (first number in "Size" line)
+# Empty Medium
+{ Container Id: 1
+  Count: 1
+  Size: "8,8"
+  SfxOpen: UseActions/KEYUnlockingMetalDoor(mono)
+  SfxClose: UseActions/KEYUnlockingMetalDoor(mono)
+  { Child Items
+    Group_0: empty
+  }
+}
+# ContainerRandom: used for Junk POIs
+{ Container Id: 2
+  Count: "1,3"
+  Size: "8,8"
+  SfxOpen: UseActions/ContainerOpen
+  SfxClose: UseActions/ContainerClose
+  { Child Items
+    # Food
+    Name_0: CannedVegetables, data: 0.4, xdata: "1,2"
+    Name_1: CannedMeat, data: 0.4, xdata: "1,2"
+    Name_2: EmergencyRations, data: 0.1, xdata: "1,1"
+    Name_3: WaterBottle, data: 0.4, xdata: "1,3"
+    Name_4: RottenFood, data: 0.4, xdata: "1,1"
+    # Medical Stuff
+    Name_5: AntibioticInjection, data: 0.3, xdata: "1,2"
+    Name_6: Medikit02, data: 0.3, xdata: "1,2"
+    Name_7: EnergyPills, data: 0.3, xdata: "1,2"
+    Name_8: StomachPills, data: 0.3, xdata: "1,2"
+    Name_9: AntibioticOintment, data: 0.3, xdata: "1,2"
+    Name_10: AntibioticPills, data: 0.3, xdata: "1,2"
+    # Components
+    Name_11: SteelPlate, data: 0.2, xdata: "1,2"
+    Name_12: Electronics, data: 0.2, xdata: "1,2"
+    Name_13: OpticalFiber, data: 0.2, xdata: "1,2"
+    Name_14: MechanicalComponents, data: 0.2, xdata: "1,2"
+  }
+}
+# PentaxidTank
+{ Container Id: 3
+  Count: 1
+  Size: "8,8"
+  SfxOpen: UseActions/electric
+  SfxClose: UseActions/electric
+  { Child Items
+    Group_0: empty
+  }
+}
+# Container Blocks: Extra Large
+{ Container Id: 4
+  Count: 1
+  Size: "8,8"
+  SfxOpen: UseActions/KEYUnlockingMetalDoor(mono)
+  SfxClose: UseActions/KEYUnlockingMetalDoor(mono)
+  { Child Items
+    Group_0: OresBasic, data: 0.1
+    Group_1: IngotsBasic, data: 0.1
+    Group_2: ComponentsBasic, data: 0.1
+    Group_3: CraftingMaterial, data: 0.1
+    Group_4: EnergyItems, data: 0.1
+    Group_5: Seeds, data: 0.1
+    Group_6: MedicalItems, data: 0.1
+    Group_7: FoodItems, data: 0.1
+    Group_8: BuildingBlocks, data: 0.05
+    Group_9: DevicesCommon, data: 0.02
+    Group_10: Tools, data: 0.02
+    Group_11: WeaponsBasic, data: 0.02
+    Group_12: WeaponsBasicKit, data: 0.1
+  }
+}
+# GolemSwamp
+{ Container Id: 5
+  Count: "3,4"
+  Size: "8,1"
+  SfxOpen: UseActions/stone_open_close
+  SfxClose: UseActions/stone_open_close
+  { Child Items
+    Name_0: CrushedStone, data: 0.4, xdata: "5,15"
+    Name_1: XenoSubstrate, data: 0.6, xdata: "2,3"
+    Group_0: OresBasic, data: 0.9
+    Group_1: OresAdvanced, data: 0.6
+    Group_2: OresRare, data: 0.4
+  }
+}
+# GolemIce
+{ Container Id: 6
+  Count: "3,4"
+  Size: "8,1"
+  SfxOpen: UseActions/stone_open_close
+  SfxClose: UseActions/stone_open_close
+  { Child Items
+    Name_0: CrushedStone, data: 0.4, xdata: "5,15"
+    Name_1: PentaxidCrystal, data: 0.6, xdata: "1,2"
+    Group_0: OresBasic, data: 0.9
+    Group_1: OresAdvanced, data: 0.6
+    Group_2: OresRare, data: 0.4
+  }
+}
+# WoodWalker
+{ Container Id: 7
+  Count: "2,3"
+  Size: "8,1"
+  SfxOpen: UseActions/stone_open_close
+  SfxClose: UseActions/stone_open_close
+  { Child Items
+    Name_0: WoodLogs, data: 0.9, xdata: "5,15"
+    Group_0: Seeds, data: 0.6
+    Group_1: Biological01, data: 0.6
+  }
+}
+# Talon Guardian
+{ Container Id: 8
+  Count: "2,4"
+  Size: "8,1"
+  SfxOpen: UseActions/ZIPPERShort3(mono)
+  SfxClose: UseActions/ZIPPERShort3(mono)
+  { Child Items
+    Name_0: HerbalLeaves, data: 0.3, xdata: "1,2"
+    Name_1: PlantProtein, data: 0.3, xdata: "1,3"
+    Name_2: PowerBar, data: 0.2, xdata: "1,2"
+    Name_3: Bandages, data: 0.3, xdata: "1,2"
+    Name_4: HerbalLeaves, data: 0.3, xdata: "1,2"
+    Group_0: Sprouts, data: 0.3
+  }
+}
+# Oviraptor
+{ Container Id: 9
+  Count: "1,2"
+  Size: "8,1"
+  SfxOpen: UseActions/body_open
+  SfxClose: UseActions/body_close
+  { Child Items
+    Name_0: Meat, xdata: "1,2"
+    Name_2: Egg, data: 0.6, xdata: "1,2"
+  }
+}
+# Dino small (Raptor, Megalonops, Parasaur)
+{ Container Id: 10
+  Count: "1,2"
+  Size: "8,1"
+  SfxOpen: UseActions/body_open
+  SfxClose: UseActions/body_close
+  { Child Items
+    Name_0: Meat, xdata: "1,2"
+    Name_1: Egg, data: 0.6, xdata: "1,2"
+  }
+}
+# Backpack and DropContainer
+{ Container Id: 11
+  Count: 1
+  Size: "8,8"
+  SfxOpen: UseActions/KEYUnlockingMetalDoor(mono)
+  SfxClose: UseActions/KEYUnlockingMetalDoor(mono)
+  DestroyOnClose: False
+  { Child Items
+    Group_0: empty
+  }
+}
+# Container Blocks: Large
+{ Container Id: 12
+  Count: 1
+  Size: "8,8"
+  SfxOpen: UseActions/KEYUnlockingMetalDoor(mono)
+  SfxClose: UseActions/KEYUnlockingMetalDoor(mono)
+  { Child Items
+    Group_0: empty
+  }
+}
+# PentaxidTankSV
+{ Container Id: 13
+  Count: 1
+  Size: "8,8"
+  SfxOpen: UseActions/electric
+  SfxClose: UseActions/electric
+  { Child Items
+    Group_0: empty
+  }
+}
+# DroneSmallFast01Rocket _OLD_
+{ Container Id: 14
+  Count: "1,2"
+  Size: "8,1"
+  SfxOpen: UseActions/drone_open
+  SfxClose: UseActions/drone_close
+  { Child Items
+    Name_0: EnergyCell, data: 0.7, xdata: "1,2"
+    Name_1: SlowRocket, data: 0.7, xdata: "2,4"
+    Group_0: BasicComponents, data: 0.3
+    Group_1: CompositeComponents, data: 0.3
+  }
+}
+# TurretRobot
+{ Container Id: 15
+  Count: "1,2"
+  Size: "8,1"
+  SfxOpen: UseActions/drone_open
+  SfxClose: UseActions/drone_close
+  { Child Items
+    Name_0: EnergyCell, data: 0.7, xdata: "1,2"
+    Name_1: 5.8mmBullet, data: 0.7, xdata: "20,40"
+    Name_2: 50Caliber, data: 0.7, xdata: "10,20"
+    Group_0: BasicComponents, data: 0.3
+    Group_1: CompositeComponents, data: 0.3
+  }
+}
+# TroopTransporters
+{ Container Id: 16
+  Count: "2,4"
+  Size: "8,2"
+  SfxOpen: UseActions/drone_open
+  SfxClose: UseActions/drone_close
+  { Child Items
+    Group_0: WeaponsVeryRare, data: 0.3
+    Group_1: EnergyItems, data: 0.9
+    Group_2: MedicalItems, data: 0.8
+    Group_3: WeaponsRare, data: 0.6
+    Group_4: WeaponsRareKit, data: 0.6
+  }
+}
+# MegalonopsGreen
+{ Container Id: 17
+  Count: "1,2"
+  Size: "8,1"
+  SfxOpen: UseActions/body_open
+  SfxClose: UseActions/body_close
+  { Child Items
+    Name_0: Meat, xdata: 1
+    Name_1: Egg, data: 0.6, xdata: "1,2"
+  }
+}
+# LizardMule Large
+{ Container Id: 18
+  Count: "3,4"
+  Size: "8,1"
+  SfxOpen: UseActions/body_open
+  SfxClose: UseActions/body_close
+  { Child Items
+    Name_0: Meat, data: 1, xdata: "2,3"
+    Name_1: Milk, data: 0.9, xdata: "1,2"
+  }
+}
+# Overseer
+{ Container Id: 19
+  Count: "2,4"
+  Size: "8,1"
+  SfxOpen: UseActions/body_open
+  SfxClose: UseActions/body_close
+  { Child Items
+    Name_0: Meat, data: 0.7, xdata: 1
+    Name_1: PentaxidCrystal, data: 0.3, xdata: 1
+  }
+}
+# CaveWorm,Spider01
+{ Container Id: 20
+  Count: "3,4"
+  Size: "8,1"
+  SfxOpen: UseActions/body_open
+  SfxClose: UseActions/body_close
+  { Child Items
+    Name_0: Meat, data: 0.8, xdata: 1
+    Name_1: AlienParts02, data: 0.5, xdata: "1,2"
+    Name_2: AlienTooth, data: 1, xdata: "1,2"
+  }
+}
+# not used anymore
+# LizardMule and Triceratops Baby
+{ Container Id: 21
+  Count: 1
+  Size: "8,1"
+  SfxOpen: UseActions/body_open
+  SfxClose: UseActions/body_close
+  { Child Items
+    Name_0: Meat, xdata: 1, param: "4,6"
+  }
+}
+# SPECIAL FuelTankMSSmall
+{ Container Id: 22
+  Count: 1
+  Size: "8,1"
+  SfxOpen: UseActions/electric
+  SfxClose: UseActions/KEYUnlockingMetalDoor(mono)
+  { Child Items
+    Group_0: empty
+  }
+}
+# SPECIAL FuelTankMSLarge
+{ Container Id: 23
+  Count: 1
+  Size: "8,3"
+  SfxOpen: UseActions/electric
+  SfxClose: UseActions/KEYUnlockingMetalDoor(mono)
+  { Child Items
+    Group_0: empty
+  }
+}
+# SPECIAL OxygenTank
+{ Container Id: 24
+  Count: 1
+  Size: "8,1"
+  SfxOpen: UseActions/oxygen_tank_open
+  SfxClose: UseActions/oxygen_tank_open
+  { Child Items
+    Group_0: empty
+  }
+}
+# SPECIAL OxygenTankSV
+{ Container Id: 25
+  Count: 1
+  Size: "8,1"
+  SfxOpen: UseActions/oxygen_tank_open
+  SfxClose: UseActions/oxygen_tank_open
+  { Child Items
+    Group_0: empty
+  }
+}
+# SPECIAL FuelTankSV
+{ Container Id: 26
+  Count: 1
+  Size: "8,1"
+  SfxOpen: UseActions/electric
+  SfxClose: UseActions/KEYUnlockingMetalDoor(mono)
+  { Child Items
+    Group_0: empty
+  }
+}
+# GolemDesert
+{ Container Id: 27
+  Count: "3,4"
+  Size: "8,1"
+  SfxOpen: UseActions/stone_open_close
+  SfxClose: UseActions/stone_open_close
+  { Child Items
+    Name_0: CrushedStone, data: 0.4, xdata: "5,15"
+    Name_1: GoldOre, data: 0.4, xdata: "1,2"
+    Group_0: OresBasic, data: 0.9
+    Group_1: OresAdvanced, data: 0.6
+    Group_2: OresRare, data: 0.4
+  }
+}
+# TotalHorror
+{ Container Id: 28
+  Count: "2,4"
+  Size: "8,1"
+  SfxOpen: UseActions/body_open
+  SfxClose: UseActions/body_close
+  { Child Items
+    Name_0: AlienParts02, data: 0.5, xdata: "2,3"
+    Name_1: AlienTooth, data: 0.3, xdata: "2,3"
+  }
+}
+# AlienAssassin,Hexapod
+{ Container Id: 29
+  Count: "3,5"
+  Size: "8,1"
+  SfxOpen: UseActions/body_open
+  SfxClose: UseActions/body_close
+  { Child Items
+    Name_0: AlienParts02, data: 0.3, xdata: "1,3"
+    Name_1: ConfettiMossScrapings, data: 0.5, xdata: "1,3"
+    Name_2: FireMossScrapings, data: 0.5, xdata: "1,3"
+  }
+}
+# PlantMonster / Creepy
+{ Container Id: 30
+  Count: "2,3"
+  Size: "8,1"
+  SfxOpen: UseActions/body_open
+  SfxClose: UseActions/body_close
+  { Child Items
+    Name_0: Meat, data: 0.8, xdata: "2,3"
+    Name_1: AlienParts02, data: 0.5, xdata: "1,2"
+    Name_2: AlienTooth, data: 0.8, xdata: "1,2"
+  }
+}
+# Dino large (Triceratops, Pangolin)
+{ Container Id: 31
+  Count: "4,6"
+  Size: "8,1"
+  SfxOpen: UseActions/body_open
+  SfxClose: UseActions/body_close
+  { Child Items
+    Name_0: Meat, data: 1, xdata: "3,4"
+    Name_1: Egg, data: 0.6, xdata: "1,2"
+  }
+}
+# Dino baby (Parasaur Baby)
+{ Container Id: 32
+  Count: "1,2"
+  Size: "8,1"
+  SfxOpen: UseActions/body_open
+  SfxClose: UseActions/body_close
+  { Child Items
+    Name_0: Meat, data: 0.6, xdata: 1
+  }
+}
+# AlienBug01
+{ Container Id: 33
+  Count: "1,2"
+  Size: "8,1"
+  SfxOpen: UseActions/body_open
+  SfxClose: UseActions/body_close
+  { Child Items
+    Name_0: Meat, data: 0.6, xdata: 1
+    Name_1: AlienParts02, data: 0.5, xdata: "2,3"
+    Name_2: AlienTooth, data: 0.3, xdata: "2,3"
+  }
+}
+# ESCAPE POD - new start
+{ Container Id: 35
+  Count: 1
+  Size: "8,4"
+  SfxOpen: UseActions/KEYUnlockingMetalDoor(mono)
+  SfxClose: UseActions/KEYUnlockingMetalDoor(mono)
+  { Child Items
+    Group_0: StartingEquipment_NewStart
+  }
+}
+# ContainerSpecialEvent - for special events
+{ Container Id: 36
+  Count: 1
+  Size: "2,1"
+  SfxOpen: UseActions/ContainerOpen
+  SfxClose: UseActions/ContainerClose
+  { Child Items
+    Name_0: ArmorHeavyEpic, data: 1, xdata: 1
+    Name_1: DrillEpic, data: 1, xdata: 1
+  }
+}
+# SawAttachment
+{ Container Id: 37
+  Count: 1
+  Size: "8,3"
+  SfxOpen: UseActions/KEYUnlockingMetalDoor(mono)
+  SfxClose: UseActions/KEYUnlockingMetalDoor(mono)
+  { Child Items
+    Group_0: empty
+  }
+}
+# AlienContainer: Common - grey_NEW
+{ Container Id: 38
+  Count: "5,6"
+  Size: "8,8"
+  SfxOpen: UseActions/BarrelOpen
+  SfxClose: UseActions/BarrelClose
+  { Child Items
+    Name_0: CobaltIngot, data: 0.8, xdata: "50,75"
+    Name_1: MagnesiumPowder, data: 0.8, xdata: "50,75"
+    Name_2: ForcefieldEmitterBlocks, data: 0.7, xdata: "2,3"
+    Name_3: PistolT2, data: 0.5, xdata: 1
+    Name_4: AssaultRifleT2, data: 0.5, xdata: 1
+    Name_5: Explosives, data: 0.5, xdata: "3,5"
+    Name_6: DrillAttachment, data: 0.2, xdata: 1
+    Name_7: EnergyCell, data: 1, xdata: "15,25"
+    Name_8: Shotgun, data: 0.2, xdata: 1
+    Name_9: NightVision, data: 0.3, xdata: 1
+    Name_10: CopperIngot, data: 0.9, xdata: "100,125"
+    Name_11: SiliconIngot, data: 0.9, xdata: "100,125"
+    Name_12: IronIngot, data: 0.9, xdata: "125,150"
+    Group_0: MedicalItems, data: 1
+    Group_1: WeaponsBasic, data: 0.8
+    Group_2: WeaponsBasicKit, data: 0.2
+  }
+}
+# AlienContainer: Rare - yellow_NEW
+{ Container Id: 39
+  Count: "4,5"
+  Size: "8,8"
+  SfxOpen: UseActions/BarrelOpen
+  SfxClose: UseActions/BarrelClose
+  { Child Items
+    Name_0: SathiumIngot, data: 0.7, xdata: "75,100"
+    Name_1: NeodymiumIngot, data: 0.7, xdata: "25,50"
+    Name_2: PulseRifleT2, data: 0.4, xdata: 1
+    Name_3: Shotgun2, data: 0.4, xdata: 1
+    Name_4: WeaponSV01, data: 0.2, xdata: 1
+    Name_5: EnergyCellLarge, data: 1, xdata: "15,25"
+    Name_6: MultiToolT2, data: 0.6, xdata: 1
+    Name_7: AutoMinerCore, data: 0.04, xdata: "1,2"
+    Name_8: ArmorMedium, data: 0.05, xdata: 1
+    Name_9: DrillAttachmentT2, data: 0.04, xdata: "1,2"
+    Group_0: WeaponsBasic, data: 0.08
+    Group_1: WeaponsBasicKit, data: 0.08
+    Group_2: Medikits, data: 1
+    Group_3: SuitBooster, data: 0.7
+  }
+}
+# AlienContainer: Very Rare - red_NEW
+{ Container Id: 40
+  Count: "3,4"
+  Size: "8,8"
+  SfxOpen: UseActions/BarrelOpen
+  SfxClose: UseActions/BarrelClose
+  { Child Items
+    Name_0: ZascosiumIngot, data: 0.8, xdata: "10,15"
+    Name_1: ErestrumIngot, data: 0.8, xdata: "10,15"
+    Name_2: Minigun, data: 0.5, xdata: 1
+    Name_3: LaserRifle, data: 0.5, xdata: 1
+    Name_4: RepairBayBAT2, data: 0.6, xdata: 1
+    Name_5: FusionCell, data: 0.9, xdata: "15,25"
+    Name_6: TurretGVToolBlocks, data: 0.4, xdata: 1
+    Name_7: AutoMinerCore, data: 0.09, xdata: "2,3"
+    Name_8: ArmorHeavy, data: 0.5, xdata: 1
+    Name_9: PentaxidOre, data: 0.8, xdata: "30,60"
+    Name_10: MedicalStationBlocks, data: 0.9, xdata: 1
+    Name_11: AlienLargeBlocks, data: 0.8, xdata: "75,100"
+    Name_12: GoldIngot, data: 0.2, xdata: "10,15"
+    Name_13: WeaponSV03, data: 0.5, xdata: 1
+    Name_14: SmallOptronicBridge, data: 0.09, xdata: "2,3"
+    Name_15: SmallOptronicMatrix, data: 0.07, xdata: "2,3"
+    Name_16: LargeOptronicBridge, data: 0.05, xdata: "2,3"
+    Name_17: LargeOptronicMatrix, data: 0.03, xdata: "2,3"
+    Group_0: WeaponsRare, data: 0.1
+    Group_1: WeaponsRareKit, data: 0.09
+  }
+}
+# AlienContainer: Ultra Rare - purple
+{ Container Id: 41
+  Count: "2,3"
+  Size: "8,8"
+  SfxOpen: UseActions/BarrelOpen
+  SfxClose: UseActions/BarrelClose
+  { Child Items
+    Name_0: AutoMinerCore, data: 0.1, xdata: "2,3"
+    Name_1: GoldIngot, data: 0.2, xdata: "20,50"
+    Name_2: SmallOptronicBridge, data: 0.09, xdata: "1,2"
+    Name_3: SmallOptronicMatrix, data: 0.07, xdata: "1,2"
+    Name_4: LargeOptronicBridge, data: 0.05, xdata: "1,2"
+    Name_5: LargeOptronicMatrix, data: 0.03, xdata: "1,2"
+    Group_0: WeaponsEpic, data: 0.5
+    Group_1: WeaponsRare, data: 0.3
+    Group_2: WeaponsRareKit, data: 0.1
+  }
+}
+# Space drones _OLD
+{ Container Id: 42
+  Count: "4,6"
+  Size: "8,2"
+  SfxOpen: UseActions/drone_open
+  SfxClose: UseActions/drone_close
+  { Child Items
+    Name_0: EnergyCell, data: 0.8, xdata: "5,10"
+    Group_0: CompositeComponents, data: 0.6
+    Group_1: ComponentsRare, data: 0.6
+  }
+}
+# Escape Pod - Difficulty: Easy
+{ Container Id: 43
+  Count: 1
+  Size: "8,7"
+  SfxOpen: UseActions/KEYUnlockingMetalDoor(mono)
+  SfxClose: UseActions/KEYUnlockingMetalDoor(mono)
+  { Child Items
+    Group_0: EscapePodEasy
+  }
+}
+# Escape Pod - Difficulty: Medium
+{ Container Id: 44
+  Count: 1
+  Size: "8,4"
+  SfxOpen: UseActions/KEYUnlockingMetalDoor(mono)
+  SfxClose: UseActions/KEYUnlockingMetalDoor(mono)
+  { Child Items
+    Group_0: EscapePodMedium
+  }
+}
+# Escape Pod - Difficulty: Hard
+{ Container Id: 45
+  Count: 1
+  Size: "8,3"
+  SfxOpen: UseActions/KEYUnlockingMetalDoor(mono)
+  SfxClose: UseActions/KEYUnlockingMetalDoor(mono)
+  { Child Items
+    Group_0: EscapePodHard
+  }
+}
+# ArmoredGolem
+{ Container Id: 46
+  Count: "3,4"
+  Size: "8,2"
+  SfxOpen: UseActions/drone_open
+  SfxClose: UseActions/drone_close
+  { Child Items
+    Group_0: EnergyItems, data: 0.6
+    Group_1: ComponentsRare, data: 0.8
+    Group_2: WeaponsBasicKit, data: 0.4
+    Group_3: WeaponsRareKit, data: 0.08
+  }
+}
+# SPECIAL FuelTankMSLargeT2
+{ Container Id: 47
+  Count: 1
+  Size: "8,8"
+  SfxOpen: UseActions/electric
+  SfxClose: UseActions/KEYUnlockingMetalDoor(mono)
+  { Child Items
+    Group_0: empty
+  }
+}
+# ContainerMS01, ContainerHarvest
+{ Container Id: 48
+  Count: "1,2"
+  Size: "8,8"
+  SfxOpen: UseActions/KEYUnlockingMetalDoor(mono)
+  SfxClose: UseActions/KEYUnlockingMetalDoor(mono)
+  { Child Items
+    Group_0: OresBasic, data: 0.5
+    Group_5: Seeds, data: 0.3
+  }
+}
+# ContainerUltraRare - human container - purple
+{ Container Id: 49
+  Count: 1
+  Size: "8,8"
+  SfxOpen: UseActions/ContainerOpen
+  SfxClose: UseActions/ContainerClose
+  { Child Items
+    Name_0: SmallOptronicBridge, data: 0.09, xdata: 1
+    Name_1: SmallOptronicMatrix, data: 0.07, xdata: 1
+    Name_2: LargeOptronicBridge, data: 0.05, xdata: 1
+    Name_3: LargeOptronicMatrix, data: 0.03, xdata: 1
+    Name_4: AutoMinerCore, data: 0.2, xdata: "1,2"
+    Group_1: WeaponsEpic, data: 0.5
+  }
+}
+# Very Common NOT USED ATM
+{ Container Id: 50
+  Count: "1,2"
+  Size: "8,8"
+  SfxOpen: UseActions/ContainerOpen
+  SfxClose: UseActions/ContainerClose
+  { Child Items
+    Group_0: OresBasic, data: 0.1
+    Group_1: IngotsBasic, data: 0.1
+    Group_2: ComponentsBasic, data: 0.1
+    Group_3: CraftingMaterial, data: 0.1
+    Group_4: EnergyItems, data: 0.1
+    Group_5: Seeds, data: 0.1
+    Group_6: MedicalItems, data: 0.1
+    Group_7: FoodItems, data: 0.1
+    Group_8: BuildingBlocks, data: 0.03
+    Group_9: DevicesCommon, data: 0.01
+    Group_10: Tools, data: 0.01
+    Group_11: WeaponsBasic, data: 0.01
+    Group_12: WeaponsBasicKit, data: 0.15
+  }
+}
+# LabTable1 LabTable2 LabTable3
+{ Container Id: 51
+  Count: 1
+  Size: "8,8"
+  SfxOpen: UseActions/ContainerOpenClose
+  SfxClose: UseActions/ContainerOpenClose
+  { Child Items
+    Name_0: AlienParts02, data: 0.3, xdata: "2,3"
+    Name_1: AlienThorn, data: 0.3, xdata: "2,3"
+    Name_2: AlienParts01, data: 0.3, xdata: "2,3"
+    Name_3: AlienParts03, data: 0.3, xdata: "2,3"
+    Name_4: AntibioticInjection, data: 0.2, xdata: 1
+    Name_5: AntibioticOintment, data: 0.2, xdata: 1
+    Name_6: AdrenalineShot, data: 0.2, xdata: 1
+    Name_7: RespiratorCharge, data: 0.2, xdata: "2,3"
+    Name_8: Medikit02, data: 0.2, xdata: "1,2"
+    Name_9: NightVision, data: 0.2, xdata: "2,3"
+    Name_10: ArmorBoost, param: 0.01, xdata: 1
+    Name_11: JetpackBoost, param: 0.01, xdata: 1
+    Name_12: MultiBoost, param: 0.01, xdata: 1
+    Name_13: OxygenBoost, param: 0.01, xdata: 1
+    Name_14: InsulationBoost, param: 0.01, xdata: 1
+    Name_15: MobilityBoost, param: 0.01, xdata: 1
+    Name_16: RadiationBoost, param: 0.01, xdata: 1
+    Name_17: EVABoost, param: 0.025, xdata: 1
+    Group_0: WeaponsBasicKit, data: 0.2
+  }
+}
+# Locker LockerWShelves
+{ Container Id: 52
+  Count: 1
+  Size: "8,8"
+  SfxOpen: UseActions/BarrelOpen
+  SfxClose: UseActions/BarrelClose
+  { Child Items
+    Name_0: StomachPills, data: 0.3, xdata: "1,2"
+    Name_1: EnergyPills, data: 0.3, xdata: "1,2"
+    Name_2: EmergencyRations, data: 0.3, xdata: 1
+    Name_3: HotBeverage, data: 0.3, xdata: 1
+    Name_4: BioFuel, data: 0.2, xdata: 1
+    Name_5: RespiratorCharge, data: 0.2, xdata: "1,2"
+    Name_6: DrillCharge, data: 0.2, xdata: 1
+    Name_7: MultiCharge, data: 0.2, xdata: 1
+    Name_9: Chainsaw, data: 0.1, xdata: 1
+    Name_10: Flashlight, data: 0.1, xdata: 1
+    Name_11: MultiTool, data: 0.1, xdata: 1
+    Name_12: ShotgunShells, data: 0.3, xdata: "5,10"
+    Name_13: 5.8mmBullet, data: 0.3, xdata: "8,10"
+    Name_14: 12.7mmBullet, data: 0.2, xdata: "2,4"
+    Name_15: 8.3mmBullet, data: 0.2, xdata: "10,15"
+    Name_16: 50Caliber, data: 0.3, xdata: "5,10"
+    Name_17: ArmorMedium, param: 0.1, xdata: 1
+    Group_0: WeaponsBasicKit, data: 0.02
+  }
+}
+# Operation Table OperationTableWDrawers
+{ Container Id: 53
+  Count: "1,2"
+  Size: "8,8"
+  SfxOpen: UseActions/ContainerOpenClose
+  SfxClose: UseActions/ContainerOpenClose
+  { Child Items
+    Name_0: AntibioticInjection, data: 0.3, xdata: 1
+    Name_1: AntibioticPills, data: 0.3, xdata: 1
+    Name_2: AntibioticOintment, data: 0.3, xdata: 1
+    Name_3: AdrenalineShot, data: 0.3, xdata: 1
+    Name_4: Medikit02, data: 0.3, xdata: 1
+    Name_5: Bandages, data: 0.4, xdata: "3,4"
+    Name_6: RespiratorCharge, data: 0.3, xdata: "1,2"
+  }
+}
+# Box Medium Props6BoxMedium1
+{ Container Id: 54
+  Count: "1,2"
+  Size: "8,8"
+  SfxOpen: UseActions/ContainerOpenClose
+  SfxClose: UseActions/ContainerOpenClose
+  { Child Items
+    Name_0: DurianRoot, data: 0.4, xdata: "1,2"
+    Name_1: TomatoStage1, data: 0.4, xdata: "1,2"
+    Name_2: WheatStage1, data: 0.4, xdata: "1,2"
+    Name_3: CornStage1, data: 0.4, xdata: "1,2"
+    Name_4: PumpkinStage1, data: 0.4, xdata: "1,2"
+    Name_5: PearthingStage1, data: 0.4, xdata: "1,2"
+    Name_6: InsanityPepperStage1, data: 0.4, xdata: "1,2"
+    Name_7: DesertPlant20Stage1, data: 0.4, xdata: "1,2"
+    Name_8: AlienPlantTube2Stage1, data: 0.4, xdata: "1,2"
+    Name_9: ElderberryStage1, data: 0.4, xdata: "1,2"
+    Name_10: AlienPalmTreeStage1, data: 0.4, xdata: "1,2"
+    Name_11: AlienplantWormStage1, data: 0.4, xdata: "1,2"
+    Name_12: BulbShroomYoungStage1, data: 0.4, xdata: "1,2"
+  }
+}
+# Box Large 3 Freezer
+{ Container Id: 55
+  Count: "1,2"
+  Size: "8,8"
+  SfxOpen: UseActions/ContainerOpenClose
+  SfxClose: UseActions/ContainerOpenClose
+  { Child Items
+    Name_0: Vegetables, data: 0.3, xdata: "1,2"
+    Name_1: Meat, data: 0.3, xdata: "1,2"
+    Name_2: Spice, data: 0.3, xdata: "1,2"
+    Name_3: AlienThorn, data: 0.3, xdata: "1,2"
+    Name_4: Egg, data: 0.3, xdata: "1,2"
+    Name_5: NaturalStimulant, data: 0.3, xdata: "1,2"
+    Name_6: PlantProtein, data: 0.3, xdata: "1,2"
+    Name_7: Grain, data: 0.3, xdata: "1,2"
+    Name_8: Fruit, data: 0.3, xdata: "1,2"
+  }
+}
+# Box Large 1 and 2 Props6BoxLarge2 Props6BoxLarge1
+{ Container Id: 56
+  Count: "1,2"
+  Size: "8,8"
+  SfxOpen: UseActions/BarrelOpen
+  SfxClose: UseActions/BarrelClose
+  { Child Items
+    Name_0: NutrientSolution, data: 0.4, xdata: 1
+    Name_1: AlienParts01, data: 0.2, xdata: "1,2"
+    Name_2: AlienParts02, data: 0.2, xdata: "1,2"
+    Name_3: AlienParts03, data: 0.2, xdata: "1,2"
+    Name_4: AlienThorn, data: 0.2, xdata: "1,2"
+    Name_5: AlienTooth, data: 0.2, xdata: "1,2"
+    Name_6: PhoenixFernFonds, data: 0.2, xdata: "1,2"
+    Name_7: ConfettiMossScrapings, data: 0.3, xdata: "1,2"
+    Name_8: TrumpetGreens, data: 0.3, xdata: "1,2"
+    Name_9: FireMossScrapings, data: 0.3, xdata: "1,2"
+    Name_10: MushroomBrown, data: 0.3, xdata: "1,2"
+    Name_11: AlienSpikeLemon, data: 0.3, xdata: "1,2"
+    Name_12: HerbalLeaves, data: 0.3, xdata: "1,2"
+    Name_14: MushroomSpiky, data: 0.3, xdata: "1,2"
+    Name_15: Varonroot, data: 0.3, xdata: "1,2"
+    Name_16: Vegetables, data: 0.3, xdata: "1,2"
+    Name_17: Fiber, data: 0.3, xdata: "1,2"
+    Name_18: Spice, data: 0.3, xdata: "1,2"
+  }
+}
+# Repository 1 Level4Prop2
+{ Container Id: 57
+  Count: 1
+  Size: "8,8"
+  SfxOpen: UseActions/BarrelOpen
+  SfxClose: UseActions/BarrelClose
+  { Child Items
+    Name_0: Medikit02, data: 0.3, xdata: 1
+    Name_1: NutrientSolution, data: 0.2, xdata: 1
+    Name_2: EmergencyRations, data: 0.3, xdata: 1
+    Name_3: EnergyCell, data: 0.2, xdata: "1,2"
+    Name_4: EnergyCellLarge, data: 0.2, xdata: "1,2"
+    Name_5: BioFuel, data: 0.2, xdata: 1
+    Name_6: ShotgunShells, data: 0.3, xdata: "5,10"
+    Name_7: 5.8mmBullet, data: 0.3, xdata: "8,10"
+    Name_8: 12.7mmBullet, data: 0.2, xdata: "2,4"
+    Name_9: 8.3mmBullet, data: 0.2, xdata: "10,15"
+    Name_10: DrillCharge, data: 0.2, xdata: 1
+    Name_11: NightVision, data: 0.05, xdata: 1
+    Name_12: InsulationBoost, param: 0.01, xdata: 1
+    Name_13: MobilityBoost, param: 0.01, xdata: 1
+    Name_14: ArmorBoost, param: 0.01, xdata: 1
+    Name_15: JetpackBoost, param: 0.01, xdata: 1
+    Name_16: MultiBoost, param: 0.01, xdata: 1
+    Name_17: OxygenBoost, param: 0.01, xdata: 1
+    Name_18: RadiationBoost, param: 0.01, xdata: 1
+    Name_19: EVABoost, param: 0.0025, xdata: 1
+    Group_0: WeaponsBasicKit, data: 0.02
+  }
+}
+# Repository 2 Level4Prop3
+{ Container Id: 58
+  Count: 1
+  Size: "8,8"
+  SfxOpen: UseActions/BarrelOpen
+  SfxClose: UseActions/BarrelClose
+  { Child Items
+    Name_0: Medikit02, data: 0.3, xdata: 1
+    Name_1: NutrientSolution, data: 0.2, xdata: 1
+    Name_2: EmergencyRations, data: 0.3, xdata: 1
+    Name_3: EnergyCell, data: 0.2, xdata: "1,2"
+    Name_4: EnergyCellLarge, data: 0.2, xdata: "1,2"
+    Name_5: BioFuel, data: 0.2, xdata: 1
+    Name_6: ShotgunShells, data: 0.3, xdata: "5,10"
+    Name_7: 5.8mmBullet, data: 0.3, xdata: "8,10"
+    Name_8: 12.7mmBullet, data: 0.2, xdata: "2,4"
+    Name_9: 8.3mmBullet, data: 0.2, xdata: "10,15"
+    Name_10: DrillCharge, data: 0.2, xdata: 1
+    Name_11: NightVision, data: 0.05, xdata: 1
+    Name_12: InsulationBoost, param: 0.01, xdata: 1
+    Name_13: MobilityBoost, param: 0.01, xdata: 1
+    Name_14: ArmorBoost, param: 0.01, xdata: 1
+    Name_15: JetpackBoost, param: 0.01, xdata: 1
+    Name_16: MultiBoost, param: 0.01, xdata: 1
+    Name_17: OxygenBoost, param: 0.01, xdata: 1
+    Name_18: RadiationBoost, param: 0.01, xdata: 1
+    Name_19: EVABoost, param: 0.0025, xdata: 1
+    Group_0: WeaponsBasicKit, data: 0.02
+  }
+}
+# Cryo Chamber Level5FreezerOpened
+{ Container Id: 59
+  Count: 1
+  Size: "8,8"
+  SfxOpen: UseActions/ContainerOpenClose
+  SfxClose: UseActions/ContainerOpenClose
+  { Child Items
+    Name_0: Medikit02, data: 0.09, xdata: 1
+    Name_1: StomachPills, data: 0.3, xdata: 1
+    Name_2: EmergencyRations, data: 0.3, xdata: 1
+    Name_3: AdrenalineShot, data: 0.3, xdata: "1,2"
+  }
+}
+# Tank1 Tank2
+{ Container Id: 60
+  Count: 1
+  Size: "8,8"
+  SfxOpen: UseActions/ContainerOpenClose
+  SfxClose: UseActions/ContainerOpenClose
+  { Child Items
+    Name_0: WaterJug, data: 0.2, xdata: "1,2"
+    Name_1: WaterBottle, data: 0.4, xdata: "2,4"
+    Name_2: NutrientSolution, data: 0.3, xdata: "2,3"
+    Name_3: RespiratorCharge, data: 0.4, xdata: "2,4"
+    Name_4: OxygenBottleLarge, data: 0.3, xdata: "2,3"
+    Name_5: HydrogenBottle, data: 0.4, xdata: "2,4"
+    Name_6: BioFuel, data: 0.2, xdata: "1,2"
+  }
+}
+# Power Storage ScifiContainerEnergy
+{ Container Id: 61
+  Count: 1
+  Size: "8,8"
+  SfxOpen: UseActions/ContainerOpenClose
+  SfxClose: UseActions/ContainerOpenClose
+  { Child Items
+    Name_0: EnergyCell, data: 0.5, xdata: "3,5"
+    Name_1: EnergyCellLarge, data: 0.3, xdata: "2,3"
+    Name_2: FusionCell, data: 0.01, xdata: 1
+    Name_3: PentaxidCrystal, data: 0.02, xdata: "1,2"
+  }
+}
+# Bathroom Vanity BathroomCounter
+{ Container Id: 62
+  Count: "1,2"
+  Size: "8,8"
+  SfxOpen: UseActions/BarrelOpen
+  SfxClose: UseActions/BarrelClose
+  { Child Items
+    Name_0: Medikit03, data: 0.09, xdata: 1
+    Name_1: Bandages, data: 0.3, xdata: "3,4"
+    Name_2: StomachPills, data: 0.3, xdata: 1
+    Name_3: AntibioticInjection, data: 0.05, xdata: 1
+    Name_4: AntibioticPills, data: 0.3, xdata: 1
+  }
+}
+# Kitchen Counter KitchenCounter
+{ Container Id: 63
+  Count: "1,2"
+  Size: "8,8"
+  SfxOpen: UseActions/BarrelOpen
+  SfxClose: UseActions/BarrelClose
+  { Child Items
+    Name_1: Medikit02, data: 0.09, xdata: "1,2"
+    Name_2: Bandages, data: 0.2, xdata: "3,4"
+    Name_3: StomachPills, data: 0.2, xdata: 1
+    Name_4: AdrenalineShot, data: 0.2, xdata: 1
+    Name_5: EnergyPills, data: 0.2, xdata: 1
+    Name_6: Milk, data: 0.2, xdata: 1
+    Name_7: CannedVegetables, data: 0.1, xdata: 1
+    Name_8: CannedMeat, data: 0.1, xdata: 1
+  }
+}
+# Closet ScifiStorage
+{ Container Id: 64
+  Count: 1
+  Size: "8,8"
+  SfxOpen: UseActions/BarrelOpen
+  SfxClose: UseActions/BarrelClose
+  { Child Items
+    Name_0: LaserRifle, data: 0.3, xdata: 1
+    Name_1: Minigun, data: 0.3, xdata: 1
+    Name_2: PulseRifle, data: 0.3, xdata: 1
+    Name_3: Sniper2, data: 0.3, xdata: 1
+    Name_4: Shotgun2, data: 0.3, xdata: 1
+    Name_5: DrillT2, data: 0.3, xdata: 1
+    Name_6: MultiToolT2, data: 0.3, xdata: 1
+    Name_7: EmergencyRations, data: 0.5, xdata: "1,2"
+    Name_8: Medikit02, data: 0.5, xdata: 1
+    Name_9: NightVision, param: 0.1, xdata: 1
+    Name_10: ArmorMedium, param: 0.01, xdata: 1
+    Name_11: ArmorHeavy, param: 0.05, xdata: 1
+    Name_12: ArmorBoost, param: 0.01, xdata: 1
+    Name_13: JetpackBoost, param: 0.01, xdata: 1
+    Name_14: MultiBoost, param: 0.01, xdata: 1
+    Name_15: OxygenBoost, param: 0.01, xdata: 1
+    Name_16: InsulationBoost, param: 0.01, xdata: 1
+    Name_17: MobilityBoost, param: 0.01, xdata: 1
+    Name_18: RadiationBoost, param: 0.01, xdata: 1
+    Name_19: EVABoost, param: 0.0025, xdata: 1
+    Name_20: PulseRifleT2, param: 0.015, xdata: 1
+    Group_0: WeaponsRareKit, data: 0.02
+  }
+}
+# Nightstand ScifiNightstand
+{ Container Id: 65
+  Count: 1
+  Size: "8,8"
+  SfxOpen: UseActions/ContainerOpenClose
+  SfxClose: UseActions/ContainerOpenClose
+  { Child Items
+    Name_0: PistolT2, data: 0.3, xdata: 1
+    Name_1: LaserPistol, data: 0.3, xdata: 1
+    Name_2: EmergencyRations, data: 0.4, xdata: 1
+    Name_3: GoldCoins, data: 0.2, xdata: 1
+    Name_4: ArmorBoost, param: 0.01, xdata: 1
+    Name_5: JetpackBoost, param: 0.01, xdata: 1
+    Name_6: MultiBoost, param: 0.01, xdata: 1
+    Name_7: OxygenBoost, param: 0.01, xdata: 1
+    Name_8: InsulationBoost, param: 0.01, xdata: 1
+    Name_9: MobilityBoost, param: 0.01, xdata: 1
+    Name_10: RadiationBoost, param: 0.01, xdata: 1
+    Name_11: EVABoost, param: 0.0025, xdata: 1
+    Name_12: NightVision, param: 0.1, xdata: 1
+    Group_0: WeaponsBasicKit, data: 0.02
+  }
+}
+# Cargo Box ContainerMS01
+{ Container Id: 66
+  Count: "1,2"
+  Size: "8,8"
+  SfxOpen: UseActions/ContainerOpen
+  SfxClose: UseActions/ContainerClose
+  { Child Items
+    Name_0: IronIngot, data: 0.5, xdata: "1,3"
+    Name_1: CobaltIngot, data: 0.5, xdata: "1,3"
+    Name_2: CopperIngot, data: 0.5, xdata: "1,3"
+    Name_3: SiliconIngot, data: 0.5, xdata: "1,3"
+    Name_4: NeodymiumIngot, data: 0.2, xdata: "1,2"
+    Name_5: MagnesiumPowder, data: 0.5, xdata: "1,3"
+    Name_6: PromethiumPellets, data: 0.2, xdata: "1,2"
+    Name_7: SathiumIngot, data: 0.2, xdata: "1,2"
+    Name_8: PlasticMaterial, data: 0.5, xdata: "1,3"
+    Name_9: ErestrumIngot, data: 0.2, xdata: "1,2"
+    Name_10: ZascosiumIngot, data: 0.1, xdata: 1
+    Name_11: GoldIngot, data: 0.1, xdata: 1
+    Name_12: PentaxidCrystal, data: 0.1, xdata: 1
+    Name_13: BioFuel, data: 0.3, xdata: 1
+    Name_14: MultiCharge, data: 0.3, xdata: 1
+    Name_15: DrillCharge, data: 0.3, xdata: 1
+    Name_16: Cement, data: 0.5, xdata: "2,5"
+    Name_17: WoodPlanks, data: 0.5, xdata: "2,5"
+    Name_18: RockDust, data: 0.5, xdata: "2,5"
+  }
+}
+# Cargo Box 1 ScifiContainer2
+{ Container Id: 67
+  Count: "1,2"
+  Size: "8,8"
+  SfxOpen: UseActions/ContainerOpen
+  SfxClose: UseActions/ContainerClose
+  { Child Items
+    Name_0: SteelPlate, data: 0.5, xdata: "5,7"
+    Name_1: Electronics, data: 0.5, xdata: "4,5"
+    Name_2: OpticalFiber, data: 0.5, xdata: "4,5"
+    Name_3: EnergyMatrix, data: 0.4, xdata: "4,5"
+    Name_4: GlassPlate, data: 0.4, xdata: "4,5"
+    Name_5: MechanicalComponents, data: 0.4, xdata: "4,5"
+    Name_6: Motor, data: 0.4, xdata: "2,3"
+    Name_7: Nanotubes, data: 0.4, xdata: "4,5"
+    Name_8: Computer, data: 0.3, xdata: "2,3"
+    Name_9: CapacitorComponent, data: 0.3, xdata: "2,3"
+    Name_10: SteelPlateArmored, data: 0.5, xdata: "5,7"
+    Name_11: CobaltAlloy, data: 0.1, xdata: "1,2"
+    Name_12: Oscillator, data: 0.1, xdata: 1
+    Name_13: FluxCoil, data: 0.1, xdata: 1
+    Name_14: PowerCoil, data: 0.1, xdata: 1
+    Name_15: MultiTool, data: 0.3, xdata: 1
+    Name_16: MultiCharge, data: 0.3, xdata: 1
+    Group_0: WeaponsBasicKit, data: 0.02
+    Group_1: WeaponsRareKit, data: 0.01
+  }
+}
+# Cargo Box 2 und 3 ScifiContainer1 ScifiContainerPower
+{ Container Id: 68
+  Count: "2,3"
+  Size: "8,8"
+  SfxOpen: UseActions/ContainerOpen
+  SfxClose: UseActions/ContainerClose
+  { Child Items
+    Name_0: IronOre, data: 0.5, xdata: "3,5"
+    Name_1: CobaltOre, data: 0.5, xdata: "3,5"
+    Name_2: CopperOre, data: 0.5, xdata: "3,5"
+    Name_3: SiliconOre, data: 0.5, xdata: "3,5"
+    Name_4: NeodymiumOre, data: 0.2, xdata: "1,3"
+    Name_5: MagnesiumOre, data: 0.5, xdata: "3,5"
+    Name_6: PromethiumOre, data: 0.2, xdata: "2,3"
+    Name_7: ErestrumOre, data: 0.1, xdata: "1,2"
+    Name_8: ZascosiumOre, data: 0.1, xdata: "1,2"
+    Name_9: PentaxidOre, data: 0.1, xdata: "1,3"
+    Name_10: SathiumOre, data: 0.2, xdata: "1,3"
+    Name_11: GoldOre, data: 0.1, xdata: 1
+    Name_12: BioFuel, data: 0.3, xdata: 1
+    Name_13: MultiCharge, data: 0.3, xdata: 1
+    Name_14: DrillCharge, data: 0.3, xdata: 1
+    Name_15: Cement, data: 0.5, xdata: "2,5"
+    Name_16: WoodPlanks, data: 0.5, xdata: "2,5"
+    Name_17: RockDust, data: 0.5, xdata: "2,5"
+    Name_18: MultiTool, data: 0.3, xdata: 1
+    Name_19: MultiCharge, data: 0.3, xdata: 1
+  }
+}
+# Ammo Box Small ContainerAmmoSmall
+{ Container Id: 69
+  Count: "1,2"
+  Size: "8,8"
+  SfxOpen: UseActions/ContainerOpen
+  SfxClose: UseActions/ContainerClose
+  { Child Items
+    Name_0: ShotgunShells, data: 0.5, xdata: "5,8"
+    Name_1: 50Caliber, data: 0.5, xdata: "5,10"
+    Name_2: 8.3mmBullet, data: 0.5, xdata: "20,25"
+    Name_3: 5.8mmBullet, data: 0.5, xdata: "5,10"
+    Name_4: 12.7mmBullet, data: 0.5, xdata: "1,3"
+    Name_5: BioFuel, data: 0.5, xdata: 1
+    Name_6: DrillCharge, data: 0.5, xdata: 1
+    Name_7: MultiCharge, data: 0.5, xdata: 1
+    Name_8: PulseLaserChargePistol, data: 0.5, xdata: "5,8"
+    Name_9: PulseLaserChargeRifle, data: 0.1, xdata: "5,10"
+    Name_10: SlowRocket, data: 0.2, xdata: "1,2"
+    Name_11: SlowRocketHoming, data: 0.1, xdata: "1,2"
+    Name_12: SciFiCannonPlasmaCharge, data: 0.05, xdata: "1,2"
+    Name_13: Explosives, data: 0.5, xdata: 1
+  }
+}
+# Ammo Box Large ContainerAmmoLarge
+{ Container Id: 70
+  Count: "1,2"
+  Size: "8,8"
+  SfxOpen: UseActions/ContainerOpen
+  SfxClose: UseActions/ContainerClose
+  { Child Items
+    Name_0: 30mmBullet, data: 0.5, xdata: "100,200"
+    Name_1: 15mmBullet, data: 0.5, xdata: "200,300"
+    Name_2: FastRocketHoming, data: 0.2, xdata: "3,4"
+    Name_3: FastRocketMS, data: 0.2, xdata: "3,5"
+    Name_4: FastRocketBA, data: 0.2, xdata: "3,5"
+    Name_5: LargeRocket, data: 0.1, xdata: "2,3"
+    Name_6: LargeRocketMS, data: 0.1, xdata: "2,3"
+    Name_7: PlasmaCannonChargeSS, data: 0.05, xdata: "20,30"
+    Name_8: TurretMSPlasmaCharge, data: 0.05, xdata: "5,8"
+    Name_9: TurretBAPlasmaCharge, data: 0.05, xdata: "5,8"
+    Name_10: TurretGVPlasmaCharge, data: 0.05, xdata: "20,30"
+    Name_11: PulseLaserChargeSS, data: 0.1, xdata: "75,100"
+    Name_12: PulseLaserChargeMS, data: 0.1, xdata: "75,100"
+    Name_13: PulseLaserChargeBA, data: 0.1, xdata: "75,100"
+    Name_14: RailgunBullet, data: 0.1, xdata: "5,8"
+  }
+}
+# Fridge T1 FridgeMS
+{ Container Id: 71
+  Count: 1
+  Size: "8,8"
+  SfxOpen: UseActions/ContainerOpenClose
+  SfxClose: UseActions/ContainerOpenClose
+  { Child Items
+    Name_0: Stew, data: 0.2, xdata: 1
+    Name_1: Milk, data: 0.5, xdata: 1
+    Name_4: Salami, data: 0.4, xdata: 1
+    Name_5: Steak, data: 0.4, xdata: 1
+    Name_8: VeggieBurger, data: 0.3, xdata: 1
+    Name_9: Cheese, data: 0.4, xdata: 1
+    Name_10: FriedVegetables, data: 0.4, xdata: 1
+    Name_11: MeatBurger, data: 0.3, xdata: 1
+    Name_12: Ham, data: 0.4, xdata: 1
+    Name_13: Pizza, data: 0.2, xdata: 1
+    Name_14: Sandwich, data: 0.2, xdata: 1
+    Name_15: Ratatouille, data: 0.3, xdata: 1
+    Name_16: Waffles, data: 0.4, xdata: 1
+    Name_18: PowerBar, data: 0.4, xdata: 1
+    Name_20: Cereals, data: 0.5, xdata: 1
+    Name_21: FruitPie, data: 0.4, xdata: 1
+  }
+}
+# Fridge T2 FridgeMS02
+{ Container Id: 72
+  Count: "1,2"
+  Size: "8,8"
+  SfxOpen: UseActions/ContainerOpenClose
+  SfxClose: UseActions/ContainerOpenClose
+  { Child Items
+    Name_0: Stew, data: 0.2, xdata: 1
+    Name_1: Milk, data: 0.5, xdata: 1
+    Name_4: Salami, data: 0.4, xdata: 1
+    Name_5: Steak, data: 0.4, xdata: 1
+    Name_8: VeggieBurger, data: 0.3, xdata: 1
+    Name_9: Cheese, data: 0.4, xdata: 1
+    Name_10: FriedVegetables, data: 0.4, xdata: 1
+    Name_11: MeatBurger, data: 0.3, xdata: 1
+    Name_12: Ham, data: 0.4, xdata: 1
+    Name_13: Pizza, data: 0.2, xdata: 1
+    Name_14: Sandwich, data: 0.2, xdata: 1
+    Name_15: Ratatouille, data: 0.3, xdata: 1
+    Name_16: Waffles, data: 0.4, xdata: 1
+    Name_18: PowerBar, data: 0.4, xdata: 1
+    Name_20: Cereals, data: 0.5, xdata: 1
+    Name_21: FruitPie, data: 0.4, xdata: 1
+  }
+}
+# Trader NPC
+{ Container Id: 73
+  Count: 1
+  Size: "8,1"
+  SfxOpen: UseActions/ZIPPERShort3(mono)
+  SfxClose: UseActions/ZIPPERShort3(mono)
+  { Child Items
+    Name_0: MoneyCard, data: 0.5, xdata: "100,200"
+    Name_1: PentaxidOre, data: 0.1, xdata: "1,2"
+    Name_2: GoldCoins, data: 0.2, xdata: "1,2"
+    Name_3: PulseLaserChargePistol, data: 0.7, xdata: "10,20"
+  }
+}
+# Assault Cyborg
+{ Container Id: 74
+  Count: "1,2"
+  Size: "8,1"
+  SfxOpen: UseActions/drone_open
+  SfxClose: UseActions/drone_close
+  { Child Items
+    Name_0: PulseLaserChargeRifle, data: 0.9, xdata: "50,75"
+    Name_1: MoneyCard, data: 0.3, xdata: "5,10"
+    Group_0: ComponentsBasic, data: 0.6
+    Group_1: ComponentsRare, data: 0.1
+  }
+}
+# Civilian
+{ Container Id: 75
+  Count: 1
+  Size: "8,1"
+  SfxOpen: UseActions/ZIPPERShort3(mono)
+  SfxClose: UseActions/ZIPPERShort3(mono)
+  { Child Items
+    Name_0: MoneyCard, data: 0.5, xdata: "5,10"
+    Name_1: PulseLaserChargePistol, data: 0.7, xdata: "5,10"
+  }
+}
+# ContainerController and large containers
+{ Container Id: 76
+  Count: "1,2"
+  Size: "8,16"
+  SfxOpen: UseActions/ContainerOpen
+  SfxClose: UseActions/ContainerClose
+  { Child Items
+    Name_0: SteelPlate, data: 0.5, xdata: "5,7"
+    Name_1: Electronics, data: 0.5, xdata: "4,5"
+    Name_2: OpticalFiber, data: 0.5, xdata: "4,5"
+    Name_3: EnergyMatrix, data: 0.4, xdata: "4,5"
+    Name_4: GlassPlate, data: 0.4, xdata: "4,5"
+    Name_5: MechanicalComponents, data: 0.4, xdata: "4,5"
+    Name_6: Motor, data: 0.4, xdata: "2,3"
+    Name_7: Nanotubes, data: 0.4, xdata: "4,5"
+    Name_8: Computer, data: 0.3, xdata: "2,3"
+    Name_9: CapacitorComponent, data: 0.3, xdata: "2,3"
+    Name_10: SteelPlateArmored, data: 0.5, xdata: "5,7"
+    Name_11: CobaltAlloy, data: 0.1, xdata: "1,2"
+    Name_12: Oscillator, data: 0.1, xdata: 1
+    Name_13: FluxCoil, data: 0.1, xdata: 1
+    Name_14: PowerCoil, data: 0.1, xdata: 1
+    Name_15: MultiTool, data: 0.3, xdata: 1
+    Name_16: MultiCharge, data: 0.3, xdata: 1
+    Group_0: WeaponsBasicKit, data: 0.02
+    Group_1: WeaponsRareKit, data: 0.01
+  }
+}
+# Zirax Male Minigun + Sniper
+{ Container Id: 100
+  Count: "2,3"
+  Size: "8,1"
+  SfxOpen: UseActions/ZIPPERShort3(mono)
+  SfxClose: UseActions/ZIPPERShort3(mono)
+  { Child Items
+    Name_0: 5.8mmBullet, data: 0.9, xdata: "150,250"
+    Name_1: HeavyWeaponKit, data: 0.08, xdata: 1
+    Name_2: MoneyCard, data: 0.2, xdata: "50,100"
+    Group_0: MedicalItems, data: 0.4
+    Group_1: TroopersFood, data: 0.6
+  }
+}
+# Zirax Male Laser
+{ Container Id: 101
+  Count: "2,3"
+  Size: "8,1"
+  SfxOpen: UseActions/ZIPPERShort3(mono)
+  SfxClose: UseActions/ZIPPERShort3(mono)
+  { Child Items
+    Name_0: PulseLaserChargeRifle, data: 0.9, xdata: "12,25"
+    Name_1: LaserKit, data: 0.08, xdata: 1
+    Name_2: MoneyCard, data: 0.2, xdata: "50,100"
+    Group_0: MedicalItems, data: 0.4
+    Group_1: TroopersFood, data: 0.6
+  }
+}
+# Zirax Male Shotgun
+{ Container Id: 102
+  Count: "2,3"
+  Size: "8,1"
+  SfxOpen: UseActions/ZIPPERShort3(mono)
+  SfxClose: UseActions/ZIPPERShort3(mono)
+  { Child Items
+    Name_0: ShotgunShells, data: 0.9, xdata: "4,8"
+    Name_1: ShotgunKit, data: 0.08, xdata: 1
+    Name_2: MoneyCard, data: 0.2, xdata: "50,100"
+    Group_0: MedicalItems, data: 0.4
+    Group_1: TroopersFood, data: 0.6
+  }
+}
+# Zirax Male Rocket
+{ Container Id: 103
+  Count: "2,3"
+  Size: "8,1"
+  SfxOpen: UseActions/ZIPPERShort3(mono)
+  SfxClose: UseActions/ZIPPERShort3(mono)
+  { Child Items
+    Name_0: SlowRocket, data: 0.9, xdata: "1,3"
+    Name_1: HeavyWeaponKit, data: 0.08, xdata: 1
+    Name_2: MoneyCard, data: 0.2, xdata: "50,100"
+    Group_0: MedicalItems, data: 0.4
+    Group_1: TroopersFood, data: 0.6
+  }
+}
+# DroneSmallFast01Minigun and DroneSmallAttackBase DroneSmallFast01Minigun and DroneSmallAttackBase
+{ Container Id: 150
+  Count: "2,3"
+  Size: "8,1"
+  SfxOpen: UseActions/drone_open
+  SfxClose: UseActions/drone_close
+  { Child Items
+    Name_0: 8.3mmBullet, data: 0.9, xdata: "125,250"
+    Name_1: EnergyCell, data: 0.8, xdata: "2,3"
+    Group_0: ComponentsBasic, data: 0.6
+    Group_1: ComponentsRare, data: 0.4
+  }
+}
+# DroneSmallFast01Rocket
+{ Container Id: 151
+  Count: "2,3"
+  Size: "8,1"
+  SfxOpen: UseActions/drone_open
+  SfxClose: UseActions/drone_close
+  { Child Items
+    Name_0: SlowRocket, data: 0.9, xdata: "2,4"
+    Name_1: EnergyCell, data: 0.8, xdata: "2,3"
+    Group_0: ComponentsBasic, data: 0.6
+    Group_1: ComponentsRare, data: 0.4
+  }
+}
+# DroneSmallSlow01Cannon
+{ Container Id: 152
+  Count: "2,3"
+  Size: "8,1"
+  SfxOpen: UseActions/drone_open
+  SfxClose: UseActions/drone_close
+  { Child Items
+    Name_0: 12.7mmBullet, data: 0.9, xdata: "4,6"
+    Name_1: EnergyCell, data: 0.8, xdata: "2,3"
+    Group_0: ComponentsBasic, data: 0.6
+    Group_1: ComponentsRare, data: 0.4
+  }
+}
+# DroneSmallFast01Plasma
+{ Container Id: 153
+  Count: "2,3"
+  Size: "8,1"
+  SfxOpen: UseActions/drone_open
+  SfxClose: UseActions/drone_close
+  { Child Items
+    Name_0: SciFiCannonPlasmaCharge, data: 0.9, xdata: "4,7"
+    Name_1: EnergyCell, data: 0.8, xdata: "2,3"
+    Group_0: ComponentsBasic, data: 0.6
+    Group_1: ComponentsRare, data: 0.4
+  }
+}
+# DroneSmallSlow01Minigun and DroneSmallSlow02Minigun
+{ Container Id: 154
+  Count: "2,3"
+  Size: "8,1"
+  SfxOpen: UseActions/drone_open
+  SfxClose: UseActions/drone_close
+  { Child Items
+    Name_0: 8.3mmBullet, data: 0.9, xdata: "100,200"
+    Name_1: EnergyCell, data: 0.8, xdata: "2,3"
+    Group_0: ComponentsBasic, data: 0.6
+    Group_1: ComponentsRare, data: 0.5
+  }
+}
+# DroneLargeSlow01Plasma
+{ Container Id: 155
+  Count: "2,3"
+  Size: "8,1"
+  SfxOpen: UseActions/drone_open
+  SfxClose: UseActions/drone_close
+  { Child Items
+    Name_0: PlasmaCannonChargeSS, data: 0.9, xdata: "25,50"
+    Name_1: EnergyCellLarge, data: 0.8, xdata: "2,3"
+    Group_0: ComponentsBasic, data: 0.4
+    Group_1: ComponentsRare, data: 0.6
+  }
+}
+# DroneLargeSlow02Minigun and DroneLargeSlow01Minigun
+{ Container Id: 156
+  Count: "2,3"
+  Size: "8,1"
+  SfxOpen: UseActions/drone_open
+  SfxClose: UseActions/drone_close
+  { Child Items
+    Name_0: 15mmBullet, data: 0.9, xdata: "150,300"
+    Name_1: EnergyCellLarge, data: 0.8, xdata: "3,4"
+    Group_0: ComponentsBasic, data: 0.4
+    Group_1: ComponentsRare, data: 0.6
+  }
+}
+# DroneLargeSlow02Cannon
+{ Container Id: 157
+  Count: "2,3"
+  Size: "8,1"
+  SfxOpen: UseActions/drone_open
+  SfxClose: UseActions/drone_close
+  { Child Items
+    Name_0: RailgunBullet, data: 0.9, xdata: "10,20"
+    Name_1: EnergyCellLarge, data: 0.8, xdata: "3,4"
+    Group_0: ComponentsBasic, data: 0.4
+    Group_1: ComponentsRare, data: 0.6
+  }
+}
+# EnemyDroneV2Minigun
+{ Container Id: 158
+  Count: "2,3"
+  Size: "8,1"
+  SfxOpen: UseActions/drone_open
+  SfxClose: UseActions/drone_close
+  { Child Items
+    Name_0: 15mmBullet, data: 0.9, xdata: "300,600"
+    Name_1: FusionCell, data: 0.8, xdata: "2,3"
+    Name_2: WeaponSV02, data: 0.05, xdata: 1
+    Group_1: ComponentsRare, data: 0.6
+  }
+}
+# EnemyDroneV2Plasma
+{ Container Id: 159
+  Count: "2,3"
+  Size: "8,1"
+  SfxOpen: UseActions/drone_open
+  SfxClose: UseActions/drone_close
+  { Child Items
+    Name_0: PlasmaCannonChargeSS, data: 0.9, xdata: "50,100"
+    Name_1: FusionCell, data: 0.8, xdata: "2,3"
+    Name_2: WeaponSV04, data: 0.05, xdata: 1
+    Group_1: ComponentsRare, data: 0.6
+  }
+}
+# DroneLargeAttackBase
+{ Container Id: 160
+  Count: "2,3"
+  Size: "8,1"
+  SfxOpen: UseActions/drone_open
+  SfxClose: UseActions/drone_close
+  { Child Items
+    Name_0: FastRocket, data: 0.9, xdata: "15,30"
+    Name_1: FusionCell, data: 0.8, xdata: "2,3"
+    Name_2: WeaponSV05, data: 0.05, xdata: 1
+    Group_1: ComponentsRare, data: 0.6
+  }
+}
+# DroneLargeSlowGardian
+{ Container Id: 161
+  Count: "2,3"
+  Size: "8,1"
+  SfxOpen: UseActions/drone_open
+  SfxClose: UseActions/drone_close
+  { Child Items
+    Name_0: 15mmBullet, data: 0.9, xdata: "600,1000"
+    Name_1: FusionCell, data: 0.8, xdata: "3,4"
+    Name_2: WeaponSV02, data: 0.05, xdata: 1
+    Group_1: ComponentsRare, data: 0.8
+  }
+}
+
+
+# ==================== LOOT GROUPS ==============================
+
+
+# Line format: Item_x: name , data: count[-range], xdata: probability (x incrementing, if using a count-range use double quotes)
+{ LootGroup Name: empty
+}
+# New Escape Pod settings: Difficulty Levels
+{ LootGroup Name: EscapePodEasy
+  Count: all
+  Item_0: WaterBottle, data: 2
+}
+{ LootGroup Name: EscapePodMedium
+  Count: all
+  Item_0: WaterBottle, data: 1
+}
+{ LootGroup Name: EscapePodHard
+  Count: all
+  Item_0: WaterBottle, data: 1
+}
+# Escape pod - New Start
+{ LootGroup Name: StartingEquipment_NewStart
+}
+# Random Loot
+{ LootGroup Name: BasicComponents
+  Count: "1,2"
+  Item_0: SteelPlate, data: "1,5", xdata: 0.3
+  Item_1: GlassPlate, data: "1,2", xdata: 0.3
+  Item_2: Electronics, data: "1,2", xdata: 0.2
+  Item_3: OpticalFiber, data: "1,2", xdata: 0.3
+  Item_4: EnergyMatrix, data: "1,2", xdata: 0.3
+}
+{ LootGroup Name: CompositeComponents
+  Count: "1,2"
+  Item_0: MechanicalComponents, data: "1,5", xdata: 0.4
+  Item_1: Motor, data: "1,2", xdata: 0.2
+  Item_2: Nanotubes, data: "1,5", xdata: 0.2
+  Item_3: Computer, data: "1,2", xdata: 0.1
+  Item_4: CapacitorComponent, data: "1,2", xdata: 0.01
+  Item_5: CobaltAlloy, data: 1, xdata: 0.01
+}
+{ LootGroup Name: AdvancedComponents
+  Count: 1
+  Item_0: FluxCoil, data: "1,3", xdata: 0.2
+  Item_1: Oscillator, data: "1,2", xdata: 0.2
+}
+{ LootGroup Name: Ores
+  Count: "1,2"
+  Item_0: IronOre, data: "10,20", xdata: 0.4
+  Item_1: CobaltOre, data: "10,20", xdata: 0.4
+  Item_2: CopperOre, data: "10,15", xdata: 0.3
+  Item_3: SiliconOre, data: "10,15", xdata: 0.3
+  Item_4: NeodymiumOre, data: "10,15", xdata: 0.2
+  Item_5: MagnesiumOre, data: "10,15", xdata: 0.1
+  Item_6: PromethiumOre, data: "10,15", xdata: 0.1
+}
+{ LootGroup Name: Ingots
+  Count: "1,2"
+  Item_0: IronIngot, data: "10,20", xdata: 0.5
+  Item_1: CobaltIngot, data: "10,20", xdata: 0.4
+  Item_2: CopperIngot, data: "10,15", xdata: 0.3
+  Item_3: SiliconIngot, data: "10,15", xdata: 0.2
+  Item_4: NeodymiumIngot, data: "10,15", xdata: 0.1
+  Item_5: MagnesiumPowder, data: "10,15", xdata: 0.1
+  Item_6: PromethiumPellets, data: "10,20", xdata: 0.2
+  Item_7: PlasticMaterial, data: "10,20", xdata: 0.3
+}
+{ LootGroup Name: Sprouts
+  Count: "1,2"
+  Item_0: DurianRoot, data: 1, xdata: 0.2
+  Item_1: TomatoStage1, data: 1, xdata: 0.2
+  Item_2: WheatStage1, data: 1, xdata: 0.2
+  Item_3: CornStage1, data: 1, xdata: 0.2
+  Item_4: PumpkinStage1, data: 1, xdata: 0.2
+  Item_5: PearthingStage1, data: 1, xdata: 0.2
+  Item_6: InsanityPepperStage1, data: 1, xdata: 0.2
+  Item_7: DesertPlant20Stage1, data: 1, xdata: 0.2
+}
+# NEW LOOT GROUPS
+# Common
+{ LootGroup Name: OresBasic
+  Count: "1,2"
+  Item_0: IronOre, data: "5,20", xdata: 0.8
+  Item_1: CopperOre, data: "5,20", xdata: 0.8
+  Item_2: SiliconOre, data: "5,15", xdata: 0.6
+  Item_3: PromethiumOre, data: "5,12", xdata: 0.4
+}
+{ LootGroup Name: OresAdvanced
+  Count: "1,2"
+  Item_0: CobaltOre, data: "5,10", xdata: 0.6
+  Item_1: NeodymiumOre, data: "5,10", xdata: 0.6
+  Item_2: MagnesiumOre, data: "5,8", xdata: 0.4
+  Item_3: SathiumOre, data: "5,8", xdata: 0.4
+}
+{ LootGroup Name: OresRare
+  Count: 1
+  Item_0: ErestrumOre, data: "3,5", xdata: 0.4
+  Item_1: ZascosiumOre, data: "3,5", xdata: 0.2
+}
+{ LootGroup Name: IngotsBasic
+  Count: "1,2"
+  Item_0: IronIngot, data: "5,20", xdata: 0.4
+  Item_1: CobaltIngot, data: "5,20", xdata: 0.4
+  Item_2: CopperIngot, data: "5,15", xdata: 0.3
+  Item_3: SiliconIngot, data: "5,15", xdata: 0.3
+  Item_4: NeodymiumIngot, data: "5,15", xdata: 0.3
+}
+{ LootGroup Name: ComponentsBasic
+  Count: "1,2"
+  Item_0: SteelPlate, data: "5,15", xdata: 0.3
+  Item_1: Electronics, data: "2,5", xdata: 0.2
+  Item_2: OpticalFiber, data: "2,5", xdata: 0.3
+  Item_3: EnergyMatrix, data: "2,5", xdata: 0.3
+  Item_4: GlassPlate, data: "5,10", xdata: 0.3
+  Item_5: MechanicalComponents, data: "5,10", xdata: 0.4
+  Item_6: Motor, data: "2,5", xdata: 0.2
+  Item_7: Nanotubes, data: "5,10", xdata: 0.2
+  Item_8: Computer, data: "1,2", xdata: 0.1
+}
+{ LootGroup Name: CraftingMaterial
+  Count: "1,2"
+  Item_0: Cement, data: "5,10", xdata: 0.3
+  Item_1: WoodPlanks, data: "5,10", xdata: 0.3
+  Item_2: PlasticMaterial, data: "5,10", xdata: 0.2
+  Item_3: XenoSubstrate, data: "5,10", xdata: 0.3
+  Item_4: WaterBottle, data: "5,10", xdata: 0.3
+  Item_5: RockDust, data: "5,10", xdata: 0.3
+  Item_6: PromethiumPellets, data: "30,100", xdata: 0.3
+  Item_7: HydrogenBottle, data: "1,5", xdata: 0.3
+  Item_8: MagnesiumPowder, data: "5,10", xdata: 0.3
+}
+{ LootGroup Name: EnergyItems
+  Count: "1,2"
+  Item_0: RespiratorCharge, data: "2,5", xdata: 0.3
+  Item_1: OxygenBottleLarge, data: "2,5", xdata: 0.3
+  Item_2: WaterJug, data: "1,3", xdata: 0.3
+  Item_3: EnergyCell, data: "5,10", xdata: 0.3
+  Item_4: EnergyCellLarge, data: "2,5", xdata: 0.3
+  Item_5: FusionCell, data: "1,2", xdata: 0.3
+}
+{ LootGroup Name: BuildingBlocks
+  Count: "1,2"
+  Item_0: HullSmallBlocks, data: "10,15", xdata: 0.1
+  Item_1: HullArmoredSmallBlocks, data: "5,10", xdata: 0.05
+  Item_2: HullLargeBlocks, data: "10,15", xdata: 0.05
+  Item_3: HullArmoredLargeBlocks, data: "5,10", xdata: 0.03
+  Item_4: HullCombatLargeBlocks, data: "5,10", xdata: 0.01
+  Item_5: ConcreteBlocks, data: "10,15", xdata: 0.2
+  Item_6: WoodBlocks, data: "10,15", xdata: 0.3
+  Item_7: TrussSmallBlocks, data: "10,15", xdata: 0.2
+  Item_8: TrussLargeBlocks, data: "10,15", xdata: 0.2
+  Item_9: StairsBlocks, data: "5,10", xdata: 0.3
+  Item_10: WindowSmallBlocks, data: "5,10", xdata: 0.3
+  Item_11: WindowLargeBlocks, data: "5,10", xdata: 0.1
+  Item_12: WindowArmoredSmallBlocks, data: "5,10", xdata: 0.3
+  Item_13: WindowArmoredLargeBlocks, data: "5,10", xdata: 0.1
+  Item_14: WalkwayLargeBlocks, data: "5,10", xdata: 0.3
+  Item_15: DecoBlocks, data: "5,10", xdata: 0.3
+  Item_16: ConsoleBlocks, data: "5,10", xdata: 0.3
+  Item_17: IndoorPlants, data: "2,5", xdata: 0.5
+  Item_18: GrowingPot, data: "2,5", xdata: 0.5
+}
+{ LootGroup Name: Tools
+  Count: "1,2"
+  Item_0: Flashlight, data: 1, xdata: 0.1
+  Item_1: Chainsaw, data: 1, xdata: 0.1
+  Item_2: BioFuel, data: "2,5", xdata: 0.1
+  Item_3: MultiTool, data: 1, xdata: 0.1
+  Item_4: MultiCharge, data: "1,5", xdata: 0.1
+  Item_5: DrillT2, data: 1, xdata: 0.02
+  Item_6: DrillCharge, data: "1,5", xdata: 0.1
+  Item_7: MultiToolT2, data: 1, xdata: 0.02
+}
+{ LootGroup Name: WeaponsBasic
+  Count: "1,2"
+  Item_0: Pistol, data: 1, xdata: 0.3
+  Item_1: Shotgun, data: 1, xdata: 0.3
+  Item_2: AssaultRifle, data: 1, xdata: 0.3
+  Item_3: Sniper, data: 1, xdata: 0.3
+}
+{ LootGroup Name: WeaponsBasicKit
+  Count: 1
+  Item_0: PistolKit, data: 1, xdata: 0.3
+  Item_1: ShotgunKit, data: 1, xdata: 0.2
+  Item_2: RifleKit, data: 1, xdata: 0.3
+  Item_3: SniperKit, data: 1, xdata: 0.1
+}
+{ LootGroup Name: Seeds
+  Count: "2,3"
+  Item_0: DurianRoot, data: "2,5", xdata: 0.3
+  Item_1: CornStage1, data: "2,5", xdata: 0.3
+  Item_2: PumpkinStage1, data: "2,5", xdata: 0.3
+  Item_3: TomatoStage1, data: "2,5", xdata: 0.3
+  Item_4: WheatStage1, data: "2,5", xdata: 0.3
+  Item_5: PearthingStage1, data: "2,5", xdata: 0.3
+  Item_6: InsanityPepperStage1, data: "2,5", xdata: 0.3
+  Item_7: AlienPlantTube2Stage1, data: "2,5", xdata: 0.3
+  Item_8: DesertPlant20Stage1, data: "2,5", xdata: 0.3
+  Item_9: ElderberryStage1, data: "2,5", xdata: 0.3
+  Item_10: AlienPalmTreeStage1, data: "2,5", xdata: 0.3
+  Item_11: AlienplantWormStage1, data: "2,5", xdata: 0.3
+  Item_12: BulbShroomYoungStage1, data: "2,5", xdata: 0.3
+}
+{ LootGroup Name: MedicalItems
+  Count: 1
+  Item_0: Medikit04, data: "1,2", xdata: 0.2
+  Item_1: AntibioticOintment, data: "2,3", xdata: 0.8
+  Item_2: AntibioticPills, data: "1,2", xdata: 0.6
+  Item_3: AntiToxicOintment, data: "2,3", xdata: 0.7
+  Item_4: AntiToxicPills, data: "1,2", xdata: 0.5
+  Item_5: AntiRadiationOintment, data: "2,3", xdata: 0.6
+  Item_6: AntiParasitePills, data: "1,2", xdata: 0.3
+  Item_7: StomachPills, data: "2,3", xdata: 0.8
+  Item_8: RadiationPills, data: "1,2", xdata: 0.4
+  Item_9: AntibioticInjection, data: 1, xdata: 0.4
+  Item_10: AntiToxicInjection, data: 1, xdata: 0.3
+  Item_11: AntiRadiationInjection, data: 1, xdata: 0.2
+  Item_12: AntiParasiteInjection, data: 1, xdata: 0.1
+}
+{ LootGroup Name: Medikits
+  Count: "1,2"
+  Item_0: Medikit01, data: 1, xdata: 0.6
+  Item_1: Medikit02, data: 1, xdata: 0.4
+  Item_2: Medikit03, data: 1, xdata: 0.2
+  Item_3: Medikit04, data: "3,4", xdata: 0.8
+}
+# Common
+{ LootGroup Name: DevicesCommon
+  Count: "1,2"
+  Item_0: GeneratorBA, data: 1, xdata: 0.05
+  Item_1: FuelTankMSSmall, data: 1, xdata: 0.1
+  Item_2: WaterGenerator, data: 1, xdata: 0.3
+  Item_3: OxygenTankSmallMS, data: 1, xdata: 0.3
+  Item_4: OxygenStation, data: 1, xdata: 0.3
+  Item_5: OxygenGenerator, data: 1, xdata: 0.3
+  Item_6: FridgeMS, data: 1, xdata: 0.3
+  Item_7: FoodProcessorV2, data: 1, xdata: 0.08
+  Item_8: LightLargeBlocks, data: 1, xdata: 0.3
+  Item_9: ConstructorT1V2, data: 1, xdata: 0.03
+  Item_10: ContainerAmmoSmall, data: 1, xdata: 0.3
+  Item_11: DoorBlocks, data: "2,4", xdata: 0.3
+  Item_12: CargoContainerSmall, data: 1, xdata: 0.3
+  Item_13: ElevatorMS, data: "2,4", xdata: 0.3
+  Item_14: Core, data: 1, xdata: 0.01
+  Item_15: HangarDoorBlocks, data: 1, xdata: 0.1
+  Item_16: ShutterDoorLargeBlocks, data: 1, xdata: 0.3
+  Item_17: TurretBaseCannon, data: 1, xdata: 0.05
+  Item_18: CloneChamber, data: 1, xdata: 0.3
+}
+# Rare
+{ LootGroup Name: DevicesRare
+  Count: 1
+  Item_0: GeneratorMS, data: 1, xdata: 0.05
+  Item_1: FuelTankMSLarge, data: 1, xdata: 0.1
+  Item_2: ConstructorT2, data: 1, xdata: 0.03
+  Item_3: ContainerAmmoLarge, data: 1, xdata: 0.3
+  Item_4: DoorArmoredBlocks, data: "2,4", xdata: 0.3
+  Item_5: FuelTankMSLarge, data: 1, xdata: 0.1
+  Item_6: FuelTankMSLargeT2, data: 1, xdata: 0.1
+  Item_7: RepairBayBA, data: 1, xdata: 0.01
+  Item_8: GeneratorMST2, data: 1, xdata: 0.01
+  Item_9: OfflineProtector, data: 1, xdata: 0.3
+  Item_10: ATM, data: 1, xdata: 0.3
+} 
+# Rare Vessel
+{ LootGroup Name: DevicesVesselRare
+  Count: 1
+  Item_0: GeneratorSV, data: 1, xdata: 0.01
+  Item_1: FuelTankSV, data: 1, xdata: 0.1
+  Item_2: RCSBlockSV, data: 1, xdata: 0.01
+  Item_3: RCSBlockGV, data: 1, xdata: 0.01
+  Item_4: OxygenTankSV, data: 1, xdata: 0.3
+  Item_5: FridgeSV, data: 1, xdata: 0.1
+  Item_6: DoorBlocksSV, data: 1, xdata: 0.3
+  Item_7: SpotlightSSCube, data: 1, xdata: 0.3
+  Item_8: ContainerAmmoSmall, data: 1, xdata: 0.3
+  Item_9: PassengerSeatSV, data: 1, xdata: 0.3
+  Item_10: PassengerSeat2SV, data: 1, xdata: 0.3
+  Item_11: ThrusterGVDirectional, data: 1, xdata: 0.02
+  Item_12: ThrusterSVDirectional, data: 1, xdata: 0.02
+  Item_13: ThrusterSVRoundBlocks, data: 1, xdata: 0.01
+  Item_14: ThrusterGVRoundBlocks, data: 1, xdata: 0.01
+  Item_15: DockingPad, data: 1, xdata: 0.3
+  Item_16: WeaponSV02, data: 1, xdata: 0.3
+  Item_17: TurretGVMinigun, data: 1, xdata: 0.01
+  Item_18: TurretGVRocket, data: 1, xdata: 0.005
+  Item_20: TurretGVPlasma, data: 1, xdata: 0.001
+}
+{ LootGroup Name: ComponentsRare
+  Count: 1
+  Item_0: CapacitorComponent, data: "1,2", xdata: 0.3
+  Item_1: CobaltAlloy, data: "1,2", xdata: 0.3
+  Item_2: Oscillator, data: "1,2", xdata: 0.3
+  Item_3: FluxCoil, data: "1,2", xdata: 0.3
+  Item_4: PowerCoil, data: "1,2", xdata: 0.3
+}
+{ LootGroup Name: FoodItems
+  Count: 1
+  Item_0: CannedVegetables, data: "2,4", xdata: 0.3
+  Item_1: CannedMeat, data: "2,4", xdata: 0.3
+  Item_3: EmergencyRations, data: "1,2", xdata: 0.1
+}
+{ LootGroup Name: WeaponsRare
+  Count: 1
+  Item_0: PistolT2, data: 1, xdata: 0.1
+  Item_1: Shotgun2, data: 1, xdata: 0.1
+  Item_2: PulseRifle, data: 1, xdata: 0.1
+  Item_3: AssaultRifleT2, data: 1, xdata: 0.1
+  Item_4: Sniper2, data: 1, xdata: 0.1
+  Item_5: LaserPistol, data: 1, xdata: 0.05
+  Item_6: LaserRifle, data: 1, xdata: 0.03
+  Item_7: RocketLauncher, data: 1, xdata: 0.01
+}
+{ LootGroup Name: WeaponsRareKit
+  Count: 1
+  Item_0: HeavyWeaponKit, data: 1, xdata: 0.01
+  Item_1: LaserKit, data: 1, xdata: 0.01
+}
+{ LootGroup Name: IngotsRare
+  Count: 1
+  Item_0: ErestrumIngot, data: "5,10", xdata: 0.2
+  Item_1: SathiumIngot, data: "5,10", xdata: 0.2
+  Item_2: ZascosiumIngot, data: "5,10", xdata: 0.2
+}
+{ LootGroup Name: LootGoldIngot
+  Count: 1
+  Item_0: GoldIngot, data: "1,2", xdata: 0.2
+}
+{ LootGroup Name: LootGoldCoins
+  Count: 1
+  Item_0: GoldIngot, data: "10,15", xdata: 0.2
+}
+{ LootGroup Name: LootMoneyCard
+  Count: 1
+  Item_0: MoneyCard, data: "100,500", xdata: 0.2
+}
+# Very Rare
+{ LootGroup Name: DevicesVeryRare
+  Count: 1
+  Item_0: GeneratorMS, data: 1, xdata: 0.05
+  Item_1: FuelTankMSLarge, data: 1, xdata: 0.3
+  Item_2: FridgeMS02, data: 1, xdata: 0.3
+  Item_3: OxygenTankMS, data: 1, xdata: 0.3
+  Item_4: ConstructorSurvival, data: 1, xdata: 0.3
+  Item_5: ConstructorT2, data: 1, xdata: 0.03
+  Item_6: GravityGeneratorMS, data: 1, xdata: 0.3
+  Item_7: ContainerAmmoLarge, data: 1, xdata: 0.3
+  Item_8: MedicinelabMS, data: 1, xdata: 0.3
+  Item_9: GeneratorMST2, data: 1, xdata: 0.01
+  Item_10: TurretBaseRocket, data: 1, xdata: 0.03
+  Item_11: TurretBaseMinigun, data: 1, xdata: 0.02
+  Item_12: TurretBasePlasma, data: 1, xdata: 0.01
+  Item_13: TurretBaseFlak, data: 1, xdata: 0.02
+  Item_14: TurretBaseArtillery, data: 1, xdata: 0.01
+  Item_15: TurretBasePulseLaser, data: 1, xdata: 0.01
+}
+{ LootGroup Name: DevicesVesselVeryRare
+  Count: 1
+  Item_0: HoverEngineSmall, data: 1, xdata: 0.3
+  Item_1: SawAttachment, data: 1, xdata: 0.3
+  Item_2: TurretGVPlasma, data: 1, xdata: 0.02
+  Item_3: TurretGVArtillery, data: 1, xdata: 0.03
+  Item_4: ThrusterSVRoundBlocks, data: 1, xdata: 0.1
+  Item_5: LandinggearBlocksSV, data: 1, xdata: 0.3
+  Item_6: LandinggearBlocksHeavySV, data: 1, xdata: 0.3
+  Item_7: HoverEngineLarge, data: 1, xdata: 0.01
+  Item_8: WeaponSV01, data: 1, xdata: 0.008
+  Item_9: WeaponSV03, data: 1, xdata: 0.008
+  Item_10: WeaponSV04, data: 1, xdata: 0.008
+  Item_11: WeaponSV05, data: 1, xdata: 0.008
+}
+{ LootGroup Name: DevicesCVVeryRare
+  Count: 1
+  Item_0: ThrusterMSRoundBlocks, data: 1, xdata: 0.03
+  Item_1: RCSBlockMS, data: 1, xdata: 0.01
+  Item_2: RepairBayCV, data: 1, xdata: 0.03
+  Item_3: ThrusterMSRound2x2Blocks, data: 1, xdata: 0.02
+  Item_4: ThrusterMSRound3x3Blocks, data: 1, xdata: 0.01
+  Item_5: LandinggearBlocksCV, data: 1, xdata: 0.3
+  Item_6: WeaponMS01, data: 1, xdata: 0.03
+  Item_7: WeaponMS02, data: 1, xdata: 0.03
+  Item_8: TurretMSProjectileBlocks, data: 1, xdata: 0.008
+  Item_9: TurretMSLaserBlocks, data: 1, xdata: 0.005
+  Item_10: TurretMSRocketBlocks, data: 1, xdata: 0.005
+  Item_11: TurretMSArtilleryBlocks, data: 1, xdata: 0.001
+  Item_12: TurretMSToolBlocks, data: 1, xdata: 0.3
+  Item_13: RCSBlockMS_T2, data: 1, xdata: 0.001
+}
+{ LootGroup Name: WeaponsVeryRare
+  Count: 1
+  Item_0: Minigun, data: 1
+  Item_1: LaserPistolT2, data: 1
+  Item_2: LaserRifle, data: 1
+  Item_3: PulseRifleT2, data: 1, xdata: 0.1
+  Item_4: ScifiCannon, data: 1
+  Item_5: RocketLauncherT2, data: 1
+}
+{ LootGroup Name: WeaponsEpic
+  Count: 1
+  Item_0: AssaultRifleEpic, data: 1, xdata: 1
+  Item_1: Sniper2Epic, data: 1, xdata: 0.6
+  Item_2: MinigunEpic, data: 1, xdata: 0.5
+  Item_3: Shotgun2Epic, data: 1, xdata: 0.7
+  Item_4: LaserRifleEpic, data: 1, xdata: 0.7
+  Item_5: PistolEpic, data: 1, xdata: 1
+  Item_6: ScifiCannonEpic, data: 1, xdata: 0.2
+  Item_7: RocketLauncherEpic, data: 1, xdata: 0.3
+  Item_8: PulseRifleEpic, data: 1, xdata: 1
+  Item_9: DrillEpic, data: 1, xdata: 0.1
+  Item_10: ArmorHeavyEpic, data: 1, xdata: 0.1
+}
+{ LootGroup Name: AutoMinerCore
+  Count: 1
+  Item_0: AutoMinerCore, data: "1,3"
+}
+{ LootGroup Name: TroopersFood
+  Count: 1
+  Item_0: Salami, data: "1,2", xdata: 0.7
+  Item_1: Sandwich, data: 1, xdata: 0.4
+  Item_2: PowerBar, data: "2,4", xdata: 0.8
+  Item_4: HotBeverage, data: 1, xdata: 0.5
+}
+{ LootGroup Name: Biological01
+  Count: "2,3"
+  Item_0: Spice, data: "1,3", xdata: 0.7
+  Item_1: AlienThorn, data: "1,3", xdata: 0.7
+  Item_2: Varonroot, data: "1,3", xdata: 0.7
+  Item_3: HerbalLeaves, data: "1,3", xdata: 0.7
+  Item_4: PlantProtein, data: "1,3", xdata: 0.7
+  Item_5: PhoenixFernFonds, data: "1,3", xdata: 0.7
+  Item_6: MushroomBrown, data: "1,3", xdata: 0.7
+  Item_7: MushroomSpiky, data: "1,3", xdata: 0.7
+  Item_8: NaturalSweetener, data: "1,3", xdata: 0.7
+}
+{ LootGroup Name: SuitBooster
+  Count: 1
+  Item_0: ArmorBoost, data: 1, xdata: 0.1
+  Item_1: JetpackBoost, data: 1, xdata: 0.1
+  Item_2: MultiBoost, data: 1, xdata: 0.1
+  Item_3: OxygenBoost, data: 1, xdata: 0.1
+  Item_4: InsulationBoost, data: 1, xdata: 0.1
+  Item_5: MobilityBoost, data: 1, xdata: 0.1
+  Item_6: RadiationBoost, data: 1, xdata: 0.1
+  Item_7: EVABoost, data: 1, xdata: 0.1
+}
+{ LootGroup Name: SmallOptronics
+  Count: 1
+  Item_0: SmallOptronicBridge, data: 1, xdata: 0.5
+  Item_1: SmallOptronicMatrix, data: 1, xdata: 0.1
+}
+{ LootGroup Name: LargeOptronics
+  Count: 1
+  Item_0: LargeOptronicBridge, data: 1, xdata: 0.5
+  Item_1: LargeOptronicMatrix, data: 1, xdata: 0.1
 }

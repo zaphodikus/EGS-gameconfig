@@ -1,6 +1,7 @@
 # Prerequisites
 *.*
-!config.ecf
+!Config.ecf
+!TraderNPCConfig.ecf
 !README.MD
 !LICENSE
-
+!baseline/
