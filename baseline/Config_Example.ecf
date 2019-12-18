@@ -9783,6 +9783,7 @@ VERSION: 8
     RangeSpace: 725, display: false
     AmmoCapacity: 50, display: true
     AmmoType: PlasmaCannonChargeSS, display: true
+    Automatic: true
     NoiseStrength: 100, display: false
     ReloadDelay: 3, display: true
   }
@@ -9796,7 +9797,7 @@ VERSION: 8
     Range: 500, display: false
     RangeSpace: 700, display: false
     Damage: 575, display: true
-    Automatic: false
+    Automatic: true
     AmmoCapacity: 150, display: true
     AmmoType: PulseLaserChargeSS, display: true
     NoiseStrength: 100, display: false
@@ -9880,6 +9881,7 @@ VERSION: 8
     RangeSpace: 675, display: false
     AmmoCapacity: 15, display: true
     AmmoType: FastRocket, display: true
+    Automatic: false
     NoiseStrength: 100, display: false
     ReloadDelay: 8, display: true
   }
@@ -9894,6 +9896,7 @@ VERSION: 8
     RangeSpace: 800, display: false
     AmmoCapacity: 20, display: true
     AmmoType: RailgunBullet, display: true
+    Automatic: true
     NoiseStrength: 100, display: false
     ReloadDelay: 4, display: true
   }
@@ -9933,6 +9936,7 @@ VERSION: 8
     RangeSpace: 975, display: false
     AmmoCapacity: 15, display: true
     AmmoType: FastRocketMS, display: true
+    Automatic: false
     NoiseStrength: 150, display: false
     ReloadDelay: 8, display: true
   }
@@ -9961,7 +9965,7 @@ VERSION: 8
     Range: 510, display: false
     RangeSpace: 925, display: false
     Damage: 1000, display: true
-    Automatic: false
+    Automatic: true
     AmmoCapacity: 150, display: true
     AmmoType: PulseLaserChargeMSWeapon, display: true
     NoiseStrength: 100, display: false
@@ -10274,6 +10278,7 @@ VERSION: 8
     RangeSpace: 735, display: false
     AmmoCapacity: 15, display: true
     AmmoType: FastRocketHoming, display: true
+    Automatic: false
     NoiseStrength: 100, display: false
     ReloadDelay: 8, display: true
   }

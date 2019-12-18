@@ -210,27 +210,6 @@ VERSION: 8
     OpticalFiber: 5
   }
 }
-{ Item Id: 2649, Name: ArmorMedium
-  Mass: 18, type: float, display: false, formatter: Kilogram
-  Volume: 3, type: float, display: true, formatter: Liter
-  VolumeCapacity: 150, type: float, display: true, formatter: Liter
-  StackSize: 1
-  Category: Weapons/Items
-  Durability: 1000, display: true
-  Oxygen: 562, type: int, display: true
-  Armor: 500, type: int, display: true
-  Heat: 25, type: int, display: true
-  Cold: 40, type: int, display: true
-  Radiation: 8, type: int, display: true
-  FallDamageFac: 0.60, type: float, display: true
-  PowerFac: 0.53, type: float, display: true
-  SpeedFac: 0.75, type: float, display: true
-  JumpFac: 0.55, type: float, display: true
-  JetpackFac: 1.44, type: float, display: true
-  FoodFac: 1.73, type: float, display: true
-  StaminaFac: 1.33, type: float, display: true
-  NrSlots: 3, type: int, display: true
-}
 { Template Name: Explosives
   OutputCount: 5
   CraftTime: 5
@@ -298,7 +277,7 @@ VERSION: 8
   Volume: 40, type: float, display: true, formatter: Liter
   Mass: 350, type: float, display: true, formatter: Kilogram
   HitPoints: 300, type: int, display: true
-  ThrusterForce: 228, type: int, display: true, formatter: Newton
+  ThrusterForce: 328, type: int, display: true, formatter: Newton
   EnergyIn: 108, type: int, display: true, formatter: Watt
   CPUIn: 40, type: int, display: true
   UnlockCost: 12, display: true
@@ -327,21 +306,6 @@ VERSION: 8
   UnlockCost: 2, display: true
   UnlockLevel: 1, display: true
   TechTreeNames: Hover Vessel
-}
-{ Item Id: 2168, Name: TurretGVArtilleryWeapon
-  StackSize: 5
-  Mass: 450, type: float, display: false, formatter: Kilogram
-  Category: Weapons/Items
-  {
-    ROF: 13, type: float, display: true, formatter: ROF
-    Range: 5200, display: false
-    RangeSpace: 8300, display: false
-    AmmoCapacity: 1, display: true
-    AmmoType: ArtilleryRocket, display: true
-    NoiseStrength: 200, display: false
-    CameraShake: 4
-    ReloadDelay: 13, display: true
-  }
 }
 { Block Id: 716, Name: TurretGVArtillery
   Group: cpgTurret
