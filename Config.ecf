@@ -24,7 +24,7 @@ VERSION: 8
 }
 { Template Name: DrillT2
   CraftTime: 20
-  Target: "SmallC,LargeC,AdvC"
+  Target: "BaseC,LargeC,AdvC"
   { Child Inputs
     MechanicalComponents: 5
     Electronics: 2
@@ -126,7 +126,7 @@ VERSION: 8
 { Template Name: PromethiumPellets
   OutputCount: 20
   CraftTime: 5
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     PromethiumOre: 1
   }
@@ -134,7 +134,7 @@ VERSION: 8
 { Template Name: EnergyCell
   OutputCount: 4
   CraftTime: 5
-  Target: "SurvC,SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     PromethiumPellets: 10
   }
@@ -159,7 +159,7 @@ VERSION: 8
 { Template Name: MagnesiumPowder
   OutputCount: 20
   CraftTime: 5
-  Target: "SmallC,HoverC,LargeC,AdvC"
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
     MagnesiumOre: 5
   }
