@@ -1,5 +1,7 @@
 # Prerequisites
 *.*
+!files_link.txt
+!set_links.bat
 !Config.ecf
 !TraderNPCConfig.ecf
 !README.MD
