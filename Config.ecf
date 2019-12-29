@@ -22,6 +22,78 @@ VERSION: 8
     Prob: 0.2
   }
 }
+{ Template Name: DrillT2
+  CraftTime: 20
+  Target: "SmallC,LargeC,AdvC"
+  { Child Inputs
+    MechanicalComponents: 5
+    Electronics: 2
+    OpticalFiber: 1
+    EnergyMatrix: 1
+  }
+}
+# ==================== LOOT TABLES ==============================
+# Item line: "Group|Name_x" (x incrementing), data: "probability" [, xdata="count range"] (default = 1,1)
+# NOTE: Please currently always use 8 columns! (first number in "Size" line)
+# Oviraptor
+{ Container Id: 9
+  Count: "1,2"
+  Size: "8,1"
+  SfxOpen: UseActions/body_open
+  SfxClose: UseActions/body_close
+  { Child Items
+    Name_0: Meat, xdata: "1,4"
+    Name_2: Egg, data: 0.6, xdata: "1,2"
+  }
+}
+# Dino small (Raptor, Megalonops, Parasaur)
+{ Container Id: 10
+  Count: "1,2"
+  Size: "8,1"
+  SfxOpen: UseActions/body_open
+  SfxClose: UseActions/body_close
+  { Child Items
+    Name_0: Meat, xdata: "1,4"
+    Name_1: Egg, data: 0.6, xdata: "1,2"
+  }
+}
+# Dino large (Triceratops, Pangolin)
+{ Container Id: 31
+  Count: "4,6"
+  Size: "8,1"
+  SfxOpen: UseActions/body_open
+  SfxClose: UseActions/body_close
+  { Child Items
+    Name_0: Meat, data: 1, xdata: "5,10"
+    Name_1: Egg, data: 0.6, xdata: "1,2"
+  }
+}
+# AlienBug01
+{ Container Id: 33
+  Count: "1,2"
+  Size: "8,1"
+  SfxOpen: UseActions/body_open
+  SfxClose: UseActions/body_close
+  { Child Items
+    Name_0: Meat, data: 0.6, xdata: "4,5"
+    Name_1: AlienParts02, data: 0.5, xdata: "2,3"
+    Name_2: AlienTooth, data: 0.3, xdata: "4,5"
+  }
+}
+# TroopTransporters
+{ Container Id: 16
+  Count: "4,6"
+  Size: "8,2"
+  SfxOpen: UseActions/drone_open
+  SfxClose: UseActions/drone_close
+  { Child Items
+    Group_0: WeaponsVeryRare, data: 1.0
+    Group_1: EnergyItems, data: 1.3
+    Group_2: MedicalItems, data: 1.3
+    Group_3: WeaponsRare, data: 1.3
+    Group_4: WeaponsRareKit, data: 1.3
+  }
+}
 { Item Id: 2071, Name: Chainsaw
   PickupToToolbar: true
   StackSize: 1
@@ -218,7 +290,7 @@ VERSION: 8
   Category: Weapons/Items
   Durability: 1000, display: true
   Oxygen: 562, type: int, display: true
-  Armor: 500, type: int, display: true
+  Armor: 800, type: int, display: true
   Heat: 25, type: int, display: true
   Cold: 40, type: int, display: true
   Radiation: 8, type: int, display: true
