@@ -94,6 +94,21 @@ VERSION: 8
     Group_4: WeaponsRareKit, data: 1.3
   }
 }
+# DroneLargeAttackBase
+{ Container Id: 160
+  Count: "2,3"
+  Size: "8,1"
+  SfxOpen: UseActions/drone_open
+  SfxClose: UseActions/drone_close
+  { Child Items
+    Name_0: FastRocket, data: 0.9, xdata: "150,300"
+    Name_1: FusionCell, data: 0.8, xdata: "20,30"
+    Name_2: WeaponSV05, data: 1.0, xdata: 1
+    Group_1: ComponentsRare, data: 1.0
+  }
+}
+# ================= Weapons ========================
+#
 { Item Id: 2071, Name: Chainsaw
   PickupToToolbar: true
   StackSize: 1
@@ -312,6 +327,57 @@ VERSION: 8
     EnergyCell: 4
     Electronics: 1
   }
+}
+# ============================ Other ==================================
+{ Block Id: 1494, Name: SolarPanelBlocks
+  Group: cpgSolar
+  PanelAngle: 30
+  SolarPanelEfficiency: 5.0, display: true
+  Material: metallight
+  Category: Devices
+  Mass: 250, type: float, display: true, formatter: Kilogram
+  Volume: 25, type: float, display: true, formatter: Liter
+  MaxCount: 50, type: int, display: true
+  CPUIn: 45, type: int, display: true
+  ChildBlocks: "SolarPanelSlope, SolarPanelSlope2, SolarPanelSlope3, SolarPanelHorizontal, SolarPanelHorizontal2, SolarPanelHorizontalMount, SolarPanelHorizontalStand"
+  Info: bkiSolarPanel, display: true
+  IsOxygenTight: varies, display: true
+  UnlockCost: 5, display: true
+  UnlockLevel: 3, display: true
+  TechTreeParent: SolarPanelSmallBlocks
+  TechTreeNames: Base
+}
+{ Block Id: 1496, Name: SolarPanelSlope
+  Group: cpgSolar
+  PanelAngle: 30
+  SolarPanelEfficiency: 5.0, display: true
+  Material: metallight
+  Category: Devices
+  HitPoints: 150, type: int, display: true
+  Mass: 250, type: float, display: true, formatter: Kilogram
+  MaxCount: 50, type: int, display: true
+  CPUIn: 45, type: int, display: true
+  TemplateRoot: SolarPanelBlocks
+  IsOxygenTight: false, display: true
+  BlockColor: "110,110,110"
+}
+{ Block Id: 1513, Name: SolarPanelSmallBlocks
+  Group: cpgSolar
+  PanelAngle: 30
+  SolarPanelEfficiency: 5.0, display: true
+  Material: metallight
+  Category: Devices
+  HitPoints: 100, type: int, display: true
+  Mass: 150, type: float, display: true, formatter: Kilogram
+  Volume: 15, type: float, display: true, formatter: Liter
+  MaxCount: 50, type: int, display: true
+  CPUIn: 20, type: int, display: true
+  ChildBlocks: "SolarPanelSlopeSmall, SolarPanelSlope3Small, SolarPanelHorizontalSmall"
+  Info: bkiSolarPanel, display: true
+  IsOxygenTight: varies, display: true
+  UnlockCost: 0, display: true
+  UnlockLevel: 1, display: true
+  TechTreeNames: Base
 }
 # CPUOut parameter has no effect on this block, not sure why.
 { Block Id: 558, Name: Core
