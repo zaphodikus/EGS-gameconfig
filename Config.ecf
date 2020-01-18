@@ -432,6 +432,52 @@ VERSION: 8
   RotSpeed: 120, type: int, display: true
   Zoom: 5, type: float
 }
+{ Template Name: WarpDriveSV
+  CraftTime: 70
+  Target: "LargeC,AdvC"
+  { Child Inputs
+    EnergyMatrix: 0  
+    PentaxidElement: 100
+    SteelPlate: 20
+    Nanotubes: 20
+    CobaltAlloy: 10
+  }
+}
+{ Block Id: 449, Name: ThrusterSVRoundNormal
+  Group: cpgThruster
+  Material: metalhard
+  ShowBlockName: true
+  StackSize: 6
+  BlockColor: "110,110,110"
+  Volume: 45, type: float, display: true, formatter: Liter
+  Mass: 300, type: float, display: true, formatter: Kilogram
+  IsOxygenTight: true, display: true
+  IsIgnoreLC: true
+  TemplateRoot: ThrusterSVRoundBlocks
+  Info: bkiThruster, display: true
+  HitPoints: 300, type: int, display: true
+  ThrusterForce: 185, type: int, display: true, formatter: Newton
+  EnergyIn: 32, type: int, display: true, formatter: Watt
+  CPUIn: 30, type: int, display: true
+  Temperature: 87, display: true
+  Category: Devices
+  BlastRadius: 3
+  BlastDamage: 100
+}
+{ Block Id: 547, Name: ThrusterSVRoundLarge, Ref: ThrusterSVRoundNormal
+  HitPoints: 350, type: int, display: true
+  Volume: 60, type: float, display: true, formatter: Liter
+  Mass: 450, type: float, display: true, formatter: Kilogram
+  ThrusterForce: 305, type: int, display: true, formatter: Newton
+  EnergyIn: 38, type: int, display: true, formatter: Watt
+  CPUIn: 40, type: int, display: true
+  Temperature: 100, display: true
+  TemplateRoot: ThrusterSVRoundLarge
+  UnlockCost: 12, display: true
+  UnlockLevel: 10, display: true
+  TechTreeParent: ThrusterSVRoundBlocks
+  TechTreeNames: Small Vessel
+} 
 { Block Id: 697, Name: ThrusterJetRound1x3x1, Ref: ThrusterJetRound3x7x3
   Volume: 40, type: float, display: true, formatter: Liter
   Mass: 350, type: float, display: true, formatter: Kilogram
