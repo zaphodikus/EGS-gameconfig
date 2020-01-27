@@ -491,6 +491,74 @@ VERSION: 8
   TechTreeNames: Small Vessel
   Temperature: 140, display: true
 }
+{ Block Id: 778, Name: ThrusterMSRound2x2Blocks
+  Material: metalhard
+  StackSize: 6
+  BlockColor: "26,50,89"
+  Category: Devices
+  ChildBlocks: "ThrusterMSRoundNormal2x2, ThrusterMSRoundSlant2x2, ThrusterMSRoundArmored2x2"
+  Volume: 1200, type: float, display: true, formatter: Liter
+  Mass: 163840, type: float, display: true, formatter: Kilogram
+  Info: bkiBlockGroup, display: true
+  IsOxygenTight: true, display: true
+  HitPoints: 3000, type: int, display: true
+  ThrusterForce: 300000, type: int, display: true, formatter: Newton
+  EnergyIn: 4608, type: int, display: true, formatter: Watt
+  CPUIn: 13300, type: int, display: true
+  Temperature: 182, display: true
+  Radiation: 4, display: RadiationLevel
+  UnlockCost: 17, display: true
+  UnlockLevel: 15, display: true
+  TechTreeParent: ThrusterMSRoundBlocks
+  TechTreeNames: Capital Vessel
+}
+{ Block Id: 835, Name: ThrusterMSRound3x3Blocks
+  Material: metalhard
+  StackSize: 6
+  BlockColor: "102,0,0"
+  Category: Devices
+  ChildBlocks: "ThrusterMSRoundNormal3x3, ThrusterMSRoundSlant3x3, ThrusterMSRoundArmored3x3"
+  Volume: 2000, type: float, display: true, formatter: Liter
+  Mass: 442368, type: float, display: true, formatter: Kilogram
+  Info: bkiBlockGroup, display: true
+  IsOxygenTight: true, display: true
+  HitPoints: 6750, type: int, display: true
+  ThrusterForce: 1100000, type: int, display: true, formatter: Newton
+  EnergyIn: 12442, type: int, display: true, formatter: Watt
+  CPUIn: 53300, type: int, display: true
+  Temperature: 200, display: true
+  Radiation: 5, display: RadiationLevel
+  UnlockCost: 25, display: true
+  UnlockLevel: 20, display: true
+  TechTreeParent: ThrusterMSRound2x2Blocks
+  TechTreeNames: Capital Vessel
+}
+
+{ Template Name: ThrusterMSRound2x2Blocks
+  CraftTime: 50
+  Target: AdvC
+  { Child Inputs
+    MechanicalComponents: 100
+    Motor: 4
+    ZascosiumAlloy: 4
+    OpticalFiber: 20
+    Oscillator: 4
+    PowerCoil: 4
+  }
+}
+{ Template Name: ThrusterMSRound3x3Blocks
+  CraftTime: 55
+  Target: AdvC
+  { Child Inputs
+    MechanicalComponents: 200
+    Motor: 6
+    ZascosiumAlloy: 9
+    OpticalFiber: 30
+    Oscillator: 6
+    PowerCoil: 6
+  }
+}
+
 { Block Id: 604, Name: RCSBlockGV
   Group: cpgRCS
   Material: metal
