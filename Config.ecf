@@ -355,12 +355,13 @@ VERSION: 8
   CraftTime: 400
   Target: "AdvC"
   { Child Inputs
-    ArmotHeavy: 1
+	ArmorHeavy: 1
     XenoSubstrate: 20
     ZascosiumAlloy: 10
     ErestrumGel: 10
     GlassPlate: 20
     EnergyMatrix: 8
+    Motor: 6
     Electronics: 20
     CapacitorComponent: 20
     Nanotubes: 20
