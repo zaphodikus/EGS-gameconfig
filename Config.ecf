@@ -289,30 +289,26 @@ VERSION: 8
   UnlockLevel: 3, display: true
   TechTreeNames: Weapons
 }
+# armor https://steamcommunity.com/app/383120/discussions/0/1747895465439059678/?ctp=2
 { Item Id: 2649, Name: ArmorMedium
-  UnlockCost: 8, display: true					# ADDED
+  UnlockCost: 0, display: true					# ADDED
   UnlockLevel: 10, display: true				# ADDED
   TechTreeParent: ArmorLight					# ADDED
-  TechTreeNames: Weapons						# ADDED
+  TechTreeNames: Tools						# ADDED
 }
 { Item Id: 2650, Name: ArmorHeavy
-  UnlockCost: 12, display: true					# ADDED
+  UnlockCost: 0, display: true					# ADDED
   UnlockLevel: 16, display: true				# ADDED
   TechTreeParent: ArmorMedium					# ADDED
-  TechTreeNames: Weapons						# ADDED
-}
-{ Item Id: 2653, Name: ArmorMediumEpic, Ref: ArmorMedium
-  UnlockCost: 0, display: true					# ADDED
-  UnlockLevel: 20, display: true				# 1 (ADDED display:)
-  TechTreeParent: ArmorMedium					# ADDED
-  TechTreeNames: Weapons						# Hidden
+  TechTreeNames: Tools						# ADDED
 }
 { Item Id: 2653, Name: ArmorHeavyEpic, Ref: ArmorHeavy
   UnlockCost: 0, display: true					# ADDED
   UnlockLevel: 24, display: true				# 1 (ADDED display:)
   TechTreeParent: ArmorHeavy					# ADDED
-  TechTreeNames: Weapons						# Hidden
+  TechTreeNames: Tools						# Hidden
 }
+
 { Template Name: ArmorLight
   CraftTime: 60
   Target: "SurvC,SmallC,HoverC,BaseC"
@@ -324,42 +320,26 @@ VERSION: 8
   }
 }
 { Template Name: ArmorMedium
-  CraftTime: 120
+  CraftTime: 90
   Target: "LargeC,AdvC"
   { Child Inputs
     SteelPlate: 40
+    SteelPlateArmored: 4
+    Motor: 2
     Electronics: 5
-    OpticalFiber: 5
+    GlassPlate: 4
+    CapacitorComponent: 1
+    EnergyMatrix: 1
+    MechanicalComponents: 6
+    OpticalFiber: 1
   }
 }
-{ Item Id: 2649, Name: ArmorMedium
-  Mass: 18, type: float, display: false, formatter: Kilogram
-  Volume: 3, type: float, display: true, formatter: Liter
-  VolumeCapacity: 150, type: float, display: true, formatter: Liter
-  StackSize: 1
-  Category: Weapons/Items
-  Durability: 1000, display: true
-  Oxygen: 562, type: int, display: true
-  Armor: 800, type: int, display: true
-  Heat: 30, type: int, display: true
-  Cold: 50, type: int, display: true
-  Radiation: 8, type: int, display: true
-  FallDamageFac: 0.60, type: float, display: true
-  PowerFac: 0.53, type: float, display: true
-  SpeedFac: 0.75, type: float, display: true
-  JumpFac: 0.55, type: float, display: true
-  JetpackFac: 1.44, type: float, display: true
-  FoodFac: 1.73, type: float, display: true
-  StaminaFac: 1.33, type: float, display: true
-  NrSlots: 3, type: int, display: true
-}
-
 { Template Name: ArmorHeavy
   CraftTime: 120
   Target: "LargeC,AdvC"
   { Child Inputs
     SteelPlateArmored: 12
-    GlassPlate: 4
+    GlassPlate: 8
     Motor: 6
     Electronics: 6
     CapacitorComponent: 4
@@ -371,68 +351,26 @@ VERSION: 8
     ErestrumGel: 4
   }
 }
-{ Item Id: 2650, Name: ArmorHeavy
-  Mass: 35, type: float, display: false, formatter: Kilogram
-  Volume: 6, type: float, display: true, formatter: Liter
-  VolumeCapacity: 200, type: float, display: true, formatter: Liter
-  StackSize: 1
-  Category: Weapons/Items
-  Durability: 1200, display: true
-  Oxygen: 843, type: int, display: true
-  Armor: 1200, type: int, display: true
-  Heat: 60, type: int, display: true
-  Cold: 75, type: int, display: true
-  Radiation: 16, type: int, display: true
-  FallDamageFac: 0.7, type: float, display: true
-  PowerFac: 0.43, type: float, display: true
-  SpeedFac: 0.6, type: float, display: true
-  JumpFac: 0.45, type: float, display: true
-  JetpackFac: 1.73, type: float, display: true
-  FoodFac: 2.07, type: float, display: true
-  StaminaFac: 1.46, type: float, display: true
-  NrSlots: 4, type: int, display: true
-}
 { Template Name: ArmorHeavyEpic
   CraftTime: 400
   Target: "AdvC"
   { Child Inputs
-    ArmorHeavy: 1
+    ArmotHeavy: 1
     XenoSubstrate: 20
     ZascosiumAlloy: 10
     ErestrumGel: 10
-    GlassPlate: 6
+    GlassPlate: 20
     EnergyMatrix: 8
-    Oscillator: 2
-    FluxCoil: 1
-    PowerCoil: 2
-    Motor: 6
-    Electronics: 6
-    CapacitorComponent: 4
-    Nanotubes: 9
-    PlasticMaterial: 10
-    Computer: 2
+    Electronics: 20
+    CapacitorComponent: 20
+    Nanotubes: 20
+    PlasticMaterial: 30
+    Computer: 4
     GoldIngot: 10
   }
 }
-{ Item Id: 2653, Name: ArmorHeavyEpic, Ref: ArmorHeavy
-  Oxygen: 1000, type: int, display: true
-  Armor: 1600, type: int, display: true
-  Heat: 600, type: int, display: true
-  Cold: 200, type: int, display: true
-  Radiation: 40, type: int, display: true
-  FallDamageFac: 0.7, type: float, display: true
-  PowerFac: 0.7, type: float, display: true
-  SpeedFac: 0.9, type: float, display: true
-  JumpFac: 0.7, type: float, display: true
-  JetpackFac: 1.1, type: float, display: true
-  FoodFac: 0.9, type: float, display: true
-  StaminaFac: 1.1, type: float, display: true
-  NrSlots: 0, type: int, display: true
-  Mass: 35, type: float, display: false, formatter: Kilogram
-  Volume: 8, type: float, display: true, formatter: Liter
-  UnlockLevel: 1
-  TechTreeNames: Hidden
-}
+
+# misc
 { Template Name: Explosives
   OutputCount: 5
   CraftTime: 5
