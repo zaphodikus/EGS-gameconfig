@@ -307,6 +307,7 @@ VERSION: 8
   UnlockLevel: 24, display: true				# 1 (ADDED display:)
   TechTreeParent: ArmorHeavy					# ADDED
   TechTreeNames: Tools						# Hidden
+  NrSlots: 5, type: int, display: true		# ADDED
 }
 
 { Template Name: ArmorLight
@@ -371,6 +372,59 @@ VERSION: 8
   }
 }
 
+# T2 was missing
+
+{ Block Id: 1811, Name: ShieldGeneratorCVT2, Ref: ShieldGeneratorCV
+  Mass: 6000, type: float, display: true, formatter: Kilogram
+  Volume: 600, type: float, display: true, formatter: Liter
+  EnergyIn: 36000, type: int, display: true, formatter: Watt
+  CPUIn: 33100, type: int, display: true
+  EnergyInIdle: 1600, type: int, display: true, formatter: Watt
+  ShieldCapacity: 36000, type: int, display: true
+  ShieldRecharge: 120, type: int, display: true
+  UnlockCost: 20, display: true
+  UnlockLevel: 15, display: true
+  TechTreeParent: ShieldGeneratorCV
+  TechTreeNames: Capital Vessel
+}
+{ Template Name: ShieldGeneratorCVT2
+  CraftTime: 90
+  Target: "AdvC"
+  { Child Inputs
+    ShieldGeneratorCV: 1
+    EnergyMatrix: 2
+    Oscillator: 2
+    CapacitorComponent: 5
+    FluxCoil: 5
+    PowerCoil: 1
+  }
+}
+
+{ Block Id: 1812, Name: ShieldGeneratorBAT2, Ref: ShieldGeneratorBA
+  Mass: 10000, type: float, display: true, formatter: Kilogram
+  Volume: 800, type: float, display: true, formatter: Liter
+  EnergyIn: 50000, type: int, display: true, formatter: Watt
+  CPUIn: 45500, type: int, display: true
+  EnergyInIdle: 1500, type: int, display: true, formatter: Watt
+  ShieldCapacity: 50000, type: int, display: true
+  ShieldRecharge: 150, type: int, display: true
+  UnlockCost: 20, display: true
+  UnlockLevel: 15, display: true
+  TechTreeParent: ShieldGeneratorBA
+  TechTreeNames: Base
+}
+{ Template Name: ShieldGeneratorBAT2
+  CraftTime: 90
+  Target: "AdvC"
+  { Child Inputs
+    ShieldGeneratorBA: 1
+    EnergyMatrix: 2
+    Oscillator: 2
+    CapacitorComponent: 5
+    FluxCoil: 5
+    PowerCoil: 1
+  }
+}
 # misc
 { Template Name: Explosives
   OutputCount: 5
