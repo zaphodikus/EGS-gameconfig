@@ -11,12 +11,13 @@ VERSION: 8
 # ==================== BLOCKS, DEVICES ==========================
 # require water again
 { Template Name: ConcreteBlocks
-  CraftTime: 1
-  OutputCount: 1
+  CraftTime: 5
+  OutputCount: 5
   Target: "SurvC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
-    Cement: 2
+    Cement: 5
     WaterJug: 1	
+	PlasticMaterial: 1
   }
 }
 { Template Name: ConcreteArmoredBlocks
@@ -50,9 +51,25 @@ VERSION: 8
     EnergyMatrix: 1
   }
 }
+
 # ==================== LOOT TABLES ==============================
 # Item line: "Group|Name_x" (x incrementing), data: "probability" [, xdata="count range"] (default = 1,1)
 # NOTE: Please currently always use 8 columns! (first number in "Size" line)
+# GolemDesert
+{ Container Id: 27
+  Count: "3,4"
+  Size: "8,1"
+  SfxOpen: UseActions/stone_open_close
+  SfxClose: UseActions/stone_open_close
+  { Child Items
+    Name_0: CrushedStone, data: 0.4, xdata: "5,15"
+    Name_1: GoldOre, data: 0.4, xdata: "1,2"
+    Group_0: OresBasic, data: 0.9
+    Group_1: OresAdvanced, data: 1.6
+    Group_2: OresRare, data: 1.4
+  }
+}
+
 # Oviraptor
 { Container Id: 9
   Count: "1,2"
@@ -98,6 +115,32 @@ VERSION: 8
     Name_2: AlienTooth, data: 0.3, xdata: "6,8"
   }
 }
+# AlienAssassin,Hexapod
+{ Container Id: 29
+  Count: "3,5"
+  Size: "8,1"
+  SfxOpen: UseActions/body_open
+  SfxClose: UseActions/body_close
+  { Child Items
+    Name_0: AlienParts02, data: 0.3, xdata: "1,3"
+    Name_1: ConfettiMossScrapings, data: 1.5, xdata: "1,3"
+    Name_2: FireMossScrapings, data: 1.5, xdata: "1,3"
+  }
+}
+# TotalHorror
+{ Container Id: 28
+  Count: "2,4"
+  Size: "8,1"
+  SfxOpen: UseActions/body_open
+  SfxClose: UseActions/body_close
+  { Child Items
+    Name_0: AlienParts02, data: 0.5, xdata: "2,3"
+    Name_1: AlienTooth, data: 0.3, xdata: "2,3"
+    Name_2: FireMossScrapings, data: 1.5, xdata: "1,3"
+  }
+}
+
+
 # TroopTransporters
 { Container Id: 16
   Count: "4,6"
@@ -386,6 +429,54 @@ VERSION: 8
     PlasticMaterial: 30
     Computer: 4
     GoldIngot: 10
+  }
+}
+
+{ Item Id: 2073, Name: Sniper2Epic, Ref: Sniper2
+  PickupToToolbar: true
+  Durability: 500, display: false
+  DegradationProb: 0.305, type: float, display: false
+  {
+    ROF: 0.425, type: float, display: true, formatter: ROF
+    Range: 400, display: false
+    NoiseStrength: 100, display: false
+    BulletSpread: 0.011, display: true
+    Recoil: 0.528, display: true
+    AmmoType: RailgunBullet, display: true
+    Damage: 600, display: true
+    AmmoCapacity: 13, display: true
+    ReloadDelay: 5, display: true
+    DamageMultiplier_1: 8, data: head, display: DmgMultiplierHead
+    DamageMultiplier_2: 0, data: dirt|stone|rock|wood
+    DamageMultiplier_3: 0.75, data: hullarmored|hullcombat
+    DamageMultiplier_4: 0, data: shield
+  }
+  {
+  }
+  UnlockCost: 0, display: true
+  UnlockLevel: 15, display: true
+  TechTreeParent: Sniper2
+  TechTreeNames: Weapons
+}
+
+{ Template Name: Sniper2Epic
+  CraftTime: 120
+  Target: "AdvC"
+  { Child Inputs
+    Sniper2: 1
+    MechanicalComponents: 20
+    Electronics: 20
+    OpticalFiber: 15
+    SniperKit: 2
+  }  
+}
+{ Template Name: RailgunBullet
+  OutputCount: 40
+  CraftTime: 15
+  Target: "LargeC,AdvC"
+  { Child Inputs
+    CobaltAlloy: 4
+    SathiumIngot: 20
   }
 }
 
