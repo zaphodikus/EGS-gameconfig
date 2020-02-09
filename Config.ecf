@@ -9,7 +9,24 @@ VERSION: 8
 
 
 # ==================== BLOCKS, DEVICES ==========================
-
+# require water again
+{ Template Name: ConcreteBlocks
+  CraftTime: 1
+  OutputCount: 1
+  Target: "SurvC,HoverC,BaseC,LargeC,AdvC"
+  { Child Inputs
+    Cement: 2
+    WaterJug: 1	
+  }
+}
+{ Template Name: ConcreteArmoredBlocks
+  CraftTime: 1
+  Target: "LargeC,AdvC"
+  { Child Inputs
+    ConcreteBlocks: 3
+    SteelPlate: 2
+  }
+}
 
 # Properties:
 # IsAccessible: shows up in Control Panel
@@ -372,21 +389,7 @@ VERSION: 8
   }
 }
 
-# T2 was missing
-
-{ Block Id: 1811, Name: ShieldGeneratorCVT2, Ref: ShieldGeneratorCV
-  Mass: 6000, type: float, display: true, formatter: Kilogram
-  Volume: 600, type: float, display: true, formatter: Liter
-  EnergyIn: 36000, type: int, display: true, formatter: Watt
-  CPUIn: 33100, type: int, display: true
-  EnergyInIdle: 1600, type: int, display: true, formatter: Watt
-  ShieldCapacity: 36000, type: int, display: true
-  ShieldRecharge: 120, type: int, display: true
-  UnlockCost: 20, display: true
-  UnlockLevel: 15, display: true
-  TechTreeParent: ShieldGeneratorCV
-  TechTreeNames: Capital Vessel
-}
+# T2 shield gen was missing from constructors
 { Template Name: ShieldGeneratorCVT2
   CraftTime: 90
   Target: "AdvC"
@@ -398,20 +401,6 @@ VERSION: 8
     FluxCoil: 5
     PowerCoil: 1
   }
-}
-
-{ Block Id: 1812, Name: ShieldGeneratorBAT2, Ref: ShieldGeneratorBA
-  Mass: 10000, type: float, display: true, formatter: Kilogram
-  Volume: 800, type: float, display: true, formatter: Liter
-  EnergyIn: 50000, type: int, display: true, formatter: Watt
-  CPUIn: 45500, type: int, display: true
-  EnergyInIdle: 1500, type: int, display: true, formatter: Watt
-  ShieldCapacity: 50000, type: int, display: true
-  ShieldRecharge: 150, type: int, display: true
-  UnlockCost: 20, display: true
-  UnlockLevel: 15, display: true
-  TechTreeParent: ShieldGeneratorBA
-  TechTreeNames: Base
 }
 { Template Name: ShieldGeneratorBAT2
   CraftTime: 90
