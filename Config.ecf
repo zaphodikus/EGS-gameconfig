@@ -6,6 +6,101 @@
 
 VERSION: 8
 
+{ Block Id: 1095, Name: LCDScreenBlocks
+  Material: metallight
+  HitPoints: 50, type: int, display: false
+  StackSize: 20
+  Mass: 11, type: float, display: true, formatter: Kilogram
+  Volume: 0.5, type: float, display: true, formatter: Liter
+  Info: bkiBlockGroup, display: true
+  IsOxygenTight: false, display: true
+  Category: Devices
+  ChildBlocks: "LCDProjector, LCDNoFrame1x2, LCDFrame1x2, LCDNoFrame1x1, LCDFrame1x1, LCDNoFrame05x1, LCDNoFrame05x05, LCDNoFrame02x1, LCDNoFrame02x05"
+  UnlockCost: 0
+  UnlockLevel: 1
+  TechTreeNames: 
+}
+
+{ Block Id: 420, Name: RCSBlockMS
+  Group: cpgRCS
+  Material: metal
+  ShowBlockName: true
+  Volume: 120, type: float, display: true, formatter: Liter
+  Mass: 40000, type: float, display: true, formatter: Kilogram
+  IsOxygenTight: false, display: true
+  IsIgnoreLC: true
+  Info: bkiGyroscope, display: true
+  StackSize: 6
+  BlockColor: "110,110,110"
+  Category: Devices
+  Torque: 1000, type: int, display: true, formatter: NewtonMeter  # was 10000
+  EnergyIn: 1, type: int, display: true, formatter: Watt
+  CPUIn: 75000, type: int, display: true
+  BlastRadius: 3
+  BlastDamage: 80
+  UnlockCost: 5, display: true
+  UnlockLevel: 7, display: true
+  TechTreeParent: GeneratorBA
+  TechTreeNames: Capital Vessel
+}
+
+{ Block Id: 336, Name: PentaxidTank
+  Group: cpgWarp
+  LootList: 3
+  Material: metal
+  ShowBlockName: true
+  MaxCount: 1, type: int, display: true
+  IsLockable: true
+  StackSize: 1
+  BlockColor: "110,110,110"
+  Mass: 4000, type: float, display: true, formatter: Kilogram
+  Volume: 300, type: float, display: true, formatter: Liter
+  VolumeCapacity: 2500, type: float, display: true, formatter: Liter
+  Category: Devices
+  HitPoints: 100, type: int, display: true
+  CPUIn: 400, type: int, display: true
+  BlastRadius: 5
+  BlastDamage: 300
+  UnlockCost: 13, display: true
+  UnlockLevel: 10, display: true
+  TechTreeParent: GravityGeneratorMS
+  TechTreeNames: "Base,Capital Vessel"
+  Radiation: 4, display: RadiationLevel
+  Temperature: 45, display: true
+}
+
+{ Block Id: 558, Name: Core
+  Group: cpgCore
+  Material: metal
+  ShowBlockName: true
+  StackSize: 20
+  Mass: 90, type: float, display: true, formatter: Kilogram
+  Volume: 17, type: float, display: true, formatter: Liter
+  IsIgnoreLC: true
+  MaxCount: 1, type: int, display: true
+  IsOxygenTight: true, display: true
+  Info: bkiCore, display: true
+  Category: Devices
+  BlastRadius: 1
+  BlastDamage: 300
+  BlockColor: "0,40,0"
+  EnergyIn: 5, type: int, display: true, formatter: Watt
+  HitPoints: 250, type: int, display: true
+  UnlockCost: 0, display: true
+  UnlockLevel: 1, display: true
+  TechTreeNames: "Small Vessel,Hover Vessel,Capital Vessel,Base"
+}
+{ Block Id: 730, Name: DockingPad, Ref: LandinggearShort
+  Info: bkiLandinggearHV, display: true
+  TemplateRoot: DockingPad
+  StackSize: 6
+  Mass: 100, type: float, display: true, formatter: Kilogram
+  Volume: 10, type: float, display: true, formatter: Liter
+  UnlockCost: 0, display: true
+  UnlockLevel: 1, display: true
+  TechTreeNames: Hover Vessel
+}
+
 { Template Name: AssaultRifleEpic
   CraftTime: 5
   Target: "AdvC"
@@ -766,13 +861,19 @@ VERSION: 8
   UnlockLevel: 16, display: true				# ADDED
   TechTreeParent: ArmorMedium					# ADDED
   TechTreeNames: "Tools,Weapons"						# ADDED
+  Armor: 700, type: int, display: true		# reduced
 }
+
 { Item Id: 2653, Name: ArmorHeavyEpic, Ref: ArmorHeavy
   UnlockCost: 0, display: true					# ADDED
   UnlockLevel: 25, display: true				# 1 (ADDED display:)
   TechTreeParent: ArmorHeavy					# ADDED
   TechTreeNames: "Tools,Weapons"						# Hidden
   NrSlots: 5, type: int, display: true		# ADDED
+  Armor: 1000, type: int, display: true		# reduced
+  Heat: 800, type: int, display: true
+  Cold: 273, type: int, display: true
+  Radiation: 40, type: int, display: true
 }
 
 { Template Name: ArmorLight
@@ -928,6 +1029,7 @@ VERSION: 8
   SolarPanelEfficiency: 5.0, display: true
   Material: metallight
   Category: Devices
+  StackSize: 6
   Mass: 250, type: float, display: true, formatter: Kilogram
   Volume: 25, type: float, display: true, formatter: Liter
   MaxCount: 50, type: int, display: true
@@ -1197,7 +1299,7 @@ VERSION: 8
   Mass: 4000, type: float, display: true, formatter: Kilogram
   MaxCount: 1, type: int, display: true
   IsOxygenTight: false, display: true
-  StackSize: 6
+  StackSize: 1
   BlockColor: "110,110,110"
   Category: Devices
   Info: bkiWarpDrive, display: true
@@ -1268,4 +1370,55 @@ VERSION: 8
   HitPoints: 935, type: int, display: true
   RotSpeed: 60, type: int, display: true
   Zoom: 5, type: float
+}
+
+{ Item Id: 2186, Name: DrillAttachmentCVWeapon
+  StackSize: 5
+  Mass: 150, type: float, display: false, formatter: Kilogram
+  Category: Weapons/Items
+  {
+    DecoMode: true
+    InfoPopup: true
+    TerrainMode: true
+    HarvestSupport: true
+    AllowAt: Space
+    ROF: 0.5, type: float
+    Damage: 300 # was 500
+    Radius: 4 # was 3
+    Range: 80, display: true # was 120
+    IgnoreAtmo: true
+    Automatic: true
+    AmmoCapacity: 0, display: true
+    AmmoType: AmmoInfinite, display: true
+    NoiseStrength: 30, display: false
+    CameraShake: 0
+    ReloadDelay: 3.8, display: false
+    DamageMultiplier_1: 0, data: woodblock|concrete|hull|hullarmored|hullcombat|metal|metalhard|shield
+    DamageMultiplier_2: 0, data: wood
+    DamageMultiplier_3: 0.5, data: rock
+  }
+}
+{ Block Id: 1582, Name: DrillAttachmentCV
+  LootList: 37
+  Group: cpgHarvest
+  Material: metalhard
+  ShowBlockName: true
+  WeaponItem: DrillAttachmentCVWeapon
+  BlockColor: "110,110,110"
+  Info: bkiDrill, display: true
+  Category: Weapons/Items
+  EnergyIn: 3000, type: int, display: true, formatter: Watt
+  CPUIn: 400, type: int, display: true
+  EnergyInIdle: 5, type: int, display: true, formatter: Watt
+  Mass: 1400, type: float, display: true, formatter: Kilogram # was 1000
+  Volume: 500, type: float, display: true, formatter: Liter
+  HitPoints: 500, type: int, display: true
+  StackSize: 6
+  MaxCount: 6, type: int, display: true
+  BlastRadius: 2
+  BlastDamage: 50
+  UnlockCost: 20, display: true
+  UnlockLevel: 25, display: true
+  TechTreeParent: TurretMSToolBlocks
+  TechTreeNames: Capital Vessel
 }
