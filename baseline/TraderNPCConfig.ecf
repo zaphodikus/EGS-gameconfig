@@ -10,6 +10,7 @@
 #       price than he buys (guaranteed spread is 5%).
 
 # Please do not change the name of the default trader
+# Please do not change the name of the default trader
 { Trader Name: TraderDefault
   SellingText: "Hi, I am trader <NAME>\nI am selling <GOODS>.\nYou can pay with <PAYMENT>."
   # SellingText: "trwDefaultSellingText"
@@ -24,11 +25,11 @@
   SellingText: "Welcome to QuantumSTAR! How can we server you today?\n<DISCOUNTTEXT>"
   SellingGoods: "trwSpecial"
   Discount: 0.15
-  Item1: "AutoMinerCore, 12000-18000, 1-5, 4500-5600, 5-10"
-  Item2: "SmallOptronicBridge, 60000-90000, 1-5, 30000-45000, 5-10"
-  Item3: "SmallOptronicMatrix, 100000-120000, 1-5, 50000-75000, 5-10"
-  Item4: "LargeOptronicBridge, 150000-200000, 1-5, 100000-115000, 5-10"
-  Item5: "LargeOptronicMatrix, 250000-300000, 1-5, 150000-190000, 5-10" 
+  Item1: "AutoMinerCore, 1200-1800, 1-5, 4500-5600, 5-10"
+  Item2: "SmallOptronicBridge, 6000-9000, 1-5, 3000-4500, 5-10"
+  Item3: "SmallOptronicMatrix, 10000-12000, 1-5, 5000-75000, 5-10"
+  Item4: "LargeOptronicBridge, 15000-20000, 1-5, 10000-115000, 5-10"
+  Item5: "LargeOptronicMatrix, 25000-30000, 1-5, 15000-190000, 5-10"
 }
 
 { Trader Name: Talon
@@ -125,8 +126,8 @@
   Item25: "PlasticMaterial, 1-2, 50-100, 1-1, 100-500"
   Item26: "NCPowder, 1-2, 50-100, 1-1, 100-500"
   Item27: "MagnesiumPowder, 26-39, 50-100, 21-26, 100-500"
-  Item28: "SmallOptronicBridge, 60000-90000, 1-5, 30000-45000, 5-10"
-  Item29: "SmallOptronicMatrix, 100000-120000, 1-5, 50000-75000, 5-10"
+  Item28: "SmallOptronicBridge, 6000-9000, 1-5, 3000-4500, 5-10"
+  Item29: "SmallOptronicMatrix, 10000-12000, 1-5, 5000-75000, 5-10"
 }
 
 { Trader Name: OkYMedical
@@ -678,7 +679,6 @@
   Item29: "EVABoost, 6400-9600, 1-5, 5120-6400, 5-10"  
   Item30: "TransportationBoost, 6400-9600, 1-5, 5120-6400, 5-10" 
 }
-
 { Trader Name: Spaceport
   SellingText: "trwDefaultSellingText"
   SellingGoods: "trwArmorBoost"
