@@ -10,7 +10,6 @@
 #       price than he buys (guaranteed spread is 5%).
 
 # Please do not change the name of the default trader
-# Please do not change the name of the default trader
 { Trader Name: TraderDefault
   SellingText: "Hi, I am trader <NAME>\nI am selling <GOODS>.\nYou can pay with <PAYMENT>."
   # SellingText: "trwDefaultSellingText"
@@ -25,11 +24,11 @@
   SellingText: "Welcome to QuantumSTAR! How can we server you today?\n<DISCOUNTTEXT>"
   SellingGoods: "trwSpecial"
   Discount: 0.15
-  Item1: "AutoMinerCore, 1200-1800, 1-5, 4500-5600, 5-10"
-  Item2: "SmallOptronicBridge, 6000-9000, 1-5, 3000-4500, 5-10"
-  Item3: "SmallOptronicMatrix, 10000-12000, 1-5, 5000-75000, 5-10"
-  Item4: "LargeOptronicBridge, 15000-20000, 1-5, 10000-115000, 5-10"
-  Item5: "LargeOptronicMatrix, 25000-30000, 1-5, 15000-190000, 5-10"
+  Item1: "AutoMinerCore, 12000-18000, 1-5, 4500-5600, 5-10"
+  Item2: "SmallOptronicBridge, 60000-90000, 1-5, 30000-45000, 5-10"
+  Item3: "SmallOptronicMatrix, 100000-120000, 1-5, 50000-75000, 5-10"
+  Item4: "LargeOptronicBridge, 150000-200000, 1-5, 100000-115000, 5-10"
+  Item5: "LargeOptronicMatrix, 250000-300000, 1-5, 150000-190000, 5-10" 
 }
 
 { Trader Name: Talon
@@ -126,8 +125,8 @@
   Item25: "PlasticMaterial, 1-2, 50-100, 1-1, 100-500"
   Item26: "NCPowder, 1-2, 50-100, 1-1, 100-500"
   Item27: "MagnesiumPowder, 26-39, 50-100, 21-26, 100-500"
-  Item28: "SmallOptronicBridge, 6000-9000, 1-5, 3000-4500, 5-10"
-  Item29: "SmallOptronicMatrix, 10000-12000, 1-5, 5000-75000, 5-10"
+  Item28: "SmallOptronicBridge, 60000-90000, 1-5, 30000-45000, 5-10"
+  Item29: "SmallOptronicMatrix, 100000-120000, 1-5, 50000-75000, 5-10"
 }
 
 { Trader Name: OkYMedical
@@ -231,14 +230,14 @@
   SellingText: "Welcome to SERVANT CORP Hardware and Utilities Store!\n<DISCOUNTTEXT>"
   SellingGoods: "trwComponents,trwArmorBoost"
   Discount: 0.15
-  Item1: "MultiToolT2, 3446-5169, 1-50, 2757-3446, 50-100"
+  Item1: "MultiToolT2, 3446-5169, 1-5, 2757-3446, 5-10"
   Item2: "TextureTool, 534-801, 1-5, 427-534, 5-10"
   Item3: "ColorTool, 534-801, 1-5, 427-534, 5-10"
-  Item4: "ZascosiumIngot, 167-251, 500-700, 134-167, 700-1000"
+  Item4: "Chainsaw, 1677-2515, 1-5, 1341-1677, 5-10"
   Item5: "MultiCharge, 25-37, 50-100, 20-25, 100-500"
   Item6: "BioFuel, 32-48, 50-100, 26-32, 100-500"
   Item7: "ArmorMedium, 40000-60000, 1-5, 32000-40000, 5-10 "
-  Item8: "ErestrumIngot, 160-240, 500-700, 128-160, 700-1000" 
+  Item8: "NightVision, 1600-2400, 1-5, 1280-1600, 5-10" 
   Item9: "JetpackBoost, 6400-9600, 1-5, 5120-6400, 5-10"
   Item10: "MobilityBoost, 6400-9600, 1-5, 5120-6400, 5-10"
   Item11: "MultiBoost, 6400-9600, 1-5, 5120-6400, 5-10"
@@ -679,6 +678,7 @@
   Item29: "EVABoost, 6400-9600, 1-5, 5120-6400, 5-10"  
   Item30: "TransportationBoost, 6400-9600, 1-5, 5120-6400, 5-10" 
 }
+
 { Trader Name: Spaceport
   SellingText: "trwDefaultSellingText"
   SellingGoods: "trwArmorBoost"
