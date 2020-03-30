@@ -5,6 +5,57 @@
 # - parameters not listed (commented out / removed) will cause the game to continue using the internal ORIGINAL values
 
 VERSION: 8
+{ Template Name: IronOre
+  BaseItem: true
+  CraftTime: 5
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
+  { Child Inputs
+    CrushedStone: 13 # was 15
+  }
+}
+{ Template Name: CopperOre
+  BaseItem: true
+  CraftTime: 5
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
+  { Child Inputs
+    CrushedStone: 13 # was 15
+  }
+}
+{ Template Name: SiliconOre
+  BaseItem: true
+  CraftTime: 5
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
+  { Child Inputs
+    CrushedStone: 13 # was 15
+  }
+}
+# uses 3x the material for a base ore and 3x longer to make
+{ Template Name: CobaltOre
+  BaseItem: true
+  CraftTime: 15
+  Target: "LargeC,AdvC"
+  { Child Inputs
+    CrushedStone: 45
+  }
+  UnlockCost: 0
+  UnlockLevel: 10
+  Category: Components
+}
+
+{ Item Id: 2080, Name: Explosives
+  StackSize: 8 # only changed stacksize
+}
+
+{ Template Name: SteelPlate
+  OutputCount: 10
+  DeconOverride: Continue   # Stop
+  CraftTime: 2
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
+  { Child Inputs
+    IronIngot: 2
+  }
+}
+
 
 { Block Id: 1095, Name: LCDScreenBlocks
   Material: metallight
@@ -153,7 +204,7 @@ VERSION: 8
 }
 { Item Id: 2074, Name: MinigunEpic, Ref: Minigun
   PickupToToolbar: true
-  Durability: 500, display: false
+  Durability: 800, display: false	# was 500
   DegradationProb: 0.024, type: float, display: false
   {
     ROF: 0.043, type: float, display: true, formatter: ROF
@@ -169,7 +220,7 @@ VERSION: 8
     TracerPerBullet: 2
     DamageMultiplier_1: 2, data: head, display: DmgMultiplierHead
     DamageMultiplier_2: 0.09, data: wood
-    DamageMultiplier_3: 0, data: dirt|stone|rock|hullarmored|hullcombat
+    DamageMultiplier_3: 0.05, data: dirt|stone|rock|hullarmored|hullcombat
     DamageMultiplier_4: 0.2, data: shield
   }
   UnlockCost: 0
@@ -192,7 +243,7 @@ VERSION: 8
 }
 { Item Id: 2075, Name: Shotgun2Epic, Ref: Shotgun2
   PickupToToolbar: true
-  Durability: 500, display: false
+  Durability: 800, display: false	# was 500
   DegradationProb: 0.305, type: float, display: false
   {
     ROF: 0.850, type: float, display: true, formatter: ROF
@@ -207,7 +258,7 @@ VERSION: 8
     ReloadDelay: 3, display: true
     DamageMultiplier_1: 3, data: head, display: DmgMultiplierHead
     DamageMultiplier_2: 0.015, data: wood
-    DamageMultiplier_3: 0, data: dirt|stone|rock|hullarmored|hullcombat
+    DamageMultiplier_3: 0.05, data: dirt|stone|rock|hullarmored|hullcombat
     DamageMultiplier_4: 0.4, data: metal
     DamageMultiplier_5: 0.05, data: metalhard
     DamageMultiplier_6: 0, data: shield
@@ -861,7 +912,7 @@ VERSION: 8
   UnlockLevel: 16, display: true				# ADDED
   TechTreeParent: ArmorMedium					# ADDED
   TechTreeNames: "Tools,Weapons"						# ADDED
-  Armor: 700, type: int, display: true		# reduced
+  Armor: 800, type: int, display: true		# reduced
 }
 
 { Item Id: 2653, Name: ArmorHeavyEpic, Ref: ArmorHeavy
@@ -870,10 +921,10 @@ VERSION: 8
   TechTreeParent: ArmorHeavy					# ADDED
   TechTreeNames: "Tools,Weapons"						# Hidden
   NrSlots: 5, type: int, display: true		# ADDED
-  Armor: 1000, type: int, display: true		# reduced
   Heat: 800, type: int, display: true
   Cold: 273, type: int, display: true
   Radiation: 40, type: int, display: true
+  Armor: 1200, type: int, display: true		# increased again
 }
 
 { Template Name: ArmorLight
@@ -940,7 +991,7 @@ VERSION: 8
 
 { Item Id: 2073, Name: Sniper2Epic, Ref: Sniper2
   PickupToToolbar: true
-  Durability: 500, display: false
+  Durability: 800, display: false		# was 500
   DegradationProb: 0.305, type: float, display: false
   {
     ROF: 0.425, type: float, display: true, formatter: ROF
@@ -952,7 +1003,7 @@ VERSION: 8
     Damage: 600, display: true
     AmmoCapacity: 13, display: true
     ReloadDelay: 5, display: true
-    DamageMultiplier_1: 8, data: head, display: DmgMultiplierHead
+    DamageMultiplier_1: 6, data: head, display: DmgMultiplierHead
     DamageMultiplier_2: 0, data: dirt|stone|rock|wood
     DamageMultiplier_3: 0.75, data: hullarmored|hullcombat
     DamageMultiplier_4: 0, data: shield
@@ -1026,7 +1077,7 @@ VERSION: 8
 { Block Id: 1494, Name: SolarPanelBlocks
   Group: cpgSolar
   PanelAngle: 30
-  SolarPanelEfficiency: 5.0, display: true
+  SolarPanelEfficiency: 6.0, display: true
   Material: metallight
   Category: Devices
   StackSize: 6
@@ -1045,7 +1096,7 @@ VERSION: 8
 { Block Id: 1496, Name: SolarPanelSlope
   Group: cpgSolar
   PanelAngle: 30
-  SolarPanelEfficiency: 5.0, display: true
+  SolarPanelEfficiency: 6.0, display: true
   Material: metallight
   Category: Devices
   HitPoints: 150, type: int, display: true
@@ -1059,7 +1110,7 @@ VERSION: 8
 { Block Id: 1513, Name: SolarPanelSmallBlocks
   Group: cpgSolar
   PanelAngle: 30
-  SolarPanelEfficiency: 5.0, display: true
+  SolarPanelEfficiency: 6.0, display: true
   Material: metallight
   Category: Devices
   HitPoints: 100, type: int, display: true
@@ -1421,4 +1472,8 @@ VERSION: 8
   UnlockLevel: 25, display: true
   TechTreeParent: TurretMSToolBlocks
   TechTreeNames: Capital Vessel
+}
+
+{ Block Id: 456, Name: ThrusterSVDirectional
+  StackSize: 15	  # just set stacksize
 }
