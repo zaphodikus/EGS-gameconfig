@@ -1,0 +1,10 @@
+# Prerequisites
+*.*
+!files_link.txt
+!list_links.bat
+!set_links.bat
+!Config.ecf
+!TraderNPCConfig.ecf
+!README.MD
+!LICENSE
+!baseline/
