@@ -35,7 +35,7 @@ VERSION: 8
   CraftTime: 15
   Target: "LargeC,AdvC"
   { Child Inputs
-    CrushedStone: 45
+    CrushedStone: 75
   }
   UnlockCost: 0
   UnlockLevel: 10
@@ -1476,4 +1476,16 @@ VERSION: 8
 
 { Block Id: 456, Name: ThrusterSVDirectional
   StackSize: 15	  # just set stacksize
+}
+{ Item Id: 2357, Name: AlienParts01, Ref: FoodTemplate
+  Category: Food
+  StackSize: 100
+}
+{ Item Id: 2358, Name: AlienParts02, Ref: FoodTemplate
+  Category: Food
+  StackSize: 100
+}
+{ Item Id: 2359, Name: AlienParts03, Ref: FoodTemplate
+  Category: Food
+  StackSize: 100
 }
