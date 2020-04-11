@@ -5,6 +5,115 @@
 # - parameters not listed (commented out / removed) will cause the game to continue using the internal ORIGINAL values
 
 VERSION: 8
+{ Item Id: 2748, Name: NightVision
+  StackSize: 10		# only change stacksize
+}
+{ Template Name: NightVision # value 1600-2400
+  BaseItem: true
+  CraftTime: 80
+  Target: "LargeC,AdvC"
+  { Child Inputs
+    Electronics: 15
+    PlasticMaterial: 10
+    Computer: 4
+    SteelPlate: 2
+    EnergyMatrix: 2
+  }
+  #UnlockCost: 15
+  #UnlockLevel: 25    # changed
+  #TechTreeParent: DrillT2
+  #TechTreeNames: Tools
+}
+# Armor boosters
+#{ Template Name: EVABoost
+#  CraftTime: 100
+#  Target: "HoverC,BaseC,SmallC,LargeC,AdvC"
+#  { Child Inputs
+#    SteelPlate: 1
+#    OpticalFiber: 1
+#    Nanotubes: 2
+#    GoldIngot: 1
+#  }
+#}
+
+{ Template Name: JetpackBoost
+  CraftTime: 100
+  Target: "AdvC"
+  { Child Inputs
+    SteelPlate: 2
+    Electronics: 10
+    CobaltAlloy: 10
+    Motor: 2
+    GoldIngot: 1
+  }
+}
+
+{ Template Name: ArmorBoost
+  CraftTime: 100
+  Target: "AdvC"
+  { Child Inputs
+    SteelPlate: 10
+    Electronics: 5
+    Motor: 4
+    GoldIngot: 1
+  }
+}
+{ Template Name: MultiBoost
+  CraftTime: 100
+  Target: "AdvC"
+  { Child Inputs
+    SteelPlate: 3
+    Electronics: 5
+    Nanotubes: 30
+    GoldIngot: 2
+  }
+}
+
+{ Template Name: OxygenBoost
+  CraftTime: 100
+  Target: "AdvC"
+  { Child Inputs
+    SteelPlate: 6
+    Electronics: 2
+    Nanotubes: 10
+    GoldIngot: 1
+  }
+}
+{ Template Name: InsulationBoost
+  CraftTime: 100
+  Target: "LargeC,AdvC"
+  { Child Inputs
+    SteelPlate: 3
+    Electronics: 5
+    Nanotubes: 30
+    GoldIngot: 1
+  }
+}
+{ Template Name: RadiationBoost
+  CraftTime: 100
+  Target: "LargeC,AdvC"
+  { Child Inputs
+    SteelPlate: 5
+    OpticalFiber: 10
+    Nanotubes: 20
+    GoldIngot: 1
+  }
+}
+{ Template Name: MobilityBoost
+  CraftTime: 100
+  Target: "AdvC"
+  { Child Inputs
+    SteelPlate: 5
+    Electronics: 5
+    PlasticMaterial: 10
+    Motor: 4
+    GoldIngot: 1
+  }
+}
+
+
+
+##################################################
 { Template Name: IronOre
   BaseItem: true
   CraftTime: 5
@@ -36,6 +145,7 @@ VERSION: 8
   Target: "LargeC,AdvC"
   { Child Inputs
     CrushedStone: 75
+	BioFuel: 5
   }
   UnlockCost: 0
   UnlockLevel: 10
@@ -182,7 +292,7 @@ VERSION: 8
   }
   {
   }
-  UnlockCost: 0
+  UnlockCost: 15
   UnlockLevel: 25
   TechTreeParent: AssaultRifle
   TechTreeNames: Weapons
@@ -223,7 +333,7 @@ VERSION: 8
     DamageMultiplier_3: 0.05, data: dirt|stone|rock|hullarmored|hullcombat
     DamageMultiplier_4: 0.2, data: shield
   }
-  UnlockCost: 0
+  UnlockCost: 15
   UnlockLevel: 25
   TechTreeParent: Minigun
   TechTreeNames: Weapons
@@ -265,7 +375,7 @@ VERSION: 8
   }
   {
   }
-  UnlockCost: 0
+  UnlockCost: 15
   UnlockLevel: 25
   TechTreeParent: Shotgun2
   TechTreeNames: Weapons
@@ -295,7 +405,7 @@ VERSION: 8
     Recoil: 1.44, display: true
     ReloadDelay: 6, display: true
   }
-  UnlockCost: 0
+  UnlockCost: 15
   UnlockLevel: 25
   TechTreeParent: ScifiCannon
   TechTreeNames: Weapons
@@ -335,7 +445,7 @@ VERSION: 8
   }
   {
   }
-  UnlockCost: 0
+  UnlockCost: 15
   UnlockLevel: 25
   TechTreeParent: PulseRifleT2
   TechTreeNames: Weapons
@@ -370,7 +480,7 @@ VERSION: 8
   }
   {
   }
-  UnlockCost: 0
+  UnlockCost: 15
   UnlockLevel: 25
   TechTreeParent: RocketLauncherT2
   TechTreeNames: Weapons
@@ -408,7 +518,7 @@ VERSION: 8
   }
   {
   }
-  UnlockCost: 0
+  UnlockCost: 15
   UnlockLevel: 25
   TechTreeParent: LaserRifle
   TechTreeNames: Weapons
@@ -472,7 +582,7 @@ VERSION: 8
   }
   {
   }
-  UnlockCost: 0
+  UnlockCost: 10
   UnlockLevel: 15
   TechTreeParent: PistolT2
   TechTreeNames: Weapons
@@ -504,7 +614,7 @@ VERSION: 8
     Radius: 3.5
     Range: 6, display: false
   }
-  UnlockCost: 0
+  UnlockCost: 15
   UnlockLevel: 25    # changed
   TechTreeParent: DrillT2
   TechTreeNames: Tools
@@ -534,7 +644,7 @@ VERSION: 8
     Recoil: 1.44, display: true
     ReloadDelay: 6, display: true
   }
-  UnlockCost: 0
+  UnlockCost: 15
   UnlockLevel: 25
   TechTreeParent: ScifiCannon
   TechTreeNames: Weapons
@@ -574,7 +684,7 @@ VERSION: 8
   }
   {
   }
-  UnlockCost: 0
+  UnlockCost: 15
   UnlockLevel: 25
   TechTreeParent: PulseRifleT2
   TechTreeNames: Weapons
@@ -798,7 +908,7 @@ VERSION: 8
   { Child Inputs
     SteelPlate: 8
     CopperIngot: 4
-    NCPowder: 1
+    NCPowder: 1  # nitrocellulose
   }
 }
 { Item Id: 2053, Name: Minigun
@@ -902,13 +1012,13 @@ VERSION: 8
 }
 # armor https://steamcommunity.com/app/383120/discussions/0/1747895465439059678/?ctp=2
 { Item Id: 2649, Name: ArmorMedium
-  UnlockCost: 0, display: true					# ADDED
+  UnlockCost: 10, display: true					# ADDED
   UnlockLevel: 10, display: true				# ADDED
   TechTreeParent: ArmorLight					# ADDED
   TechTreeNames: "Tools,Weapons"						# ADDED
 }
 { Item Id: 2650, Name: ArmorHeavy
-  UnlockCost: 0, display: true					# ADDED
+  UnlockCost: 13, display: true					# ADDED
   UnlockLevel: 16, display: true				# ADDED
   TechTreeParent: ArmorMedium					# ADDED
   TechTreeNames: "Tools,Weapons"						# ADDED
@@ -916,7 +1026,7 @@ VERSION: 8
 }
 
 { Item Id: 2653, Name: ArmorHeavyEpic, Ref: ArmorHeavy
-  UnlockCost: 0, display: true					# ADDED
+  UnlockCost: 15, display: true					# ADDED
   UnlockLevel: 25, display: true				# 1 (ADDED display:)
   TechTreeParent: ArmorHeavy					# ADDED
   TechTreeNames: "Tools,Weapons"						# Hidden
@@ -1010,7 +1120,7 @@ VERSION: 8
   }
   {
   }
-  UnlockCost: 0, display: true
+  UnlockCost: 10, display: true
   UnlockLevel: 15, display: true
   TechTreeParent: Sniper2
   TechTreeNames: Weapons
