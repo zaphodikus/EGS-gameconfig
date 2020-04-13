@@ -16,25 +16,14 @@ VERSION: 8
     Electronics: 15
     PlasticMaterial: 10
     Computer: 4
-    SteelPlate: 2
     EnergyMatrix: 2
+    PentaxidElement: 10
   }
   #UnlockCost: 15
   #UnlockLevel: 25    # changed
   #TechTreeParent: DrillT2
   #TechTreeNames: Tools
 }
-# Armor boosters
-#{ Template Name: EVABoost
-#  CraftTime: 100
-#  Target: "HoverC,BaseC,SmallC,LargeC,AdvC"
-#  { Child Inputs
-#    SteelPlate: 1
-#    OpticalFiber: 1
-#    Nanotubes: 2
-#    GoldIngot: 1
-#  }
-#}
 
 { Template Name: JetpackBoost
   CraftTime: 100
@@ -294,7 +283,7 @@ VERSION: 8
   }
   UnlockCost: 15
   UnlockLevel: 25
-  TechTreeParent: AssaultRifle
+  TechTreeParent: AssaultRifleT2
   TechTreeNames: Weapons
 }
 
@@ -755,25 +744,25 @@ VERSION: 8
 }
 # Dino large (Triceratops, Pangolin)
 { Container Id: 31
-  Count: "4,6"
+  Count: "10,15"
   Size: "8,1"
-  SfxOpen: UseActions/body_open
-  SfxClose: UseActions/body_close
+  SfxOpen: UseActions/KEYUnlockingMetalDoor(mono)  # UseActions/body_open
+  SfxClose: UseActions/KEYUnlockingMetalDoor(mono)  # UseActions/body_close
   { Child Items
-    Name_0: Meat, data: 1, xdata: "5,10"
-    Name_1: Egg, data: 0.6, xdata: "1,2"
+    Name_0: Meat, data: 1.5, xdata: "5,10"
+    Name_1: Egg, data: 1.1, xdata: "2,4"
   }
 }
 # AlienBug01
 { Container Id: 33
-  Count: "4,6"
+  Count: "10,15"
   Size: "8,1"
   SfxOpen: UseActions/body_open
   SfxClose: UseActions/body_close
   { Child Items
-    Name_0: Meat, data: 0.6, xdata: "4,5"
-    Name_1: AlienParts02, data: 0.5, xdata: "2,3"
-    Name_2: AlienTooth, data: 0.3, xdata: "6,8"
+    Name_0: Meat, data: 1.5, xdata: "4,5"
+    Name_1: AlienParts02, data: 1.5, xdata: "2,3"
+    Name_2: AlienTooth, data: 1.1, xdata: "6,8"
   }
 }
 # AlienAssassin,Hexapod
@@ -977,6 +966,12 @@ VERSION: 8
   TechTreeParent: AssaultRifle
   TechTreeNames: Weapons
 }
+{ Item Id: 2057, Name: Shotgun2
+  {
+    AmmoCapacity: 8, display: true
+  }
+}
+
 { Item Id: 2063, Name: AssaultRifle
   PickupToToolbar: true
   StackSize: 1
@@ -1293,7 +1288,7 @@ VERSION: 8
   Target: "LargeC,AdvC"
   { Child Inputs
     EnergyMatrix: 0  
-    PentaxidElement: 100
+    PentaxidElement: 200
     SteelPlate: 20
     Nanotubes: 20
     CobaltAlloy: 10

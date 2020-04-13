@@ -679,6 +679,7 @@
   Item30: "TransportationBoost, 6400-9600, 1-5, 5120-6400, 5-10" 
 }
 
+
 { Trader Name: Spaceport
   SellingText: "trwDefaultSellingText"
   SellingGoods: "trwArmorBoost"
