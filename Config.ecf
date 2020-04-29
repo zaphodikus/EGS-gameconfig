@@ -8,6 +8,10 @@ VERSION: 8
 { Item Id: 2748, Name: NightVision
   StackSize: 10		# only change stacksize
 }
+#{ Block Id: 716, Name: TurretGVArtillery
+#  MaxCount: 2, type: int, display: true  # was MaxCount 1
+#}
+
 { Template Name: NightVision # value 1600-2400
   BaseItem: true
   CraftTime: 80
@@ -713,10 +717,10 @@ VERSION: 8
   SfxClose: UseActions/stone_open_close
   { Child Items
     Name_0: CrushedStone, data: 0.4, xdata: "5,15"
-    Name_1: GoldOre, data: 0.4, xdata: "1,2"
+    Name_1: GoldOre, data: 1.4, xdata: "2,4"
     Group_0: OresBasic, data: 0.9
-    Group_1: OresAdvanced, data: 1.6
-    Group_2: OresRare, data: 1.4
+    Group_1: OresAdvanced, data: 2.6
+    Group_2: OresRare, data: 2.4
   }
 }
 
@@ -742,14 +746,18 @@ VERSION: 8
     Name_1: Egg, data: 0.6, xdata: "1,2"
   }
 }
+{ Item Id: 2350, Name: Meat, Ref: FoodTemplate
+  StackSize: 50  # was 20 by default
+}
+
 # Dino large (Triceratops, Pangolin)
 { Container Id: 31
   Count: "10,15"
   Size: "8,1"
   SfxOpen: UseActions/KEYUnlockingMetalDoor(mono)  # UseActions/body_open
-  SfxClose: UseActions/KEYUnlockingMetalDoor(mono)  # UseActions/body_close
+  SfxClose: UseActions/body_close
   { Child Items
-    Name_0: Meat, data: 1.5, xdata: "5,10"
+    Name_0: Meat, data: 1.5, xdata: "15,20"
     Name_1: Egg, data: 1.1, xdata: "2,4"
   }
 }
@@ -798,26 +806,42 @@ VERSION: 8
   SfxOpen: UseActions/drone_open
   SfxClose: UseActions/drone_close
   { Child Items
-    Group_0: WeaponsVeryRare, data: 1.3
-    Group_1: EnergyItems, data: 1.8
-    Group_2: MedicalItems, data: 1.8
+    Group_0: WeaponsVeryRare, data: 2.3
+    Group_1: EnergyItems, data: 2.5
+    Group_2: MedicalItems, data: 2.5
     Group_3: WeaponsRare, data: 1.8
-    Group_4: WeaponsRareKit, data: 1.8
+    Group_4: WeaponsRareKit, data: 2.5
   }
 }
 # DroneLargeAttackBase
 { Container Id: 160
   Count: "2,3"
   Size: "8,1"
-  SfxOpen: UseActions/drone_open
-  SfxClose: UseActions/drone_close
+  SfxOpen: UseActions/BarrelOpen    # drone_open
+  SfxClose: UseActions/BarrelClose  # drone_close
   { Child Items
     Name_0: FastRocket, data: 1.5, xdata: "150,300"
     Name_1: FusionCell, data: 1.5, xdata: "20,30"
     Name_2: WeaponSV05, data: 1.5, xdata: 1
+    Group_0: OresBasic, data: 2.9
     Group_1: ComponentsRare, data: 1.5
   }
 }
+# DroneSmallFast01Minigun and DroneSmallAttackBase DroneSmallFast01Minigun and DroneSmallAttackBase
+{ Container Id: 150
+  Count: "2,3"
+  Size: "8,1"
+  SfxOpen: UseActions/BarrelOpen    # drone_open
+  SfxClose: UseActions/BarrelClose  # drone_close
+  { Child Items
+    Name_0: 8.3mmBullet, data: 1.8, xdata: "125,250"
+    Name_1: EnergyCell, data: 2.0, xdata: "2,3"
+    Group_0: ComponentsBasic, data: 1.6
+    Group_1: ComponentsRare, data: 1.6
+  }
+}
+
+
 # ================= Weapons ========================
 #
 { Item Id: 2071, Name: Chainsaw
