@@ -1,0 +1,415 @@
+# How it works:
+# - rename to 'Config.ecf' to activate
+# - change original values of parameters as desired
+# - listed parameters will overwrite the game's internal original values
+# - parameters not listed (commented out / removed) will cause the game to continue using the internal ORIGINAL values
+
+VERSION: 9
+
+
+# ==================== BLOCKS, DEVICES ==========================
+
+{ Item Id: 2748, Name: NightVision
+  StackSize: 10
+}
+
+# uses 4x the material for a base ore and almost 3x longer to make
+{ Template Name: CobaltOre, Ref: OreTemplate
+  BaseItem: true
+  CraftTime: 12
+  Target: "LargeC,AdvC"
+  { Child Inputs
+    CrushedStone: 100
+	BioFuel: 5
+  }
+  UnlockCost: 0
+  UnlockLevel: 10
+  Category: Components
+}
+
+{ Template Name: PromethiumPellets
+  OutputCount: 20  # doubled
+  CraftTime: 5
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
+  { Child Inputs
+    PromethiumOre: 1
+  }
+}
+
+{ Template Name: MagnesiumPowder
+  OutputCount: 20  # doubled
+  CraftTime: 5
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
+  { Child Inputs
+    MagnesiumOre: 5
+  }
+}
+
+{ Template Name: EnergyCell
+  OutputCount: 4  # doubled
+  CraftTime: 5
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
+  { Child Inputs
+    PromethiumPellets: 10
+  }
+}
+{ Template Name: EnergyCellLarge
+  OutputCount: 4  # doubled
+  CraftTime: 15
+  Target: "LargeC,AdvC"
+  { Child Inputs
+    PromethiumPellets: 50
+  }
+}
+
+{ Template Name: Fiber
+  BaseItem: true
+  OutputCount: 60  # doubled
+  CraftTime: 5
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
+  { Child Inputs
+    WoodLogs: 1
+  }
+}
+{ Template Name: BioFuel
+  OutputCount: 1
+  CraftTime: 25   # reduced slightly
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
+  { Child Inputs
+    Fiber: 5  # halved
+  }
+}
+
+{ Template Name: MagnesiumPowder
+  OutputCount: 20
+  CraftTime: 5
+  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
+  { Child Inputs
+    MagnesiumOre: 5
+  }
+}
+
+{ Template Name: 5.8mmBullet
+  OutputCount: 150
+  CraftTime: 5
+  Target: "SmallC,HoverC,BaseC,LargeC,AdvC"
+  { Child Inputs
+    SteelPlate: 8
+    CopperIngot: 4
+    NCPowder: 1  # nitrocellulose
+  }
+}
+
+# All solar panels doubled
+{ Block Id: 1494, Name: SolarPanelBlocks
+  MaxCount: 30, type: int, display: true  # doubled
+  SolarPanelEfficiency: 7, display: true  # doubled
+}
+{ Block Id: 1496, Name: SolarPanelSlope
+  MaxCount: 30, type: int, display: true  # doubled
+  SolarPanelEfficiency: 7, display: true  # doubled
+}
+{ Block Id: 1497, Name: SolarPanelHorizontal, Ref: SolarPanelSlope
+  MaxCount: 30, type: int, display: true  # doubled
+  SolarPanelEfficiency: 7, display: true  # doubled
+}
+{ Block Id: 1498, Name: SolarPanelHorizontal2, Ref: SolarPanelSlope
+  MaxCount: 30, type: int, display: true  # doubled
+  SolarPanelEfficiency: 7, display: true  # doubled
+}
+{ Block Id: 1499, Name: SolarPanelHorizontalMount, Ref: SolarPanelSlope
+  MaxCount: 30, type: int, display: true  # doubled
+  SolarPanelEfficiency: 7, display: true  # doubled
+}
+
+{ Block Id: 1510, Name: SolarPanelSlope2, Ref: SolarPanelSlope
+  MaxCount: 30, type: int, display: true  # doubled
+  SolarPanelEfficiency: 7, display: true  # doubled
+}
+{ Block Id: 1511, Name: SolarPanelSlope3, Ref: SolarPanelSlope
+  MaxCount: 30, type: int, display: true  # doubled
+  SolarPanelEfficiency: 7, display: true  # doubled
+}
+# small panels
+{ Block Id: 1513, Name: SolarPanelSmallBlocks
+  MaxCount: 30, type: int, display: true  # doubled
+  SolarPanelEfficiency: 4.0, display: true  # doubled
+}
+{ Block Id: 1514, Name: SolarPanelSlope3Small
+  MaxCount: 30, type: int, display: true  # doubled
+  SolarPanelEfficiency: 4.0, display: true  # doubled
+}
+{ Block Id: 1515, Name: SolarPanelSlopeSmall, Ref: SolarPanelSlope3Small
+  MaxCount: 30, type: int, display: true  # doubled
+  SolarPanelEfficiency: 4.0, display: true  # doubled
+}
+{ Block Id: 1516, Name: SolarPanelHorizontalSmall, Ref: SolarPanelSlope3Small
+  MaxCount: 30, type: int, display: true  # doubled
+  SolarPanelEfficiency: 4.0, display: true  # doubled
+}
+
+# armor https://steamcommunity.com/app/383120/discussions/0/1747895465439059678/?ctp=2
+{ Item Id: 2649, Name: ArmorMedium
+  UnlockCost: 10, display: true					# ADDED
+  UnlockLevel: 10, display: true				# ADDED
+  TechTreeParent: ArmorLight					# ADDED
+  TechTreeNames: "Tools,Weapons"						# ADDED
+}
+{ Item Id: 2650, Name: ArmorHeavy
+  UnlockCost: 13, display: true					# ADDED
+  UnlockLevel: 16, display: true				# ADDED
+  TechTreeParent: ArmorMedium					# ADDED
+  TechTreeNames: "Tools,Weapons"						# ADDED
+  Armor: 800, type: int, display: true		# reduced
+}
+
+{ Item Id: 2653, Name: ArmorHeavyEpic, Ref: ArmorHeavy
+  UnlockCost: 15, display: true					# ADDED
+  UnlockLevel: 25, display: true				# 1 (ADDED display:)
+  TechTreeParent: ArmorHeavy					# ADDED
+  TechTreeNames: "Tools,Weapons"						# Hidden
+  NrSlots: 5, type: int, display: true		# ADDED
+  Heat: 800, type: int, display: true
+  Cold: 273, type: int, display: true
+  Radiation: 40, type: int, display: true
+  Armor: 1200, type: int, display: true		# increased again
+}
+
+{ Template Name: ArmorMedium
+  CraftTime: 90
+  Target: "LargeC,AdvC"
+  { Child Inputs
+    SteelPlate: 40
+    SteelPlateArmored: 4
+    Motor: 2
+    Electronics: 5
+    GlassPlate: 4
+    CapacitorComponent: 1
+    EnergyMatrix: 1
+    MechanicalComponents: 6
+    OpticalFiber: 1
+  }
+}
+{ Template Name: ArmorHeavy
+  CraftTime: 120
+  Target: "LargeC,AdvC"
+  { Child Inputs
+    SteelPlateArmored: 12
+    GlassPlate: 8
+    Motor: 6
+    Electronics: 6
+    CapacitorComponent: 4
+    EnergyMatrix: 4
+    Nanotubes: 9
+    PlasticMaterial: 10
+    Computer: 2
+    ZascosiumAlloy: 4
+    ErestrumGel: 4
+  }
+}
+{ Template Name: ArmorHeavyEpic
+  CraftTime: 400
+  Target: "AdvC"
+  { Child Inputs
+	ArmorHeavy: 1
+    XenoSubstrate: 20
+    ZascosiumAlloy: 10
+    ErestrumGel: 10
+    GlassPlate: 20
+    EnergyMatrix: 8
+    Motor: 6
+    Electronics: 20
+    CapacitorComponent: 20
+    Nanotubes: 20
+    PlasticMaterial: 30
+    Computer: 4
+    GoldIngot: 10
+  }
+}
+
+
+# EVA booster recipes
+{ Template Name: JetpackBoost
+  CraftTime: 100
+  Target: "AdvC"
+  { Child Inputs
+    SteelPlate: 2
+    Electronics: 10
+    CobaltAlloy: 10
+    Motor: 2
+    GoldIngot: 1
+  }
+}
+
+{ Template Name: ArmorBoost
+  CraftTime: 100
+  Target: "AdvC"
+  { Child Inputs
+    SteelPlate: 10
+    Electronics: 5
+    Motor: 4
+    GoldIngot: 1
+  }
+}
+{ Template Name: MultiBoost
+  CraftTime: 100
+  Target: "AdvC"
+  { Child Inputs
+    SteelPlate: 3
+    Electronics: 5
+    Nanotubes: 30
+    GoldIngot: 2
+  }
+}
+
+{ Template Name: OxygenBoost
+  CraftTime: 100
+  Target: "AdvC"
+  { Child Inputs
+    SteelPlate: 6
+    Electronics: 2
+    Nanotubes: 10
+    GoldIngot: 1
+  }
+}
+{ Template Name: InsulationBoost
+  CraftTime: 100
+  Target: "LargeC,AdvC"
+  { Child Inputs
+    SteelPlate: 3
+    Electronics: 5
+    Nanotubes: 30
+    GoldIngot: 1
+  }
+}
+{ Template Name: RadiationBoost
+  CraftTime: 100
+  Target: "LargeC,AdvC"
+  { Child Inputs
+    SteelPlate: 5
+    OpticalFiber: 10
+    Nanotubes: 20
+    GoldIngot: 1
+  }
+}
+{ Template Name: MobilityBoost
+  CraftTime: 100
+  Target: "AdvC"
+  { Child Inputs
+    SteelPlate: 5
+    Electronics: 5
+    PlasticMaterial: 10
+    Motor: 4
+    GoldIngot: 1
+  }
+}
+
+{ Item Id: 2673, Name: InsulationBoost, Ref: ArmorBoostTemplate
+  Cold: 100, type: int, display: true  # tripled
+}
+
+
+{ Item Id: 2191, Name: DrillAttachmentSVT2Weapon, Ref: DrillAttachmentWeapon
+  Category: Weapons/Items
+  {
+    DecoMode: true
+    InfoPopup: true
+    TerrainMode: true
+    HarvestSupport: true
+    AllowAt: "UnderWater, Planet, Space"
+    Damage: 1000
+    Radius: 2
+    Range: 30, display: false
+    IgnoreAtmo: true
+    AmmoCapacity: 0, display: true
+    AmmoType: AmmoInfinite, display: true
+    NoiseStrength: 20, display: false
+    ReloadDelay: 3.8, display: false
+  }
+}
+
+# ==================== LOOT TABLES ==============================
+# Item line: "Group|Name_x" (x incrementing), data: "probability" [, xdata="count range"] (default = 1,1)
+# NOTE: Please currently always use 8 columns! (first number in "Size" line)
+# GolemDesert
+{ Container Id: 27
+  Count: "3,4"
+  Size: "8,1"
+  SfxOpen: UseActions/stone_open_close
+  SfxClose: UseActions/stone_open_close
+  { Child Items
+    Name_0: CrushedStone, data: 0.4, xdata: "5,15"
+    Name_1: GoldOre, data: 1.4, xdata: "2,6"
+    Group_0: OresBasic, data: 0.9
+    Group_1: OresAdvanced, data: 2.6
+    Group_2: OresRare, data: 2.4
+  }
+}
+
+# Dino large (Triceratops, Pangolin)
+{ Container Id: 31
+  Count: "10,15"
+  Size: "8,1"
+  SfxOpen: UseActions/KEYUnlockingMetalDoor(mono)  # UseActions/body_open
+  SfxClose: UseActions/body_close
+  { Child Items
+    Name_0: Meat, data: 1.5, xdata: "10,20"
+    Name_1: Egg, data: 1.1, xdata: "2,4"
+  }
+}
+
+# AlienBug01
+{ Container Id: 33
+  Count: "10,15"
+  Size: "8,1"
+  SfxOpen: UseActions/body_open
+  SfxClose: UseActions/body_close
+  { Child Items
+    Name_0: Meat, data: 1.5, xdata: "4,5"
+    Name_1: AlienParts02, data: 1.5, xdata: "2,3"
+    Name_2: AlienTooth, data: 1.1, xdata: "6,8"
+    Name_3: AlienThorn, data: 0.3, xdata: "2,3"  # added
+  }
+}
+
+# TroopTransporters
+{ Container Id: 16
+  Count: "4,6"
+  Size: "8,2"
+  SfxOpen: UseActions/drone_open
+  SfxClose: UseActions/drone_close
+  { Child Items
+    Group_0: WeaponsVeryRare, data: 2.3
+    Group_1: EnergyItems, data: 2.5
+    Group_2: MedicalItems, data: 2.5
+    Group_3: WeaponsRare, data: 1.8
+    Group_4: WeaponsRareKit, data: 2.5
+  }
+}
+# DroneLargeAttackBase
+{ Container Id: 160
+  Count: "2,3"
+  Size: "8,1"
+  SfxOpen: UseActions/BarrelOpen    # drone_open
+  SfxClose: UseActions/BarrelClose  # drone_close
+  { Child Items
+    Name_0: FastRocket, data: 1.5, xdata: "150,300"
+    Name_1: FusionCell, data: 1.5, xdata: "20,30"
+    Name_2: WeaponSV05, data: 1.5, xdata: 1
+    Group_0: OresBasic, data: 2.9
+    Group_1: ComponentsRare, data: 1.5
+  }
+}
+# DroneSmallFast01Minigun and DroneSmallAttackBase DroneSmallFast01Minigun and DroneSmallAttackBase
+{ Container Id: 150
+  Count: "2,3"
+  Size: "8,1"
+  SfxOpen: UseActions/BarrelOpen    # drone_open
+  SfxClose: UseActions/BarrelClose  # drone_close
+  { Child Items
+    Name_0: 8.3mmBullet, data: 1.8, xdata: "125,250"
+    Name_1: EnergyCell, data: 2.0, xdata: "2,3"
+    Group_0: ComponentsBasic, data: 1.6
+    Group_1: ComponentsRare, data: 1.6
+  }
+}
