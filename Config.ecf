@@ -14,6 +14,21 @@ VERSION: 9
 }
 
 # uses 4x the material for a base ore and almost 3x longer to make
+{ Template Name: MagnesiumOre, Ref: OreTemplate
+  BaseItem: true
+  CraftTime: 12
+  Target: "AdvC"  # Adv only
+  { Child Inputs
+    CrushedStone: 100
+	CobaltOre: 5
+	BioFuel: 5
+  }
+  UnlockCost: 0
+  UnlockLevel: 10
+  Category: Components
+}
+
+# uses 4x the material for a base ore and almost 3x longer to make
 { Template Name: CobaltOre, Ref: OreTemplate
   BaseItem: true
   CraftTime: 12
@@ -76,7 +91,7 @@ VERSION: 9
   CraftTime: 25   # reduced slightly
   Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
   { Child Inputs
-    Fiber: 5  # halved
+    Fiber: 7  # less
   }
 }
 
@@ -411,5 +426,33 @@ VERSION: 9
     Name_1: EnergyCell, data: 2.0, xdata: "2,3"
     Group_0: ComponentsBasic, data: 1.6
     Group_1: ComponentsRare, data: 1.6
+  }
+}
+
+
+
+# T2 shield gen was missing from constructors
+{ Template Name: ShieldGeneratorCVT2
+  CraftTime: 90
+  Target: "AdvC"
+  { Child Inputs
+    ShieldGeneratorCV: 1
+    GoldIngot: 10
+    Oscillator: 2
+    CapacitorComponent: 5
+    FluxCoil: 5
+    PowerCoil: 1
+  }
+}
+{ Template Name: ShieldGeneratorBAT2
+  CraftTime: 90
+  Target: "AdvC"
+  { Child Inputs
+    ShieldGeneratorBA: 1
+    GoldIngot: 10
+    Oscillator: 2
+    CapacitorComponent: 5
+    FluxCoil: 5
+    PowerCoil: 1
   }
 }
