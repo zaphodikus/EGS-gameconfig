@@ -20714,7 +20714,7 @@ HullCombatSmallBlocks
   HitPoints: 80, type: int, display: true
   Mass: 40, type: float, display: true, formatter: Kilogram
   BlockColor: "110,110,110"
-  Voxelize: false    # shape has no collider so don't voxelize it
+  #Voxelize: false    # shape has no collider so don't voxelize it
 }
 { +Block Id: 1502, Name: ForcefieldEmitter1x2, Ref: ForcefieldEmitter1x1
   Model: @models/Blocks/Mothership/ForcefieldEmitter1x2Prefab

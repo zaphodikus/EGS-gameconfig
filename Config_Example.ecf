@@ -18126,14 +18126,6 @@ VERSION: 9
     Fiber: 10
   }
 }
-{ Template Name: FlameThrowerCanister
-  OutputCount: 1
-  CraftTime: 28
-  Target: "SurvC,SmallC,HoverC,BaseC,LargeC,AdvC"
-  { Child Inputs
-    BioFuel: 4
-  }
-}
 { Template Name: 50Caliber
   OutputCount: 25
   CraftTime: 5
